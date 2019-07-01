@@ -1,0 +1,62 @@
+.setBotton(@size: 24upx, @weight: normal) {
+    font-size: @size;
+    font-family: MicrosoftYaHei;
+    font-weight: @weight;
+}
+
+// 订单按钮
+.o-btn {
+    border: 1px solid #ff3366;
+    background: #ffffff;
+    border-radius: 8upx;
+    overflow: hidden;
+    text-align: center;
+    padding: 10upx 15upx;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+
+    .setBotton(28upx, 500);
+}
+
+// 取消订单按钮
+.o-btn-cancel {
+    color: #2f3a40;
+    border: 1px solid rgba(168, 182, 184, 1);
+}
+
+// 立即付款按钮
+.o-btn-pay {
+    color: #ffffff;
+    background: rgba(255, 51, 102, 1);
+    border: 1px solid #ff3366;
+    margin-left: 12upx;
+}
+
+// 订单详情状态Tags status
+.o-tags {
+    padding: 4upx 6upx;
+    font-size: 24upx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    border: 1px solid #a8b6b8;
+    border-radius: 6upx;
+    color: #a8b6b8;
+    float: right;
+
+    // 已发货
+    &.send {
+        color: #a8b6b8;
+    }
+
+    // 未发货
+    &.await {
+        color: #ff3366;
+        border: 1px solid #ff3366;
+    }
+
+    &.part {
+        color: #58a803;
+        border: 1px solid #58a803;
+    }
+}

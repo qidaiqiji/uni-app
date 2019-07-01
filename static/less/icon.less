@@ -1,0 +1,258 @@
+// out:false
+.playVideo {
+	position       : absolute;
+	z-index        : 5;
+	top            : 50%;
+	left           : 50%;
+	width          : 120upx;
+	height         : 120upx;
+	margin-left    : -60upx;
+	margin-top     : -60upx;
+	background     : url('~@/static/images/public/play-icon.jpg') 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.list-video {
+	position       : absolute;
+	z-index        : 5;
+	top            : 50%;
+	left           : 50%;
+	width          : 80upx;
+	height         : 80upx;
+	margin-left    : -40upx;
+	margin-top     : -40upx;
+	background     : url('~@/static/images/public/play-icon.jpg') 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.icon_fire {
+	background-image   : url('~@/static/images/s30/icon_fire.png');
+	background-position: left center;
+	background-repeat  : no-repeat;
+	background-size    : 30upx 30upx;
+	padding-left       : 30upx;
+}
+
+.icon_pro_arrow {
+	&:before {
+		content            : '';
+		width              : 30upx;
+		height             : 30upx;
+		background-image   : url('~@/static/images/s30/icon_return.png');
+		background-position: left center;
+		background-repeat  : no-repeat;
+		background-size    : 30upx 30upx;
+		position           : absolute;
+		right              : 24upx;
+		top                : 50%;
+		margin-top         : -15upx;
+	}
+}
+
+
+// 商品详情
+.pro_icon {
+	display            : block;
+	position           : relative;
+	width              : 60upx;
+	height             : 60upx;
+	margin             : 0 auto;
+	background-position: center;
+	background-repeat  : no-repeat;
+	background-size    : 60upx 60upx;
+
+	&.icon_home {
+		background-image: url('~@/static/images/s60/pro_icon_home.png');
+	}
+
+	&.icon_cart {
+		background-image: url('~@/static/images/s60/pro_icon_cart.png');
+	}
+
+	&.icon_brand {
+		background-image: url('~@/static/images/s60/pro_icon_brand.png');
+	}
+}
+
+.pro_address {
+	background-image   : url('~@/static/images/public/address.png');
+	background-position: left center;
+	background-repeat  : no-repeat;
+	background-size    : 30upx 30upx;
+	padding-left       : 35upx;
+}
+
+
+// 排行ICON
+.fl_icon {
+	display            : block;
+	width              : 39upx;
+	height             : 47upx;
+	position           : absolute;
+	left               : 12upx;
+	top                : 0;
+	z-index            : 2;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 100% 100%;
+
+	&.fl_icon0 {
+		background-image: url('~@/static/images/paihang/icon_bangdan_no1.png');
+	}
+
+	&.fl_icon1 {
+		background-image: url('~@/static/images/paihang/icon_bangdan_no2.png');
+	}
+
+	&.fl_icon2 {
+		background-image: url('~@/static/images/paihang/icon_bangdan_no3.png');
+	}
+}
+
+
+// 我的模块
+.icon_mine_bg {
+	background-image   : url('~@/static/images/my/my_bg.png');
+	background-position: top;
+	background-repeat  : no-repeat;
+	background-size    : 100% 409upx;
+}
+
+.icon_mine {
+	display            : block;
+	width              : 60upx;
+	height             : 60upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 100% 100%;
+
+	&.icon_mine_order {
+		background-image: url('~@/static/images/s60/mine_order.png');
+	}
+
+	&.icon_mine_payment {
+		background-image: url('~@/static/images/s60/mine_payment.png');
+	}
+
+	&.icon_mine_receive {
+		background-image: url('~@/static/images/s60/mine_receive.png');
+	}
+
+	&.icon_mine_exchange {
+		background-image: url('~@/static/images/s60/mine_exchange.png');
+	}
+}
+
+.icon_module {
+	display            : block;
+	width              : 60upx;
+	height             : 60upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 100% 100%;
+
+	&.icon_s_jifen {
+		background-image: url('~@/static/images/s60/s_jifen.png');
+	}
+
+	&.icon_s_lingquan {
+		background-image: url('~@/static/images/s60/s_lingquan.png');
+	}
+
+	&.icon_s_quan {
+		background-image: url('~@/static/images/s60/s_quan.png');
+	}
+
+	&.icon_s_service {
+		background-image: url('~@/static/images/s60/s_service.png');
+	}
+
+	&.icon_s_position {
+		background-image: url('~@/static/images/s60/s_position.png');
+	}
+
+	&.icon_s_daohuo {
+		background-image: url('~@/static/images/s60/s_daohuo.png');
+	}
+
+	&.icon_s_help {
+		background-image: url('~@/static/images/s60/s_help.png');
+	}
+
+	&.icon_s_contact {
+		background-image: url('~@/static/images/s60/s_contact.png');
+	}
+}
+
+// 确认订单
+.icon_order_freight {
+	display            : inline-block;
+	vertical-align     : middle;
+	width              : 36upx;
+	height             : 36upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 36upx 36upx;
+	background-image   : url('~@/static/images/order/freight.png');
+}
+
+.icon_order_arrow_r_red {
+	display            : inline-block;
+	vertical-align     : middle;
+	width              : 20upx;
+	height             : 20upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 20upx 20upx;
+	background-image   : url('~@/static/images/order/arrow_r_red.png');
+}
+
+// 品类馆
+.icon_category {
+	display            : inline-block;
+	vertical-align     : middle;
+	width              : 44upx;
+	height             : 44upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 44upx 44upx;
+
+	&.mask_selected {
+		background-image: url('~@/static/images/s44/category_mask_selected.png');
+	}
+
+	&.xixie_selected {
+		background-image: url('~@/static/images/s44/category_xixie_selected.png');
+	}
+
+	&.gehu_selected {
+		background-image: url('~@/static/images/s44/category_gehu_selected.png');
+	}
+
+	&.yingji_selected {
+		background-image: url('~@/static/images/s44/category_yingji_selected.png');
+	}
+}
+
+.icon_category_shopping {
+	display            : inline-block;
+	vertical-align     : middle;
+	width              : 44upx;
+	height             : 44upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 44upx 44upx;
+	background-image   : url('~@/static/images/s44/category_shopping.png');
+}
+
+// 特卖专场
+.icon_cheap_shop_white {
+	display            : inline-block;
+	vertical-align     : middle;
+	width              : 44upx;
+	height             : 44upx;
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 44upx 44upx;
+	background-image   : url('~@/static/images/s44/cheap_shop_white.png');
+}

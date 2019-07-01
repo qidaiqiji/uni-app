@@ -1,0 +1,95 @@
+.switch {
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block
+}
+.switch[hidden] {
+    display: none
+}
+.switch .u-switch-wrapper {
+    display: -webkit-inline-flex;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: middle
+}
+.switch .u-switch-input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 52px;
+    height: 32px;
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    outline: 0;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background-color: #dfdfdf;
+    -webkit-transition: background-color .1s, border .1s;
+    transition: background-color .1s, border .1s
+}
+.switch .u-switch-input:before {
+    width: 50px;
+    background-color: #fdfdfd
+}
+.switch .u-switch-input:after,
+.switch .u-switch-input:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    border-radius: 15px;
+    transition: -webkit-transform .3s;
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s
+}
+.switch .u-switch-input:after {
+    width: 30px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4)
+}
+.switch .u-switch-input.u-switch-input-checked {
+    border-color: #007aff;
+    background-color: #007aff
+}
+.switch .u-switch-input.u-switch-input-checked:before {
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+.switch .u-switch-input.u-switch-input-checked:after {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px)
+}
+.switch .uni-checkbox-input {
+    margin-right: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 1px solid #d1d1d1;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    color: #007aff
+}
+.switch .uni-checkbox-input.uni-checkbox-input-checked:before {
+    font: normal normal normal 14px/1 uni;
+    content: "\EA08";
+    color: inherit;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%) scale(.73);
+    -webkit-transform: translate(-50%, -48%) scale(.73)
+}
+.switch .uni-checkbox-input.uni-checkbox-input-disabled {
+    background-color: #e1e1e1
+}
+.switch .uni-checkbox-input.uni-checkbox-input-disabled:before {
+    color: #adadad
+}

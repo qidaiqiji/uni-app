@@ -1,0 +1,276 @@
+<template>
+	<view class="jfrules-page">
+		<!-- <uni-nav-bar left-icon="back" left-text="返回" right-text="菜单" title="导航栏组件"></uni-nav-bar> -->
+		<view class="jfrules-content">
+			<view class="head">一、关于平台</view>
+			<view class="item">
+				<text class="title">1、小美诚品是什么？</text>
+				<text class="desc">小美诚品是一个专注于<text style="color:red;">原装进口化妆品B2B采购平台</text>，为<text style="color:red;">美妆零售企业</text>,提供优质的、有价格竞争力的进口化妆品采购服务。</text>
+			</view>
+			<view class="item">
+				<text class="title">2、上小美诚品采购有什么特点和优势？</text>
+				<text class="desc">①小美诚品专注原装进口美妆，海量商品一站采购，省时省心</text>
+				<view><text class="desc">②与品牌方（总代）深度合作，保证100%原装正品，证件齐全</text></view>
+				<view><text class="desc">③品牌直供，优势价格，利润更高</text></view>
+				<view><text class="desc">④最低1支起批，灵活补货，不压库存，轻松进货</text></view>
+				
+			</view>
+			<view class="item">
+				<text class="title">3、小美诚品的合作方式有哪些？</text>
+				<text class="desc">
+					合作模式：美妆零售企业在平台自由采购，小美诚品提供优质、有价格竞争力的进口美妆货源、销售咨询服务、产品培训服务、小美学院等。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">3、小美诚品的合作方式有哪些？</text>
+				<text class="desc">
+					合作模式：美妆零售企业在平台自由采购，小美诚品提供优质、有价格竞争力的进口美妆货源、销售咨询服务、产品培训服务、小美学院等。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">4、为什么注册之后还需要认证？</text>
+				<text class="desc">
+					为了保护品牌方和客户的合法利益，所以会对注册用户的资料进行严格审核，只有通过身份认证的用户才能享受平台的服务。
+				</text>
+			</view>
+			<view class="head">二、关于商品</view>
+			<view class="item">
+				<text class="title">1、小美诚品销售的商品都是正品吗？</text>
+				<text class="desc">
+					小美诚品与品牌方（总代）深度合作，取得品牌授权。产品均为原装进口的正品行货，均贴有中文标贴，可提供报关单、检疫检验证明等进口手续，可以合法销售。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">2、平台都有哪些品类的产品？</text>
+				<text class="desc">
+					平台所有品牌产品报关单、检疫检验证明等进口手续证件齐全
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">4、有中文标签背贴吗？</text>
+				<text class="desc">
+					所有产品均贴有合格的中文标签背贴
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">4、有中文标签背贴吗？</text>
+				<text class="desc">
+					所有产品均贴有合格的中文标签背贴
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">5、产品的有效期有保障吗？</text>
+				<text class="desc">
+					对于3年期保质期的产品，平台确保有效期在18个月以上
+				</text>
+				<view><text class="desc">对于2年期保质期的产品，平台确保有效期在12个月以上</text></view>
+			</view>
+			<view class="item">
+				<text class="title">6、平台商品的价格含税吗？</text>
+				<text class="desc">
+					如需要开具发票，需另外支付税费。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">7、平台有没有特别的活动和采购政策？</text>
+				<text class="desc">
+					平台会不定期的推出团采、秒杀、满赠、满减、超值套餐等形式的特惠活动，敬请关注，不要错过！
+				</text>
+				<view><text class="desc">具体活动规则详情请查看“帮助中心——采购指南——关于活动”</text></view>
+			</view>
+			<view class="head">三、关于采购</view>
+			<view class="item">
+				<text class="title">1、可以通过哪些方式在小美诚品进行采购？</text>
+				<text class="desc">
+					客户可以在小美诚品的PC网站（<text style="color:red;">www.xiaomei360.com、 微信服务号小美诚品两个平台进行采购</text>）。
+				</text>
+				<view><text class="desc"><text style="color:red;">小美诚品APP</text>正在升级优化中，敬请期待！</text></view>
+			</view>
+			<view class="item">
+				<text class="title">2、通过小美诚品订货的流程是怎样的？</text>
+				<text class="desc">
+					小美诚品的订货流程如下:
+				</text>
+				<view class="desc">
+					<text>选择商品→确认订单→付款发货→收货验货→确认收货→交易成功</text>
+				</view>
+			</view>
+			<view class="item">
+				<text class="title">3、起批量有要求吗？</text>
+				<text class="desc">
+					平台最低支持 <text style="color:red;">1支起采</text> ，方便客户灵活补货
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">4、支持一件代发吗？</text>
+				<text class="desc">
+					目前暂不提供一件代发的服务
+				</text>
+			</view>
+			<view class="head">四、支付与配送</view>
+			<view class="item">
+				<text class="title">1、下单后多久能发货？</text>
+				<text class="desc">
+					下单成功后，我们会在12个小时内对用户所订购的商品、邮寄地址、款项支付等信息进行核对，一般在<text style="color:red;">2~3个工作日</text>内将包裹发出（<text style="color:red;">周末和法定节假日顺延</text>
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">2、从哪里发货？</text>
+				<text class="desc">
+					小美诚品与品牌方（或总代）深度合作，部分产品入仓从深圳小美仓库发货（<text style="color:red;">标注“小美直发”</text>），其他产品由品牌方(或总代)从各地仓库发货，具体请参考商品详情页说明
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">3、平台使用什么物流配送方式，能否自选物流？</text>
+				<text class="desc">
+					通常包裹20公斤以上发物流，其它发快递，详细情况请咨询客服
+					
+				</text>
+				<view class="desc">
+					<text>目前暂时不提供自选物流的服务，我们会根据订单中的收货地址和商品种类选择最合适的物流公司进行配送。</text>
+				</view>
+			</view>
+			<view class="item">
+				<text class="title">4、小美诚品的配送范围？</text>
+				<text class="desc">
+					小美诚品配送范围覆盖全国大部分地区（港澳台地区除外）
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">5、配送费用如何支付？</text>
+				<text class="desc">
+					小美诚品配送商品，用户可以选择现付运费和到付运费两种形式
+				</text>
+				<view class="desc">
+					<text>①现付运费。在下单的时候支付物流费用，具体费用以下单页面为准</text>
+				</view>
+				<view class="desc">
+					<text>②到付运费。货物寄到之后，客户支付实际产生的物流费用</text>
+				</view>
+			</view>
+			<view class="item">
+				<text class="title">6、平台有没有包邮等运费政策支持？</text>
+				<view class="desc">
+					<text>为了给大家提供更优质的采购体验，降低采购成本，即日起至2018年12月31日小美诚品推出以下邮费政策：</text>
+				</view>
+				<view class="">
+					<text class="title">（1）采购小美直发商品</text>
+					<text class="desc">①收货地址为广东、湖南、湖北、福建、广西、贵州、江西、浙江的订单，订单金额满2999元包邮，不足2999元收取物流费用20元</text>
+				</view>
+				<view class="desc">
+					<text>②收货地址为云南、重庆、四川、陕西、山西、河北、宁夏、北京、天津、上海、山东、江苏、安徽、河南的订单，订单金额满3999元包邮，不足3999元收取物流费用30元</text>
+				</view>
+				<view class="desc">
+					<text>③收货地址为新疆、西藏、青海、甘肃、内蒙、辽宁、吉林、黑龙江、海南的订单，订单金额满4999元包邮，不足4999元收取物流费用50元</text>
+				</view>
+				<view class="desc">
+					<text>特别说明：以上邮费政策不支持自选物流，需自选物流请联系小美诚品的客服人员处理。</text>
+				</view>
+				<view class="">
+					<text class="title">（2）采购非小美直发商品</text>
+				</view>
+				<view class="desc">
+					<text>在平台采购非小美直发商品，小美平台提供优惠一定条件的包邮政策，具体视品牌而不同，请留意商品详情页指示信息</text>
+				</view>
+				<view class="desc">
+					<text>特别说明：</text>
+				</view>
+				<view class="desc">
+					<text>全国包邮：因物流限制，港澳台地区暂时不能实行包邮政策。</text>
+				</view>
+				<view class="desc">
+					<text>满额包邮：单品牌采购满足一定条件，如1000元、满2000元、满3000元等，即可全国包邮。</text>
+				</view>
+				<view class="desc">
+					<text>21省包邮：北京市, 天津市, 河北省, 山西省, 上海市, 江苏省, 浙江省, 安徽省, 福建省, 江西省, 山东省, 河南省, 湖北省, 湖南省, 广东省, 广西壮族自治区, 重庆市, 四川省, 贵州省, 云南省,陕西省；其他偏远省份到付:内蒙古自治区, 辽宁省, 吉林省, 黑龙江省, 海南省, 西藏自治区, 甘肃省, 青海省, 宁夏回族自治区, 新疆维吾尔自治区</text>
+				</view>
+			</view>
+			<view class="item">
+				<text class="title">7、商品验货与签收需要注意什么？</text>
+				<text class="desc">
+					小美诚品保证出货时货物外包装的完好无缺，为了保证客户的利益，请在收到货物时务必验货，请拆开包装箱，确认货品完好无损后再签收。如果发现货物在运输途中有破损，顾客有权拒收，在快递单上写明拒收原因，请配送人员退回。
+				</text>
+				<view><text class="desc">若发现商品错发、漏发，请在签收<text style="color:red;">24小时内</text>联系客服处理，超过24小时，小美诚品概不负责。</text></view>
+			</view>
+			<view class="item">
+				<text class="title">8、平台支持哪些支付方式？</text>
+				<text class="desc">
+					平台支持支付宝、微信和网银3种支付方式。
+				</text>
+			</view>
+			<view class="head">五、售后服务</view>
+			<view class="item">
+				<text class="title">1、平台有什么样的退换货政策支持？</text>
+				<text class="desc">
+					小美诚品力求为客户提供优质的货品和售后服务，若发现以下问题，自收到产品7天内平台给以退换
+				</text>
+				<view><text class="desc">①产品错发、货不对版</text></view>
+				<view><text class="desc">②保质期为3年的，剩余效期低于18个月</text></view>
+				<view><text class="desc">③保质期为2年的，剩余效期低于12个月</text></view>
+				<view><text class="desc"><text style="color:red;">请注意：退换的产品须保证外包装完好，不影响二次销售</text></text></view>
+			</view>
+			<view class="item">
+				<text class="title">2、退换流程是什么样的？</text>
+				<text class="desc">
+					①申请退货→②客服受理→③寄回退货→④确认收货→⑤完成退款
+				</text>
+				<view><text class="desc">①申请换货→②客服受理→③寄回原货→④确认收货→⑤重发新货→⑥确认收货→⑦完成换货</text></view>
+			</view>
+			<view class="item">
+				<text class="title">3、退货地址是什么？</text>
+				<text class="desc">
+					请联系客服热线0755-29490945，并将图片等凭证提交审核。客服会在凭证审核通过后，告知退货地址。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">4、退换货产生的运费由谁负责？</text>
+				<text class="desc">
+					因商品质量问题、第三方物流及小美诚品本身的原因产生的退换，运费由小美诚品承担
+				</text>
+				<view><text class="desc">注：不支持货到付款业务，请顾客先垫付运费，到货验证商品后，小美诚品将以现金形式为用户报销运费。如果是未经确认而擅自退回的商品，该退货申请将不被受理。</text></view>
+			</view>
+			<view class="item">
+				<text class="title">5、多长时间能收到退款？</text>
+				<text class="desc">
+					收到退货包裹并确认无误后，小美诚品将在48小时内进行退款。退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">6、小美诚品支持开发票吗？</text>
+				<text class="desc">
+					可以开票，具体请联系客服处理
+				</text>
+			</view>
+			<view class="head">六、小美学院</view>
+				<view class="item">
+				<text class="title">1、小美学院是什么？</text>
+				<text class="desc">
+					      小美学院是一个内容服务频道，包含行业观察、平台热销品牌动态、产品资讯内容，以品牌PPT、视频、图文介绍、产品陈列图和试用体验等内容为主，专业为客户提供选品、培训BA、产品营销等服务。
+				</text>
+			</view>
+				<view class="item">
+				<text class="title">2、使用小美学院需要收费吗？</text>
+				<text class="desc">
+					小美诚品每月采购下单、确认收货的客户可以<text style="color:red;">免费使用</text>
+				</text>
+			</view>
+
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			};
+		},
+		onLoad(option) {},
+		methods: {}
+	}
+</script>
+
+<style lang="less">
+	@import url('../less/detail.less');
+</style>

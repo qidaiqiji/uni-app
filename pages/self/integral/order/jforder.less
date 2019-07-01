@@ -1,0 +1,150 @@
+//out:false
+.setTransform(@x: 0px, @y: 0px) {
+	-webkit-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+
+.setPage() {
+	width: 100%;
+	min-height: 100%;
+	background: #f3f3f3;
+}
+
+.jforder-page {
+	overflow: hidden;
+	padding-bottom: 60upx;
+	min-height: 1200upx;
+	background: #f3f3f3;
+}
+
+.jforder-header {
+}
+
+.jforder-content {
+	font-size: 20upx;
+	width: 702upx;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 32upx;
+
+	.item {
+		//min-height: 383upx;
+		background: #fff;
+		border-radius: 20upx;
+		box-sizing: border-box;
+		margin-bottom: 24upx;
+		position: relative;
+		overflow: hidden;
+		font-size: 20upx;
+	}
+
+	.item {
+		&-head {
+			display: block;
+			height: 88upx;
+			line-height: 88upx;
+			background: rgba(255, 255, 255, 1);
+			font-size: 28upx;
+			font-family: PingFang-SC-Bold;
+			font-weight: bold;
+			color: #2f3a40;
+			padding: 0 24upx;
+			margin-bottom: 12upx;
+
+			.i {
+				font-size: 24upx;
+				font-family: PingFang-SC-Medium;
+				font-weight: 500;
+				color: #889696;
+				font-style: normal;
+				margin-left: 32upx;
+			}
+		}
+
+		.title {
+			display: block;
+			font-size: 26upx;
+			font-family: PingFang-SC-Medium;
+			font-weight: 500;
+			color: #2f3a40;
+			line-height: 30upx;
+			margin-bottom: 30upx;
+		}
+
+		.price {
+			display: block;
+			font-size: 22upx;
+			font-family: PingFang-SC-Medium;
+			font-weight: 500;
+			color: #889696;
+			line-height: 30upx;
+		}
+
+		.num {
+			float: right;
+		}
+
+		&-body {
+			font-size: 20upx;
+			margin-bottom: 24upx;
+			box-sizing: border-box;
+			display: flex;
+			padding: 0 24upx;
+
+			.img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.fl {
+				width: 150upx;
+				height: 150upx;
+				font-size: 20upx;
+			}
+
+			.fr {
+				margin-left: 20upx;
+				width: 520upx;
+				font-size: 20upx;
+			}
+		}
+
+		&-foot {
+			border-top: 1px solid #dce4e6;
+			min-height: 70upx;
+			line-height: 70upx;
+			text-align: right;
+			padding: 0 24upx;
+			font-size: 28upx;
+		}
+
+		.text {
+			font-size: 28upx;
+			font-family: PingFang-SC-Medium;
+			font-weight: 500;
+		}
+
+		.wait {
+			color: #ff3366;
+		}
+
+		.tips {
+			color: #3a444a;
+		}
+	}
+}
+
+.tips-text {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 54upx;
+	line-height: 54upx;
+	text-align: center;
+	background: rgba(255, 255, 255, 1);
+	font-size: 24upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color: #ff3366;
+}

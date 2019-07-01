@@ -1,0 +1,471 @@
+//out:false
+.setTransform(@x: 0px, @y: 0px) {
+	-webkit-transform: translate(@x, @y);
+	-ms-transform    : translate(@x, @y);
+	transform        : translate(@x, @y);
+}
+
+@import 'reset.less';
+@import 'common.less';
+
+@font-face {
+	font-family: 'iconfont';
+	src        : url('https://at.alicdn.com/t/font_1028200_47ewtwy4t04.ttf') format('truetype');
+}
+
+.icon {
+	font-family: 'iconfont';
+	font-size  : 40upx;
+	color      : #fff;
+}
+
+// 公共页面属性
+.pages {
+	min-height: @minHeight;
+	overflow  : hidden;
+}
+
+// 公共标题文字属性
+.texts {
+	display: block;
+	display: -webkit-box;
+
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow          : hidden;
+	text-overflow     : ellipsis;
+
+	word-break : break-all;
+	white-space: normal;
+}
+
+// 公共锁定页面
+.locked-pages {
+	overflow: hidden;
+	position: absolute;
+	width   : 100%;
+	height  : 100%;
+}
+
+.locked-fixed {
+	position: fixed;
+	z-index : 5;
+}
+
+// 公共搜索框盒子
+.search-box {
+	position   : absolute;
+	top        : 16upx;
+	width      : 702upx;
+	height     : 60upx;
+	left       : 50%;
+	margin-left: -351upx;
+	z-index    : 5;
+
+	background: #ffffff;
+}
+
+// 公共display:block;
+.bl {
+	display: block;
+}
+
+// 公共图片坐下角盒子
+.fl-box {
+	line-height: 1;
+	position     : absolute;
+	left         : 0;
+	bottom       : 0;
+	padding      : 5upx 5upx;
+	background   : rgba(0, 0, 0, 0.6);
+	min-width    : 80upx;
+	text-align   : center;
+	border-radius: 4upx;
+	color        : #f3f3f3;
+	font-size    : 20upx;
+	font-family  : PingFangSC-Regular;
+
+	&.stock {
+		background: rgba(255, 108, 68, 0.7);
+	}
+
+	&.stock2 {
+		left      : 14upx;
+		bottom: 4upx;
+		background: rgba(255, 108, 68, 1);
+	}
+}
+
+// 轮播设置
+.swiper-box {
+	height  : 360upx;
+	width   : 100%;
+	position: relative;
+
+	img {
+		width     : 100%;
+		height    : 100%;
+		max-height: 360upx;
+	}
+
+	.uni-padding-wrap {
+		position: absolute;
+		width   : 100%;
+	}
+
+	.swiper {
+		height: 360upx;
+	}
+}
+
+// 公共底部按钮盒子
+@import '~@/static/less/commom-foot.less';
+
+// 公共右下角浮标
+.foot-r-box {
+	z-index: 22;
+	width  : 84upx;
+	height : auto;
+	right  : 24upx;
+
+	.item {
+		cursor    : pointer;
+		margin-top: 24upx;
+	}
+
+	.icon {
+		display            : block;
+		width              : 84upx;
+		height             : 84upx;
+		background-position: center;
+		background-repeat  : no-repeat;
+		background-size    : 84upx 84upx;
+	}
+
+	// .icon-conact {
+	//     background-image: url('./static/images/public/icon_kefu@2x.png');
+	// }
+
+	// .icon-top {
+	//     background-image: url('./static/images/public/icon_top@2x.png');
+	// }
+
+	.image {
+		width : 84upx;
+		height: 84upx;
+	}
+}
+
+// 公共暂无优惠券/无数据
+.tiket-unset {
+	.unicon {
+		display      : block;
+		margin       : auto;
+		margin-bottom: 20upx;
+		width        : 314upx;
+		height       : 180upx;
+	}
+
+	.undata {
+		background         : url('~@/static/images/unset/img_wushuju.png');
+		background-repeat  : no-repeat;
+		background-position: center;
+		background-size    : 100% 100%;
+	}
+
+	.uncoupon {
+		background         : url('~@/static/images/unset/not_coupon.png');
+		background-repeat  : no-repeat;
+		background-position: center;
+		background-size    : 100% 100%;
+	}
+
+	.text {
+		font-size  : 26upx;
+		color      : #b2b2b2;
+		line-height: 48upx;
+	}
+
+	margin-top: 240upx;
+	text-align: center;
+	overflow  : hidden;
+}
+
+// 订单模块
+.unset_empty_order {
+	width: 451upx;
+	height: 385upx;
+	background         : url('~@/static/images/order/empty_order.png');
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 100% 100%;
+	display: inline-block;
+	margin: auto;
+}
+.unset_empty_data {
+	width: 451upx;
+	height: 385upx;
+	background         : url('~@/static/images/order/no_data.png');
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : 100% 100%;
+	background-size    : 100% 100%;
+	display: inline-block;
+	margin: auto;
+}
+
+// 公共表单按钮
+@import '~@/static/less/form-btn.less';
+
+// 购物车按钮
+.icon_user_buy {
+	cursor  : pointer;
+	width   : 44upx;
+	height  : 44upx;
+	position: absolute;
+
+	.image,
+	.img {
+		width         : 100%;
+		height        : 100%;
+		vertical-align: unset;
+	}
+}
+
+// 商品列表: 格式二
+@import '~@/static/less/goods-list-type2.less';
+
+// 贵宾规则
+.svip-popup {
+	.bodyer {
+		font-size  : 24upx;
+		font-family: PingFang-SC-Medium;
+		font-weight: 500;
+		color      : #889696;
+		line-height: 42upx;
+	}
+}
+
+.center-box .image {
+	width : 100%;
+	height: 100%;
+}
+
+.bottom {
+	&-content {
+		display   : flex;
+		flex-wrap : wrap;
+		padding   : 0 35upx;
+		background: #ffffff;
+	}
+
+	&-content2 {
+		display      : block;
+		flex-wrap    : wrap;
+		padding      : 0 35upx;
+		background   : #ffffff;
+		margin-bottom: 12upx;
+	}
+}
+
+.bottom-btn {
+	height     : 90upx;
+	line-height: 90upx;
+	border-top : 1px #f5f5f5 solid;
+	background : #ffffff;
+	font-size  : 36upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color      : #000000;
+	text-align : center;
+}
+
+.bottom-line-select {
+	text-align   : center;
+	height       : 90upx;
+	line-height  : 90upx;
+	border-bottom: 1px #f5f5f5 solid;
+	background   : #ffffff;
+	font-size    : 36upx;
+	font-family  : PingFang-SC-Medium;
+	font-weight  : 500;
+	color        : #000000;
+}
+
+// 子单状态-已完成
+.order-status-success {
+	color: #889696;
+}
+
+// 子单状态-未发货
+.order-status-error {
+	color: #ff3366;
+}
+
+// 子单状态-部分发货
+.order-status-green {
+	color: #58a803;
+}
+
+// 输入框样式
+@import '~@/static/less/search-input.less';
+// 标签样式
+@import '~@/static/less/tag-box.less';
+// 为你推荐 商品
+@import '~@/static/less/share-goods.less';
+
+@import '~@/static/less/content-view.less';
+// 专辑详情信息
+@import '~@/static/less/coll-view.less';
+//
+@import '~@/static/basic/toUser.less';
+//
+@import '~@/static/less/coupon.less';
+
+@import '~@/static/less/botton.less';
+@import '~@/static/less/product.less';
+
+// 红盒子新品
+.redbox-swiper {
+	position: relative;
+}
+
+.redbox-swiper {
+	.uni-swiper-dots-horizontal {
+		position : absolute;
+		transform: translate(0, 0);
+		left     : auto;
+		right    : 32upx;
+		bottom   : 10upx;
+	}
+
+	.uni-swiper-slides {
+		width        : 314upx;
+		height       : 314upx;
+		background   : rgba(255, 255, 255, 1);
+		border-radius: 4upx;
+		position     : absolute;
+		overflow     : hidden;
+	}
+
+	.uni-swiper-dot {
+		width : 12upx;
+		height: 12upx;
+	}
+}
+
+@loading: 100upx;
+
+.loadingText {
+	background: #f3f3f3;
+	position  : relative;
+	padding   : 10upx;
+	width     : 100%;
+	font-size : 20upx;
+	text-align: center;
+	min-height: 80upx;
+
+	.image {
+		width : 100upx;
+		height: 100upx;
+		margin: auto;
+	}
+}
+
+.loadingText2 {
+	background: #f3f3f3;
+	width     : 100%;
+	font-size : 20upx;
+	text-align: center;
+	min-height: 80upx;
+	position: absolute;
+	z-index: 6;
+	top: 0;
+    bottom: 0;
+    left: 0;
+	right: 0;
+	background: #fff;
+	
+	.image {
+		width : 150upx;
+		height: 150upx;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+.isChecklogin {
+	width: 100%;
+	visibility: hidden;
+
+	&.show {
+		visibility: visible;
+	}
+}
+
+.textW {
+	word-break: break-all;
+}
+
+// logo自适应
+.logo-type {
+	position         : absolute;
+	top              : 50%;
+	left             : 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform    : translate(-50%, -50%);
+	transform        : translate(-50%, -50%);
+}
+
+// Ads 盒子
+.app-ads-list {
+	overflow       : hidden;
+	margin         : auto;
+	width          : 718upx;
+	display        : flex;
+	flex-wrap      : wrap;
+	justify-content: space-between;
+
+	.ads-item {
+		width        : 352upx;
+		height       : 164upx;
+		margin-bottom: 14upx;
+		position     : relative;
+		overflow     : hidden;
+		border-radius: 10upx;
+	}
+}
+
+
+// 邮费窗口样式
+.fei-active {
+	font-size  : 26upx;
+	line-height: 44upx;
+
+	.itemList {
+		color: #b2b2b2;
+	}
+
+	.itemDesc {
+		color     : #2f3a40;
+		font-size : 28upx;
+		margin-top: 5upx;
+	}
+}
+
+@import '~@/static/assets/sprite-s30.less';
+@import '~@/static/assets/sprite-s84.less';
+
+@import '~@/static/less/goods-list.less';
+
+// 推荐列表
+@import '~@/static/less/recommList.less';
+
+// 公共样式
+@import '~@/static/less/app.less';
+// icon合并
+@import '~@/static/less/icon.less';

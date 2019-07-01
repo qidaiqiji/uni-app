@@ -1,0 +1,351 @@
+.paihang-page {
+    position: relative;
+    background: #F3F3F3;
+    padding-bottom: 120upx;
+}
+
+.paihang-head {
+    width: 100%;
+    height: 360upx;
+
+    .image {
+        width: 100%;
+        height: 360upx;
+        max-height: 360upx;
+    }
+}
+
+.head {
+    overflow: hidden;
+    font-size: 24upx;
+    height: 166upx;
+    background: #399BFA;
+
+    .title {
+        overflow: hidden;
+        font-size: 32upx;
+        font-family: PingFang-SC-Bold;
+        font-weight: bold;
+        color: #FFFFFF;
+        padding: 0 16upx;
+        margin-top: 28upx;
+        box-sizing: border-box;
+        line-height: 48upx;
+        z-index: 2;
+    }
+
+    .desc {
+        font-size: 24upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        font-style: normal;
+        //line-height: 30upx;
+
+        padding-right: 35upx;
+        background-image: url("~@/static/images/paihang/icon_more.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 35upx 35upx;
+
+        float: right;
+        //margin-top: 9upx;
+    }
+
+    .trophy {
+        width: 134upx;
+        height: 134upx;
+        position: absolute;
+        top: 12upx;
+        left: 410upx;
+        z-index: 1;
+    }
+}
+
+.body {
+    padding: 0 16upx;
+    margin-top: -46upx;
+    overflow: hidden;
+}
+
+.child {
+
+    position: relative;
+    overflow: hidden;
+    width: 216upx;
+    min-height: 352upx;
+    background: #FFFFFF;
+    border-radius: 8upx 8upx 0upx 0upx;
+
+    margin-right: 10upx;
+    margin-bottom: 5px;
+    float: left;
+
+    &_img {
+        width: 216upx;
+        height: 216upx;
+        position: relative;
+        text-align: center;
+    }
+
+    &_image {
+        width: 172upx;
+        height: 169upx;
+        max-width: 172upx;
+        max-height: 169upx;
+        margin: auto;
+        margin-top: 30upx;
+    }
+
+    .text-box {
+        font-size: 22upx;
+        padding-left: 8upx;
+        padding-right: 17upx;
+        box-sizing: border-box;
+        margin-top: 12upx;
+        margin-bottom: 12upx;
+    }
+
+    .text-title {
+        font-size: 22upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: #2F3A40;
+        margin-bottom: 26upx;
+    }
+
+    .text-price {
+        font-size: 26upx;
+        font-family: PingFang-SC-Bold;
+        font-weight: bold;
+        color: #FF3366;
+    }
+}
+
+.last-child {
+    margin-right: 0upx;
+}
+
+.rank {
+
+    &-list {
+        width: 702upx;
+        margin: auto;
+        margin-top: 20upx;
+
+    }
+
+    &-item {
+        position: relative;
+        overflow: hidden;
+
+        min-height: 482upx;
+        background: #FFFFFF;
+        border-radius: 20upx;
+
+        margin-bottom: 20upx;
+    }
+}
+
+
+	.cartDetial {
+		display: flex;
+		padding: 43upx 24upx;
+		border-bottom: 1px solid #DCE4E6;
+
+		.cartDeLeft {
+			// padding:10upx;
+			// border:1px solid rgba(220,228,230,1);
+			width: 240upx;
+			height: 240upx;
+			box-sizing: border-box;
+
+			img {
+				width: 218upx;
+				height: 218upx;
+			}
+		}
+
+		.cartDeRight {
+			position: relative;
+			margin-left: 43upx;
+			width: 100%;
+
+			.descFirst {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+
+				.descText {
+					color: #2F3A40;
+					font-size: 28upx;
+					width: 358upx;
+					// 							overflow: hidden;
+					// 							white-space: nowrap;
+					// 							text-overflow: ellipsis;
+				}
+
+				.closeCart {
+					color: #889696;
+					font-size: 28upx;
+				}
+			}
+
+			.cartNum {
+				margin-top: 17upx;
+
+				text {
+					color: #889696;
+					font-size: 22upx;
+					display: block;
+					margin-top: 8upx;
+					// margin-right: 73upx;
+				}
+			}
+
+			.cartBtn {
+				position: absolute;
+				bottom: 0;
+
+				text {
+					font-size: 24upx;
+					padding: 5upx 9upx;
+					border-radius: 4px;
+					margin-right: 15upx;
+				}
+
+				text:nth-child(1) {
+					background: #FF3366;
+					color: #fff;
+				}
+
+				text:nth-child(2) {
+					border: 1px solid #FE9806;
+					color: #FE9806;
+				}
+
+				text:nth-child(3) {
+					border: 1px solid #0087EA;
+					color: #0087EA;
+				}
+			}
+		}
+	}
+
+	.goodsRight {
+		display: flex;
+		align-items: center;
+
+		.numShow {
+			margin-right: 5upx;
+			text {
+				display: block;
+				text-align: right;
+			}
+
+			text:nth-child(1) {
+				color: #FF3366;
+				font-size: 24upx;
+			}
+
+			text:nth-child(2) {
+				color: #889696;
+				font-size: 22upx;
+				margin-top: 5upx;
+			}
+
+		}
+
+		.numAddRedus {
+			display: flex;
+
+			.sameNum {
+				width: 60upx;
+				height: 60upx;
+				line-height: 60upx;
+				text-align: center;
+				border: 1px solid #DCE4E6;
+				font-size: 24upx;
+				color: #2F3A40;
+			}
+
+			.huoTips {
+				border: none;
+				border-radius: 0;
+				background: #02BD98;
+				color: #fff;
+				width: 180upx;
+				height: 60upx;
+				text-align: center;
+				line-height: 60upx;
+				font-size: 28upx;
+			}
+
+			.alsethuoTips {
+				border: none;
+				border-radius: 0;
+				background: #eee;
+				color: #666;
+				width: 180upx;
+				height: 60upx;
+				text-align: center;
+				line-height: 60upx;
+				font-size: 28upx;
+			}
+		}
+	}
+
+	.goodsList {
+		display: flex;
+		justify-content: space-between;
+		height: 130upx;
+		align-items: center;
+		padding: 0 24upx;
+	}
+
+	.goodsLeft {
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+		.leftImg {
+			img {
+				width: 98upx;
+				height: 98upx;
+			}
+		}
+
+		.leftText {
+			width: 255upx;
+			padding-top: 10upx;
+			box-sizing: border-box;
+			.newText {
+				color: #FF3366;
+				font-size: 28upx;
+			}
+
+			.oldText {
+				color: #889696;
+				font-size: 22upx;
+				text-decoration: line-through
+			}
+
+			.name {
+				color: #2F3A40;
+				font-size: 24upx;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				display: block;
+				width: 255upx;
+			}
+
+			.code {
+				color: #889696;
+				font-size: 22upx;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+			}
+		}
+
+	}

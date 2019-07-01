@@ -1,0 +1,362 @@
+//out:false
+.indexContain {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    font-style: normal;
+    font-size: 26upx;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 416upx;
+    height: 88upx+120upx;
+    overflow: hidden;
+
+    .navbg {
+        width: 100%;
+        height: 88upx;
+    }
+
+    .searchPart {
+        border-radius: 20upx;
+        width: 702upx;
+        height: 60upx;
+        top: 14upx;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
+
+// 导航按钮
+.indexTab {
+    width: 100%;
+    height: 120upx;
+    position: relative;
+    z-index: 2;
+
+    .category-nav-view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8upx 0;
+        list-style: none;
+    }
+
+    .category-nav-coll {
+        width: 25%;
+        text-align: center;
+        color: #fff;
+        opacity: 0.3;
+    }
+
+    .text {
+        position: relative;
+        font-size: 24upx;
+        margin-top: 10upx;
+        padding-bottom: 12upx;
+        // border-bottom: 2px solid transparent;
+
+        &:before {
+			content: " ";
+            position: absolute;
+            bottom: 0px;
+            width: 46upx;
+            height: 4upx;
+            left: 50%;
+            margin-left: -23upx;
+            background: transparent;
+            border-radius: 2upx;
+        }
+    }
+
+    .active {
+        opacity: 1;
+
+        .text {
+            // border-bottom: 2px solid #fff;
+        }
+
+        .text:before {
+            background: #fff;
+        }
+    }
+
+    // .icon {
+    // 	width: 44upx;
+    // 	height: 44upx;
+    // 	display: block;
+    // 	margin: 0 auto;
+    // }
+    // .icon0 {
+    // 	background: url('../../../static/images/icons/category/icon_mask_selected@2x.png');
+    // 	background-size: 100%;
+    // }
+    // .icon1 {
+    // 	background: url('../../../static/images/pinleiguan/icon_gehu_none@2x.png');
+    // 	background-size: 100%;
+    // }
+    // .icon2 {
+    // 	background: url('../../../static/images/pinleiguan/icon_yingji_none@2x.png');
+    // 	background-size: 100%;
+    // }
+    // .icon3 {
+    // 	background: url('../../../static/images/pinleiguan/icon_xixie_none@2x.png');
+    // 	background-size: 100%;
+    // }
+}
+
+.content {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% auto;
+    padding-top: 98upx+88upx+40upx;
+    //margin-top: 98upx+88upx+20upx;
+}
+
+// 背景色块
+.mianmo {
+    background: url('~@/static/images/icons/category/img_bg_0.png') 0 0 no-repeat;
+    background-size: 100% 416upx;
+}
+
+.hufu {
+    background-image: url('~@/static/images/icons/category/img_bg_1.png');
+    background-size: 100% 416upx;
+}
+
+.yingji {
+    background-image: url('~@/static/images/icons/category/img_bg_2.png');
+    background-size: 100% 416upx;
+}
+
+.xixie {
+    background-image: url('~@/static/images/icons/category/img_bg_3.png');
+    background-size: 100% 416upx;
+}
+
+// banner
+.radiusWrap {
+    margin: auto;
+    width: 100%;
+    height: 315upx;
+    border-radius: 20upx;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+
+    .swiper {
+        width: 100%;
+        height: 315upx;
+        text-align: center;
+    }
+
+    .image {
+        width: 702upx;
+        height: 315upx;
+        border-radius: 20upx;
+        overflow: hidden;
+        position: relative;
+        z-index: 4;
+    }
+}
+
+.hotGood {
+    overflow: hidden;
+    margin-top: 20upx;
+
+    .hotTitle {
+        font-weight: bold;
+        font-size: 32upx;
+        color: #2f3a40;
+        line-height: 48upx;
+        margin: 12upx 0 24upx 0;
+        display:none;
+    }
+    .isActive{
+        display: block;
+    }
+    .swiper {
+        height: 418upx;
+    }
+
+    .swiper-item-col3 {
+        width: 216upx;
+        margin-right: 12upx;
+        background: #fff;
+        border-radius: 4upx;
+        float: left;
+    }
+
+    .swiper-item-col3.last {
+        margin-right: 0;
+    }
+
+    .img-box {
+        position: relative;
+        width: 216upx;
+        height: 216upx;
+        display: block;
+        text-align: center;
+        border-radius: 4upx;
+        margin-bottom: 12upx;
+
+        .image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .info-box {
+        padding-left: 6upx;
+
+        .goodName {
+            width: 100%;
+            font-size: 26upx;
+            color: #2f3a40;
+            margin-bottom: 12upx;
+
+            &.small {
+                font-size: 24upx;
+                word-break: break-word;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+        }
+
+        .saleNum {
+            font-size: 22upx;
+            color: #889696;
+        }
+
+        .price {
+            padding: 6upx;
+            padding-left: 0;
+            overflow: hidden;
+        }
+
+        .goodPrice {
+            font-size: 28upx;
+            color: #ff3366;
+            line-height: 48upx;
+            float: left;
+        }
+
+        .goodcar {
+            font-size: 20upx;
+            float: right;
+            margin-right: 10upx;
+            // width: 44upx;
+            // height: 44upx;
+            // background: url('~@/static/images/pinleiguan/icon_shopping@2x.png');
+            // background-position: center;
+            // background-repeat: no-repeat;
+            // background-size: 100%;
+        }
+    }
+}
+
+.hot-view {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.page-section-spacing {
+    overflow: hidden;
+    background: #fff;
+    width: 670upx;
+    margin: auto;
+    padding: 16upx;
+    border-radius: 20upx;
+
+    .body {
+        display: flex;
+        -webkit-box-align: start;
+    }
+
+    &.maskWrapper {
+        margin-top: 50upx;
+        height: 446upx;
+    }
+
+    &.better {
+        margin-top: 16upx;
+        height: auto;
+
+        .brand {
+            overflow: hidden;
+        }
+
+        .brand-item {
+            float: left;
+            width: 165upx;
+            text-align: center;
+            border-right: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 14upx 0;
+        }
+
+        .image {
+            width: 112upx;
+            height: 50upx;
+        }
+
+        .mr {
+            border-right: 0;
+        }
+
+        .mb {
+            border-bottom: 0;
+        }
+    }
+
+    &.solt {
+        margin-top: 20upx;
+        height: auto;
+
+        .soltTitle {
+            color: #889696;
+            font-size: 26upx;
+            line-height: 48upx;
+            margin: 12upx 0 12upx 0;
+        }
+
+        .soltMark {
+            width: auto;
+        }
+
+        .keyword {
+            display: inline-block;
+            background: #f3f3f3;
+            color: #2f3a40;
+            padding: 8upx 20upx;
+            border-radius: 29upx;
+            display: inline-block;
+            margin: 0 16upx 16upx 0;
+            font-size: 13px;
+            text-decoration: none;
+        }
+    }
+}
+
+.category-page {
+    overflow: hidden;
+    background: #f3f3f3;
+    padding-bottom: 162upx;
+    position: relative;
+
+    .top-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 416upx;
+        z-index: 1;
+    }
+
+    .category-page-content {
+        position: relative;
+        z-index: 5;
+    }
+}

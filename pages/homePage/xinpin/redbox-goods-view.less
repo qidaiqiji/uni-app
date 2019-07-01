@@ -1,0 +1,96 @@
+//out:false
+@import '../../../static/less/price.less';
+
+.redbox-goods-view {
+	width        : 100%;
+	background   : #fff;
+	margin-bottom: 40upx;
+
+	.redbox-goods-view-coll {
+		// padding      : 20upx;
+		border-bottom   : 1px solid #ccc;
+		overflow        : hidden;
+		display         : flex;
+		-webkit-box-pack: justify;
+		justify-content : space-between;
+		position        : relative;
+		// min-height   : 304upx;
+		padding         : 32upx 24upx;
+		box-sizing      : border-box;
+	}
+
+	.img-box {
+		position  : relative;
+		width     : 240upx;
+		height    : 240upx;
+		float     : left;
+		background: #ccc;
+
+		.image {
+			width : 100%;
+			height: 100%;
+		}
+	}
+
+	.info-box {
+		float   : right;
+		overflow: hidden;
+		width   : 450upx;
+	}
+
+	.hidden-text {
+		word-break        : break-word;
+		display           : -webkit-box;
+		overflow          : hidden;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.goods-name {
+		font-size    : 28upx;
+		color        : rgba(47, 58, 64, 1);
+		margin-bottom: 10upx;
+	}
+
+	.goods-desc {
+		font-size  : 24upx;
+		font-family: PingFangSC-Light;
+		font-weight: 300;
+		color      : rgba(136, 150, 150, 1);
+	}
+
+	.goods-bottom {
+		position : absolute;
+		// width : 100%;
+		bottom   : 20upx;
+		// bottom: 32upx;
+	}
+
+	.goods-review {
+		//width      : 112upx;
+		//height     : 45upx;
+		//line-height: 45upx;
+		display      : inline-block;
+		padding      : 12upx 14upx;
+		text-align   : center;
+		background   : rgba(222, 14, 14, 1);
+		border-radius: 4upx;
+		font-size    : 22upx;
+		font-family  : PingFangSC-Regular;
+		font-weight  : 400;
+		color        : rgba(255, 255, 255, 1);
+		position     : absolute;
+		z-index      : 3;
+		right        : 24upx;
+		// bottom    : 20upx;
+		bottom       : 32upx;
+	}
+
+	.discount {
+		vertical-align: text-bottom;
+	}
+}
+
+.goods-wantTo {
+	background: rgb(20, 162, 117) !important;
+}

@@ -1,0 +1,48 @@
+//out:false
+.coupon-warp {
+    position: relative;
+    overflow: hidden;
+    background: #F3F3F3;
+    width: 100%;
+    min-height:981upx;
+    // padding-bottom: 98upx+20upx+50upx;
+}
+
+.coupon-warp__top {
+    &_img {
+        width: 100%;
+        height: 240upx;
+		vertical-align: middle;
+    }
+}
+
+.coupon-warp__select {
+	margin: 24upx 0;
+	padding: 0 24upx;
+	box-sizing: border-box;
+	background: #F3F3F3;
+    // width: 702upx;
+    // margin: 25upx auto;
+
+    &_item {
+        &.active {
+            background: rgba(255, 51, 102, 1);
+            color: rgba(255, 255, 255, 1);
+        }
+
+        width: 110upx;
+        height: 48upx;
+        line-height: 48upx;
+        border-radius: 24upx;
+        text-align: center;
+        font-size: 26upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(47, 58, 64, 1);
+        margin-bottom: 10upx;
+        display: inline-block;
+        margin-right: 20upx;
+        cursor: pointer;
+    }
+}
+

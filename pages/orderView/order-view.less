@@ -1,0 +1,312 @@
+// out:false
+
+.setAfter(@left: 24upx) {
+    &::after {
+        content: ' ';
+        width: 702upx;
+        height: 1px;
+        background: #e9f3f5;
+        position: absolute;
+        bottom: 0;
+        left: @left;
+    }
+}
+
+.ibt {
+    display: inline-block;
+    vertical-align: top;
+}
+
+//
+.o-border {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 24upx;
+    background: #ffffff;
+    margin-bottom: 12upx;
+}
+
+.o-header {
+    padding: 0 24upx;
+    height: 90upx;
+    line-height: 90upx;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 28upx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: #2f3a40;
+    background: #ffffff;
+    margin-bottom: 12upx;
+
+    .sn {
+        color: #889696;
+    }
+}
+
+// 地址信息
+.o-addressInfo {
+    position: relative;
+    overflow: hidden;
+
+    .img {
+        width: 40upx;
+        height: 40upx;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        background-image: url('../../static/images/order/add.png');
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: 40upx 40upx;
+    }
+
+    .info {
+        position: relative;
+        padding-left: 44upx;
+        font-size: 28upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(47, 58, 64, 1);
+        margin-top: 30upx;
+        margin-bottom: 30upx;
+    }
+
+    .name,
+    .phone {
+        display: inline-block;
+    }
+
+    .phone {
+        margin-left: 20upx;
+    }
+
+    .address {
+        word-spacing: normal;
+        word-break: break-all;
+        white-space: normal;
+        margin-top: 10upx;
+    }
+}
+
+// 支付信息
+.o-shippingInfo {
+    font-size: 24upx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(136, 150, 150, 1);
+    padding-top: 30upx;
+    padding-bottom: 30upx;
+
+    .item {
+        margin-bottom: 20upx;
+    }
+
+    .label {
+        width: 200upx;
+        display: inline-block;
+    }
+
+    .value {
+        color: #2f3a40;
+    }
+
+    .pay-value {
+        color: #ff3867;
+    }
+}
+
+// 邮费信息
+.o-feeInfo {
+    background: #cde6ff;
+    font-size: 24upx;
+    padding-top: 30upx;
+    padding-bottom: 30upx;
+
+    .tips {
+        font-size: 24upx;
+        font-family: MicrosoftYaHei-Bold;
+        font-weight: bold;
+        color: rgba(255, 51, 102, 1);
+        margin-bottom: 24upx;
+    }
+
+    .zhifa {
+        color: #2f3a40;
+
+        .i {
+            color: #ff3366;
+        }
+    }
+
+    .daifa {
+        color: #2f3a40;
+
+        .i {
+            color: #ff3366;
+        }
+    }
+}
+
+// 列表信息
+.o-subOrderList {
+    padding-bottom: 0upx;
+
+    .head {
+        position: relative;
+        padding: 0 24upx;
+        height: 88upx;
+        line-height: 88upx;
+        background: rgba(236, 241, 245, 1);
+        font-size: 28upx;
+        .setAfter();
+
+        .text {
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: rgba(90, 174, 252, 1);
+        }
+    }
+
+    .body {
+        background: #ffffff;
+
+        .item {
+            padding: 24upx 0;
+            position: relative;
+            width: 702upx;
+            margin: auto;
+            .setAfter(0);
+            // display: flex;
+            // align-items: start;
+            // justify-items:
+        }
+
+        .img-box {
+            margin-right: 20upx;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            width: 110upx;
+            height: 110upx;
+            text-align: center;
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid #e9f3f5;
+            border-radius: 6upx;
+
+            .img {
+                margin: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .text {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                padding: 4upx 0;
+                color: #ffffff;
+                font-size: 20upx;
+                font-family: PingFang-SC-Medium;
+                font-weight: 500;
+            }
+        }
+
+        // 物料
+        .isWuliao {
+            border: 1px solid #53a7fd;
+
+            .text {
+                background: rgba(83, 167, 253, 0.8);
+            }
+        }
+
+        // 赠品
+        .isGift {
+            border: 1px solid #ff3366;
+
+            .text {
+                background: rgba(255, 79, 123, 0.8);
+            }
+        }
+
+        .info-box {
+            display: inline-block;
+            position: relative;
+            width: 400upx;
+            height: 110upx;
+            font-size: 28upx;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: #333333;
+        }
+
+        .title {
+            color: #333333;
+            word-break: break-all;
+            word-spacing: normal;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .foot {
+            font-size: 28upx;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .f-price {
+            color: #333333;
+        }
+
+        .f-text {
+            margin-left: 20upx;
+            font-size: 24upx;
+            color: #999999;
+        }
+    }
+}
+.foot-count {
+    padding: 0 24upx;
+    overflow: hidden;
+    background: #fff;
+    height: 88upx;
+    line-height: 88upx;
+    font-size: 28upx;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(136, 150, 150, 1);
+
+    .f-price {
+        color: #2f3a40;
+    }
+}
+
+.o-page-foot-empty {
+    width: 100%;
+    height: 98upx;
+}
+
+.o-page-foot {
+    //padding: 0 24upx;
+    width: 100%;
+    height: 98upx;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    bottom: 0;
+
+    .fr {
+        margin-top: 22upx;
+        padding-right: 24upx;
+    }
+}
+
+.order-detail {
+    overflow: hidden;
+    // margin-bottom: 98upx;
+}

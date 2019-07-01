@@ -1,0 +1,43 @@
+//out:false
+.setTransform(@x: 0px, @y: 0px) {
+    -webkit-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y);
+    transform: translate(@x, @y);
+}
+
+.setBackImages(@url: transparent, @position: center, @size: auto) {
+    background-image: url(@url);
+    background-position: @position;
+    background-size: @size;
+    background-repeat: no-repeat;
+}
+
+.setBackImage(@position: center, @size: auto) {
+    background-position: @position;
+    background-size: @size;
+    background-repeat: no-repeat;
+}
+
+.setPage() {
+    width: 100%;
+    //min-height: 100vh;
+    min-height: 100%;
+    background: #F3F3F3;
+}
+
+.setFlex() {
+    display: flex;
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+
+.setFlexWith() {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+@bgcolor: #F3F3F3;
+@ff: #ffffff;
+@f: #ffffff;

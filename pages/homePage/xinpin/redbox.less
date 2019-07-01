@@ -1,0 +1,308 @@
+//out:false
+@import '../../../static/less/price.less';
+
+.red-wrap {
+	background-color: #de0e0e;
+	width           : 100%;
+	height          : 644upx;
+	position        : relative;
+}
+
+.redbox-swiper-box {
+	height  : 453upx;
+	overflow: hidden;
+}
+
+.redbox-swiper-box-left {
+	position   : relative;
+	margin-top : 45upx;
+	margin-left: 24upx;
+	width      : 300upx;
+	height     : 370upx;
+
+	.date-time {
+		font-size    : 28upx;
+		font-family  : PingFangSC-Regular;
+		font-weight  : 400;
+		color        : rgba(151, 7, 6, 1);
+		margin-bottom: 10upx;
+	}
+
+	.mouth-new {
+		font-size    : 58upx;
+		font-family  : PingFangSC-Regular;
+		font-weight  : 400;
+		color        : rgba(146, 5, 4, 1);
+		margin-bottom: 20upx;
+	}
+
+	.goods-name {
+		font-size         : 24upx;
+		font-family       : PingFangSC-Regular;
+		font-weight       : 400;
+		color             : rgba(254, 255, 255, 1);
+		line-height       : 36upx;
+		white-space       : normal;
+		word-break        : break-all;
+		overflow          : hidden;
+		text-overflow     : ellipsis;
+		display           : -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+
+	.goods-price {
+		font-size  : 24upx;
+		font-family: PingFangSC-Regular;
+		font-weight: 400;
+		color      : rgba(254, 255, 255, 1);
+		width      : 100%;
+		position   : absolute;
+		top        : 260upx;
+		//bottom   : 0upx;
+	}
+
+	.price {
+		color: rgba(254, 255, 255, 1);
+	}
+
+	.redbox-tips {
+		font-size: 24upx;
+	}
+}
+
+.redbox-swiper-box-right {
+	position: absolute;
+	z-index : 8;
+	top     : 35upx;
+	right   : 0;
+	width   : 425upx;
+	height  : 418upx;
+
+	background-image   : url('~@/static/images/redbox/img_boxbg@2x.png');
+	background-position: top center;
+	background-repeat  : no-repeat;
+	background-size    : 425upx 418upx;
+
+	.dot {
+		position: absolute;
+		bottom  : 0;
+		right   : 40upx;
+	}
+
+	.redbox-swiper {
+		width   : 314upx;
+		height  : 314upx;
+		overflow: hidden;
+		position: absolute;
+		top     : 35upx;
+		left    : 60upx;
+	}
+
+	.swiper-item {
+		width        : 314upx;
+		height       : 314upx;
+		background   : rgba(255, 255, 255, 1);
+		border-radius: 4upx;
+
+		.image {
+			width : 100%;
+			height: 100%;
+		}
+	}
+}
+
+.poswrap {
+	box-sizing   : border-box;
+	width        : 702upx;
+	margin       : auto;
+	margin-top   : 30upx;
+	margin-bottom: -72upx;
+	background   : #ffffff;
+	border-radius: 20upx;
+	box-shadow   : 0px 9px 38px 0px rgba(188, 185, 185, 0.14);
+	min-height   : 240upx;
+	padding      : 20upx;
+
+	display         : flex;
+	-webkit-box-pack: justify;
+	justify-content : space-between;
+
+	.leftwrap {
+		float : left;
+		width : 148upx;
+		height: 192upx;
+	}
+
+	.new-tips {
+		width : 100%;
+		height: 100%;
+	}
+
+	.brand-box {
+		overflow : hidden;
+		width    : 490upx;
+		display  : flex;
+		flex-wrap: wrap;
+	}
+
+	.brand-coll {
+		float        : left;
+		width        : 160upx;
+		text-align   : center;
+		border-right : 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+		box-sizing   : border-box;
+		height       : 96upx;
+		// padding   : 20upx 0;
+	}
+
+	.brandmr {
+		border-right: 0;
+	}
+
+	.brandmb {
+		border-bottom: 0;
+	}
+
+	.brand-image {
+		width : 124upx;
+		height: 42upx;
+		margin: auto;
+	}
+
+	.brand-image-bg {
+		width              : 160upx;
+		height             : 96upx;
+		background-position: center;
+		background-repeat  : no-repeat;
+		background-size    : auto 60upx;
+		background-image   : none;
+	}
+}
+
+.empty-box {
+	height: 100upx;
+}
+
+.boxTab {
+	width     : 100%;
+	margin-top: 20upx;
+}
+
+.redbox-nav-view {
+	width       : 100%;
+	height      : 88upx;
+	line-height : 88upx;
+	padding-left: 24upx;
+	box-sizing  : border-box;
+
+	.redbox-nav-view-coll {
+		display     : inline-block;
+		//padding   : 0 10upx;
+		position    : relative;
+		font-size   : 36upx;
+		font-family : PingFangSC-Regular;
+		font-weight : 400;
+		color       : rgba(136, 150, 150, 1);
+		margin-right: 30upx;
+
+		.text {
+			position: relative;
+			z-index : 5;
+		}
+
+		&:after {
+			content      : '';
+			position     : absolute;
+			z-index      : 1;
+			width        : 88%;
+			height       : 8upx;
+			background   : rgba(222, 14, 14, 1);
+			border-radius: 6upx;
+			left         : 50%;
+			transform    : translate(-50%, 0);
+			bottom       : 16upx;
+			visibility   : hidden;
+		}
+
+		&.active {
+			&:after {
+				visibility: visible;
+			}
+
+			color: #2f3a40;
+		}
+	}
+}
+
+.red-find {
+	border-bottom: 1px solid #ccc;
+
+	.findTag {
+		width        : 149upx;
+		height       : 46upx;
+		background   : #f3f3f3;
+		color        : #ff3366;
+		font-size    : 28upx;
+		text-align   : center;
+		line-height  : 46upx;
+		border-radius: 23upx;
+		margin       : 0 49upx;
+	}
+
+	.findText {
+		font-size         : 32upx;
+		color             : #2f3a40;
+		margin            : 30upx 49upx 0;
+		overflow          : hidden;
+		display           : -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow          : hidden;
+		text-overflow     : ellipsis;
+		word-break        : break-all;
+		white-space       : normal;
+	}
+
+	.activeText {
+		display: block;
+	}
+
+	.shouAll {
+		color    : #ff5882;
+		font-size: 32upx;
+		margin   : 15upx 49upx 0;
+	}
+
+	.imgShow {
+		padding      : 24upx 13upx 24upx 24upx;
+		height       : 226upx;
+		// box-sizing: border-box;
+
+		.img {
+			width        : 226upx;
+			height       : 226upx;
+			margin-right : 13upx;
+			border-radius: 16upx;
+		}
+
+		.image-bg {
+			display            : inline-block;
+			width              : 226upx;
+			height             : 226upx;
+			margin-right       : 13upx;
+			border-radius      : 16upx;
+			background-image   : none;
+			background-position: center;
+			background-repeat  : no-repeat;
+			background-size    : cover;
+		}
+	}
+
+	.imgText {
+		color    : #b2b2b2;
+		font-size: 24upx;
+		padding  : 15upx 26upx;
+	}
+}

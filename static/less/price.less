@@ -1,0 +1,37 @@
+//out:false
+//价格
+.price {
+    font-size: 24upx;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(222, 14, 14, 1);
+
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10upx;
+    color: #FF3366;
+
+    &_ident,
+    &_number,
+    &_mantissa {
+        display: inline-block;
+        vertical-align: unset;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+    }
+
+    //标识
+    &_ident {
+        font-size: 24upx;
+    }
+
+    //价格数字
+    &_number {
+        font-size: 48upx;
+    }
+
+    //小数点后面的数
+    &_mantissa {
+        font-size: 24upx;
+    }
+}

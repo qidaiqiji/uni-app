@@ -1,0 +1,60 @@
+
+.sprite-product {
+    font-size: 20upx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.product_icon_arguments, .product_icon_ok, .product_icon_return, .product_icon_star_no, .product_icon_star, .product_tab_icon_brandhome, .product_tab_icon_home, .product_tab_icon_shoppingcart {
+    background: url(sprite-product.png);
+    background-size: 170upx 170upx;
+}
+
+
+.product_icon_arguments {
+    width: 30upx;
+    height: 30upx;
+    background-position: -70upx -70upx;
+}
+
+.product_icon_ok {
+    width: 30upx;
+    height: 30upx;
+    background-position: -140upx 0upx;
+}
+
+.product_icon_return {
+    width: 30upx;
+    height: 30upx;
+    background-position: -140upx -40upx;
+}
+
+.product_icon_star_no {
+    width: 30upx;
+    height: 30upx;
+    background-position: -140upx -80upx;
+}
+
+.product_icon_star {
+    width: 30upx;
+    height: 30upx;
+    background-position: 0upx -140upx;
+}
+
+.product_tab_icon_brandhome {
+    width: 60upx;
+    height: 60upx;
+    background-position: 0upx 0upx;
+}
+
+.product_tab_icon_home {
+    width: 60upx;
+    height: 60upx;
+    background-position: -70upx 0upx;
+}
+
+.product_tab_icon_shoppingcart {
+    width: 60upx;
+    height: 60upx;
+    background-position: 0upx -70upx;
+}

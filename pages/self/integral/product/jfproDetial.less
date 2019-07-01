@@ -1,0 +1,134 @@
+// out:false
+@import '../../../../reset.less';
+
+.productDetial {
+    position: relative;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+.productDetial {
+    //background: #fff;
+
+    .tabChose {
+        box-sizing: border-box;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        height: 78upx;
+        line-height: 78upx;
+        font-size: 28upx;
+        border-top: 1px solid #f3f3f3;
+        background: #fff;
+
+        .stright {
+            width: 50%;
+            color: #2f3a40;
+            text-align: center;
+        }
+
+        .detial {
+            width: 50%;
+            text-align: center;
+        }
+
+        text {
+            height: 100%;
+            display: inline-block;
+        }
+
+        .tabActive {
+            color: #ff3366;
+            border-bottom: 1px solid #ff3366;
+        }
+    }
+
+    .isFixed {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        top: @simpleTop;
+        z-index: 22;
+    }
+
+    //图片展示区
+    .imgAllShow {
+        background: #f3f3f3;
+        padding-top: 20upx;
+
+        .imgCon {
+            background: #fff;
+        }
+
+        .image {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    //底部的加入采购车
+    .addTocart {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+
+        .cartRight {
+            width: 100%;
+
+            button {
+                width: 100%;
+                height: 98upx;
+                text-align: center;
+                line-height: 98upx;
+                background: #ff3366;
+                color: #fff;
+                font-size: 32upx;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+// banner
+.slideImg {
+    background: #fff;
+    height: 520upx;
+    text-align: center;
+
+    .swiper {
+        height: 520upx;
+        text-align: center;
+    }
+
+    .image {
+        margin: 0 auto;
+        width: 520upx;
+        height: 520upx;
+    }
+
+    .video {
+        width: 100%;
+    }
+}
+
+// 相关搭配
+.aboutOther {
+}
+
+//
+.photo-view {
+    width: 100%;
+    height: 88upx;
+    line-height: 88upx;
+    background: rgba(255, 255, 255, 1);
+    font-size: 28upx;
+    font-family: PingFang-SC-Bold;
+    font-weight: bold;
+    color: rgba(47, 58, 64, 1);
+    margin-top: 20upx;
+    border-bottom: 1px solid rgba(220, 228, 230, 1);
+
+    .text {
+        padding: 0 24upx;
+    }
+}

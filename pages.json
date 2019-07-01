@@ -1,0 +1,503 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "小美诚品"
+			}
+		},
+		{
+			"path": "pages/classify/classify",
+			"style": {
+				"navigationBarTitleText": "商品分类"
+			}
+		},
+		{
+			"path": "pages/found/found",
+			"style": {
+				"navigationBarTitleText": "发现",
+				"app-plus": {
+					"pullToRefresh": {
+						"support": true,
+						"height": "30px"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/found/detail",
+			"style": {
+				"navigationBarTitleText": "动态详情"
+			}
+		},
+		{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "采购车"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		
+		{
+			"path": "pages/homePage/zhifaIndex/zhifaIndex",
+			"style": {
+				"navigationBarTitleText": "小美直发"
+			}
+		},
+		{
+			"path": "pages/homePage/juhuasuan/juhuasuan",
+			"style": {
+				"navigationBarTitleText": "巨划算"
+			}
+		},
+		{
+			"path": "pages/homePage/anniversary/anniversary",
+			"style": {
+				"navigationBarTitleText": "超值套餐"
+			}
+		},
+		{
+			"path": "pages/homePage/category/category",
+			"style": {
+				"navigationBarTitleText": "品类馆"
+			}
+		},
+		{
+			"path": "pages/homePage/rankingList/rankingList",
+			"style": {
+				"navigationBarTitleText": "榜单优选"
+			}
+		},
+		{
+			"path": "pages/homePage/rankingList/view",
+			"style": {
+				"navigationBarTitleText": "榜单详情"
+			}
+		},
+		{
+			"path": "pages/homePage/collList/colllist",
+			"style": {
+				"navigationBarTitleText": "选品专辑"
+			}
+		},
+		{
+			"path": "pages/homePage/colldetail/colldetail",
+			"style": {
+				"navigationBarTitleText": "专辑详情"
+			}
+		},
+		{
+			"path": "pages/homePage/vipIndex/vipIndex",
+			"style": {
+				"navigationBarTitleText": "会员专区"
+			}
+		},
+		{
+			"path": "pages/homePage/miaosha/miaosha",
+			"style": {
+				"navigationBarTitleText": "限时秒杀"
+			}
+		},
+		{
+			"path": "pages/homePage/preferential/preferential",
+			"style": {
+				"navigationBarTitleText": "特卖专场"
+			}
+		},
+		
+		{
+			"path": "pages/paySuccess/paySuccess",
+			"style": {
+				"navigationBarTitleText": "支付成功"
+			}
+		},
+		
+		{
+			"path": "pages/helps/index",
+			"style": {
+				"navigationBarTitleText": "帮助中心"
+			}
+		},
+		{
+			"path": "pages/helps/inner/aboutXm",
+			"style": {
+				"navigationBarTitleText": "关于平台"
+			}
+		},
+		{
+			"path": "pages/helps/inner/aboutPro",
+			"style": {
+				"navigationBarTitleText": "关于商品"
+			}
+		},
+		{
+			"path": "pages/helps/inner/aboutBuy",
+			"style": {
+				"navigationBarTitleText": "关于采购"
+			}
+		},
+		{
+			"path": "pages/helps/inner/payWuliu",
+			"style": {
+				"navigationBarTitleText": "支付与配送"
+			}
+		},
+		{
+			"path": "pages/services/services",
+			"style": {
+				"navigationBarTitleText": "小美客服"
+			}
+		},
+		{
+			"path": "pages/helps/inner/newHelp",
+			"style": {
+				"navigationBarTitleText": "新手帮助"
+			}
+		},
+		{
+			"path": "pages/helps/inner/xiaomeijf",
+			"style": {
+				"navigationBarTitleText": "小美积分"
+			}
+		},
+		{
+			"path": "pages/helps/inner/proGuara",
+			"style": {
+				"navigationBarTitleText": "正品保证"
+			}
+		},
+		{
+			"path": "pages/helps/inner/saleService",
+			"style": {
+				"navigationBarTitleText": "售后服务"
+			}
+		},
+		{
+			"path": "pages/helps/inner/payType",
+			"style": {
+				"navigationBarTitleText": "支付方式"
+			}
+		},
+		{
+			"path": "pages/helps/inner/youfeiRules",
+			"style": {
+				"navigationBarTitleText": "邮费政策"
+			}
+		},
+		{
+			"path": "pages/helps/inner/peiInstro",
+			"style": {
+				"navigationBarTitleText": "配送说明"
+			}
+		},
+		{
+			"path": "pages/helps/inner/pinpaiCoo",
+			"style": {
+				"navigationBarTitleText": "平牌合作"
+			}
+		},
+		{
+			"path": "pages/helps/inner/ruzhuliucheng",
+			"style": {
+				"navigationBarTitleText": "入驻流程"
+			}
+		},
+		{
+			"path": "pages/helps/inner/aboutPingpai",
+			"style": {
+				"navigationBarTitleText": "关于品牌"
+			}
+		},
+		{
+			"path": "pages/helps/inner/aboutCompony",
+			"style": {
+				"navigationBarTitleText": "公司简介"
+			}
+		},
+		{
+			"path": "pages/helps/inner/aboutActive",
+			"style": {
+				"navigationBarTitleText": "关于活动"
+			}
+		},
+		{
+			"path": "pages/helps/inner/contactUs",
+			"style": {
+				"navigationBarTitleText": "联系我们"
+			}
+		},
+		{
+			"path": "pages/helps/inner/suggessText",
+			"style": {
+				"navigationBarTitleText": "服务邮箱"
+			}
+		},
+		{
+			"path": "pages/helps/inner/userAgree",
+			"style": {
+				"navigationBarTitleText": "用户协议"
+			}
+		},
+		{
+			"path": "pages/helps/detail",
+			"style": {
+				"navigationBarTitleText": "帮助详情"
+			}
+		},
+		{
+			"path": "pages/self/coupon/coupon",
+			"style": {
+				"navigationBarTitleText": "领券中心"
+			}
+		},
+		{
+			"path": "pages/self/oftenBuyList/oftenBuyList",
+			"style": {
+				"navigationBarTitleText": "常购清单"
+			}
+		},
+		{
+			"path": "pages/self/integral/integral/integral",
+			"style": {
+				"navigationBarTitleText": "积分商城"
+			}
+		},
+		{
+			"path": "pages/self/integral/order/order",
+			"style": {
+				"navigationBarTitleText": "积分订单"
+			}
+		},
+		{
+			"path": "pages/self/integral/detail/detail",
+			"style": {
+				"navigationBarTitleText": "积分明细"
+			}
+		},
+		{
+			"path": "pages/self/integral/rules/rules",
+			"style": {
+				"navigationBarTitleText": "积分规则"
+			}
+		},
+		{
+			"path": "pages/self/integral/exchangeDraw/exchangeDraw",
+			"style": {
+				"navigationBarTitleText": "积分抽奖"
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/exchangeFair/exchangeFair",
+			"style": {}
+		},
+		{
+			"path": "pages/goods/list/list",
+			"style": {
+				"navigationBarTitleText": "商品列表"
+			}
+		},
+		{
+			"path": "pages/goods/product/product",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
+			"path": "pages/goods/brandDetail/brandDetail",
+			"style": {
+				"navigationBarTitleText": "品牌主页"
+			}
+		},
+		{
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "订单列表"
+			}
+		},
+		{
+			"path": "pages/orderView/orderView",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
+			"path": "pages/ordercheck/ordercheck",
+			"style": {
+				"navigationBarTitleText": "确认订单"
+			}
+		},
+		{
+			"path": "pages/wuliu/wuliu",
+			"style": {
+				"navigationBarTitleText": "物流详情"
+			}
+		},
+		{
+			"path": "pages/ordercheck/couponList",
+			"style": {
+				"navigationBarTitleText": "优惠券"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/login/agreement",
+			"style": {
+				"navigationBarTitleText": "用户协议"
+			}
+		},
+		{
+			"path": "pages/straightCollect/straightCollect",
+			"style": {
+				"navigationBarTitleText": "直发凑单"
+			}
+		},
+		{
+			"path": "pages/self/fenxiang/fenxiang",
+			"style": {
+				"navigationBarTitleText": "邀请好友"
+			}
+		},
+		{
+			"path": "pages/self/fenxiang/sharefriend",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/wxlogin/wxlogin",
+			"style": {
+				"navigationBarTitleText": "微信授权"
+			}
+		},
+		{
+			"path": "pages/self/integral/product/product",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
+			"path": "pages/addressList/addressList",
+			"style": {
+				"navigationBarTitleText": "收货地址"
+			}
+		},
+		{
+			"path": "pages/addressAdd/addressAdd",
+			"style": {
+				"navigationBarTitleText": "新增收货地址"
+			}
+		},
+		{
+			"path": "pages/feedback/feedback",
+			"style": {
+				"navigationBarTitleText": "问题反馈"
+			}
+		},
+		{
+			"path": "pages/mineinfo/mineinfo",
+			"style": {
+				"navigationBarTitleText": "个人信息"
+			}
+		},
+		{
+			"path": "pages/hotGoods/hotGoods",
+			"style": {
+				"navigationBarTitleText": "今日爆款"
+			}
+		},
+		{
+			"path": "pages/loginaddress/loginaddress",
+			"style": {}
+		},
+		{
+			"path": "pages/video/video",
+			"style": {}
+		},
+		{
+			"path": "pages/self/ownCoupon/ownCoupon",
+			"style": {
+				"navigationBarTitleText": "我的优惠券"
+			}
+		},
+		{
+			"path": "pages/self/remindlist/remindlist",
+			"style": {
+				"navigationBarTitleText": "到货提醒"
+			}
+		},
+		{
+			"path": "pages/usable/usable",
+			"style": {
+				"navigationBarTitleText": "认证审核"
+			}
+		},
+		{
+			"path": "pages/usableno/usableno",
+			"style": {
+				"navigationBarTitleText": "审核反馈"
+			}
+		}
+	    ,
+		{
+            "path" : "pages/homePage/xinpin/xinpin",
+			"style": {
+				"navigationBarTitleText": "红盒子新品"
+			}
+        }
+    ],
+	"tabBar": {
+		"color": "#2F3A40",
+		"selectedColor": "#FF3366",
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/images/tabbar/tab_icon_home_none.png",
+				"selectedIconPath": "static/images/tabbar/tab_icon_home.png"
+			},
+			{
+				"pagePath": "pages/classify/classify",
+				"text": "分类",
+				"iconPath": "static/images/tabbar/tab_icon_classify_none.png",
+				"selectedIconPath": "static/images/tabbar/tab_icon_classify.png"
+			}, {
+				"pagePath": "pages/found/found",
+				"iconPath": "static/images/tabbar/tab_icon_discover_none.png",
+				"selectedIconPath": "static/images/tabbar/tab_icon_discover.png",
+				"text": "发现"
+			}, {
+				"pagePath": "pages/cart/cart",
+				"text": "采购车",
+				"iconPath": "static/images/tabbar/tab_icon_shoppingcart_none.png",
+				"selectedIconPath": "static/images/tabbar/tab_icon_shoppingcart.png"
+			}, {
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/images/tabbar/tab_icon_mine_none.png",
+				"selectedIconPath": "static/images/tabbar/tab_icon_mine.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "小美诚品",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#f3f3f3"
+	}
+}

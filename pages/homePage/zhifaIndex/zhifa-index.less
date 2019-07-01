@@ -1,0 +1,511 @@
+//out:false
+.setTranslate(@x: 0, @y: 0) {
+	position         : absolute;
+	-webkit-transform: translate(@x, @y);
+	-ms-transform    : translate(@x, @y);
+	transform        : translate(@x, @y);
+}
+
+@width: 702upx;
+
+.list-box {
+	.item {
+		position: relative;
+
+		&_text {
+			display           : block;
+			display           : -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow          : hidden;
+			text-overflow     : ellipsis;
+		}
+	}
+}
+
+.shampoo-page {
+	background: #f3f3f3;
+	overflow  : hidden;
+}
+
+// 轮播下文字
+.shampooServer {
+	height     : 78upx;
+	line-height: 78upx;
+	background : #fff;
+	font-size  : 22upx;
+
+	.ul {
+		display          : -webkit-flex;
+		-webkit-box-align: center;
+		justify-content  : space-between;
+		align-items      : center;
+
+		height     : 78upx;
+		line-height: 78upx;
+		margin     : 0;
+		padding    : 0;
+		list-style : none;
+	}
+
+	.li {
+		width     : 100/3%;
+		height    : 100%;
+		color     : #2f3a40;
+		font-size : 22upx;
+		text-align: center;
+
+		&:first-child {
+			width: 36%;
+		}
+	}
+
+	.text {
+		font-size     : 22upx;
+		display       : inline-block;
+		vertical-align: middle;
+	}
+}
+
+// 轮播
+.shampoo-banner {
+	margin-top: 88upx;
+
+	.img {
+		width : 100%;
+		height: 360upx;
+	}
+}
+
+// 推荐品牌
+.shampoo-pinpai {
+	overflow   : hidden;
+	margin     : auto;
+	padding-top: 22upx;
+}
+
+.list-box {
+	margin-bottom          : 20upx;
+	display                : -webkit-box;
+	display                : -webkit-flex;
+	display                : -ms-flexbox;
+	display                : flex;
+	-webkit-box-pack       : justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack          : justify;
+	justify-content        : space-between;
+	-webkit-flex-wrap      : wrap;
+	-ms-flex-wrap          : wrap;
+	flex-wrap              : wrap;
+}
+
+// 好货推荐
+.shampoo-hot {
+	overflow: hidden;
+	display : block;
+	margin  : auto;
+	width   : 702upx;
+
+	&__img {
+		display: block;
+		width  : 100%;
+		height : 88upx;
+	}
+
+	&__list {
+		width        : 100%;
+		min-height   : 756upx;
+		background   : #ffffff;
+		border-radius: 0px 0px 20upx 20upx;
+		padding      : 20upx 16upx;
+		box-sizing   : border-box;
+		overflow     : hidden;
+	}
+
+	.item {
+		width        : 216upx;
+		margin-bottom: 24upx;
+
+		.img-box {
+			max-width    : 216upx;
+			height       : 216upx;
+			max-height   : 216upx;
+			margin       : auto;
+			margin-bottom: 16upx;
+		}
+
+		.image {
+			max-width : 216upx;
+			max-height: 216upx;
+		}
+
+		&_text,
+		&_price,
+		&_count {
+			padding: 0 8upx;
+		}
+
+		&_text {
+			font-size    : 22upx;
+			font-family  : PingFang-SC-Medium;
+			font-weight  : 500;
+			color        : #2f3a40;
+			margin-bottom: 1px;
+		}
+
+		&_count {
+			font-size    : 20upx;
+			color        : #889696;
+			margin-bottom: 20upx;
+		}
+
+		&_price {
+			font-size    : 26upx;
+			font-family  : PingFang-SC-Medium;
+			font-weight  : 500;
+			color        : #ff3366;
+			margin-bottom: 10upx;
+
+			&_number {
+				display  : inline-block;
+				font-size: 26upx;
+			}
+		}
+	}
+
+	.mr {
+		margin-right: 0;
+	}
+
+	.icon_user_buy {
+		bottom: 8upx;
+		right : 10upx;
+	}
+}
+
+// 腰部广告
+.waist-banner {
+	margin  : 44upx auto;
+	width   : 100%;
+	overflow: hidden;
+	position: relative;
+	height  : 150upx;
+
+	&__img {
+		display      : block;
+		width        : 702upx;
+		margin       : auto;
+		max-height   : 150upx;
+		border-radius: 75upx;
+	}
+}
+
+// 精选品牌
+.shampoo-brands {
+	width   : @width;
+	margin  : auto;
+	overflow: hidden;
+
+	.item {
+		position     : relative;
+		overflow     : hidden;
+		background   : #ffffff;
+		border-radius: 20upx;
+		padding      : 0 24upx;
+		box-sizing   : border-box;
+		margin-bottom: 20upx;
+	}
+
+	.header {
+		margin           : 24upx 0;
+		//display        : flex;
+		display          : -webkit-box;
+		-webkit-box-align: center;
+		position         : relative;
+
+		&_img {
+			position: relative;
+			width   : 90upx;
+			height  : 90upx;
+			display : block;
+
+			.image {
+				width: 100%;
+				left : 50%;
+				top  : 50%;
+				.setTranslate(-50%, -50%);
+			}
+		}
+
+		&_warp {
+			display       : inline-block;
+			vertical-align: middle;
+			margin-left   : 16upx;
+
+			width: 420upx;
+		}
+
+		&_tag {
+			width      : 28upx;
+			height     : 28upx;
+			margin-left: 10upx;
+		}
+
+		&_tag,
+		&_name {
+			display       : inline-block;
+			vertical-align: middle;
+		}
+
+		&_name {
+			font-size  : 30upx;
+			font-family: PingFang-SC-Bold;
+			font-weight: bold;
+			color      : #2f3a40;
+
+			line-height: 40upx;
+
+			margin-bottom: 10upx;
+		}
+
+		&_title {
+			display: block;
+
+			font-size: 30upx;
+		}
+
+		&_described {
+			display    : block;
+			font-size  : 24upx;
+			font-family: PingFang-SC-Medium;
+			font-weight: 500;
+			color      : #889696;
+		}
+
+		.product_number {
+			min-width: 60upx;
+			padding  : 0 10upx;
+
+			text-align: center;
+
+			height     : 32upx;
+			line-height: 30upx;
+
+			border       : 1px solid #ff3366;
+			border-radius: 4upx;
+
+			overflow: hidden;
+
+			position  : absolute;
+			top       : 50%;
+			margin-top: -32/2upx;
+			right     : 0;
+
+			font-size  : 20upx;
+			font-family: PingFang-SC-Regular;
+			font-weight: 400;
+			color      : #ff3366;
+		}
+	}
+
+	.mr {
+		margin-right: 0;
+	}
+}
+
+.line-header {
+	position  : relative;
+	margin    : auto;
+	margin-top: 40upx;
+	width     : 702upx;
+
+	height     : 88upx;
+	line-height: 88upx;
+
+	font-size  : 28upx;
+	font-family: PingFang-SC-Bold;
+	font-weight: bold;
+	color      : #2f3a40;
+
+	display   : block;
+	text-align: center;
+
+	&::before,
+	&::after {
+		width     : 32upx;
+		height    : 1px;
+		background: #000000;
+
+		content          : ' ';
+		position         : absolute;
+		top              : 50%;
+		-webkit-transform: translate(0, -50%);
+		-ms-transform    : translate(0, -50%);
+		transform        : translate(0, -50%);
+	}
+
+	&::before {
+		left: 34%;
+	}
+
+	&::after {
+		right: 34%;
+	}
+}
+
+.flash-sale-box {
+	width   : 702upx;
+	margin  : auto;
+	overflow: hidden;
+}
+
+.flash-sale-list {
+	font-size: 0px;
+	overflow : hidden;
+
+	.item {
+		width        : 344upx;
+		min-height   : 514upx;
+		border-radius: 4px;
+		overflow     : hidden;
+		background   : #ffffff;
+		margin-bottom: 14upx;
+		float        : left;
+	}
+
+	.mr {
+		margin-right: 0;
+		float       : right;
+	}
+
+	.image_box {
+		text-align: center;
+		margin    : auto;
+		box-sizing: border-box;
+		padding   : 24upx 0;
+
+		max-width : 342upx;
+		height    : 342upx;
+		max-height: 342upx;
+
+		.img {
+			height: 100%;
+		}
+	}
+
+	.intro_box {
+		box-sizing   : border-box;
+		min-height   : 180upx;
+		margin-bottom: 24upx;
+		padding-left : 8upx;
+	}
+
+	.title {
+		width    : 310upx;
+		font-size: 26upx;
+		color    : #2f3a40;
+		margin   : 15upx 0;
+	}
+
+	.price {
+		width      : 310upx;
+		line-height: 44upx;
+		position   : relative;
+		overflow   : hidden;
+		font-size  : 28upx;
+
+		&_number {
+			font-size  : 28upx;
+			font-family: PingFang-SC-Bold;
+			font-weight: bold;
+			color      : #ff3366;
+			float      : left;
+		}
+	}
+
+	.icon_user_buy {
+		bottom: 4upx;
+		right : 0upx;
+	}
+}
+
+.tag2-box {
+	font-size: 20upx;
+}
+
+.tag2 {
+	padding: 6upx 8upx;
+
+	font-size  : 20upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+
+	border-radius: 4px;
+
+	overflow: hidden;
+	display : inline-block;
+
+	margin-right: 8upx;
+}
+
+.tag2 {
+	&-default {
+		color     : #ff3366;
+		background: #ffe2e9;
+		border    : 1px solid #ffe2e9;
+	}
+
+	&-discount {
+		border: 1px solid #ff9600;
+		color : #ff9600;
+	}
+}
+
+.zhifafoot {
+	height    : 98upx;
+	position  : fixed;
+	bottom    : 0;
+	width     : 100%;
+	background: #fff;
+	z-index   : 10;
+
+	.footerCon {
+		display    : flex;
+		height     : 98upx;
+		align-items: center;
+	}
+
+	.itemSame {
+		width     : 25%;
+		text-align: center;
+		color     : #2f3a40;
+		font-size : 20upx;
+
+		.img1 {
+			width : 51upx;
+			height: 46upx;
+		}
+
+		.img2 {
+			width : 47upx;
+			height: 47upx;
+		}
+
+		.img3 {
+			width : 47upx;
+			height: 47upx;
+		}
+
+		.img4 {
+			width : 48upx;
+			height: 45upx;
+		}
+	}
+
+	.img-cart {
+		position: relative;
+		width: 50upx;
+		height: 50upx;
+		margin: auto;
+	}
+}

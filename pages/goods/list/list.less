@@ -1,0 +1,153 @@
+//out:false
+.brandListBox {
+    overflow: hidden;
+    // background: #fff;
+    min-height: 1206upx;
+}
+
+.brandListCon {
+    // background: #fff;
+    overflow: hidden;
+
+    .brandListConHead {
+        background: #fff;
+        position: fixed;
+        width: 100%;
+        z-index: 50;
+    }
+
+    .searchBox {
+        padding: 0 24upx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 88upx;
+    }
+}
+
+.headEmpty {
+    height: 168upx;
+	visibility: hidden;
+}
+
+.brandList {
+	background: #fff;
+    //margin-top: 168upx;
+
+    .cartCon {
+        width: 44upx;
+        height: 44upx;
+        display: inline-block;
+        background: url('~@/static/images/brandList/icon_shop_pink.png') 0upx 2upx;
+        background-size: 100%;
+        float: right;
+        margin-top: 8upx;
+    }
+
+    .brand-item {
+        //width: 702upx;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+        padding: 30upx 24upx;
+        //border-top: 1px solid #E5E5E5;
+        border-bottom: 1px solid #e5e5e5;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &__img {
+            width: 236upx;
+            max-height: 236upx;
+            float: left;
+        }
+
+        &__right {
+            width: 440upx;
+            float: right;
+        }
+    }
+
+    .brand-item__right {
+
+        // 标题
+        &_title {
+            display: block;
+            font-size: 28upx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: #2f3a40;
+            margin: 14upx 0;
+            line-height: 40upx;
+        }
+
+        // 描述
+        &_described {
+            font-size: 24upx;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: #b2b2b2;
+            margin-bottom: 30upx;
+
+            &_text {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 40upx;
+            }
+        }
+
+        &_foot {
+            width: 100%;
+
+            &_price {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10upx;
+                height: 60upx;
+
+                &_ident,
+                &_number,
+                &_mantissa {
+                    display: inline-block;
+                    vertical-align: bottom;
+                    font-family: PingFangSC-Regular;
+                    font-weight: 400;
+                    color: #ff3366;
+                }
+
+                //标识
+                &_ident {
+                    font-size: 24upx;
+                    margin-right: 6upx;
+                }
+
+                //价格数字
+                &_number {
+                    font-size: 32upx;
+                }
+
+                //小数点后面的数
+                &_mantissa {
+                    font-size: 24upx;
+                }
+            }
+        }
+    }
+}
+
+
+.noGoods{
+	text-align: center;
+	.image{
+		width: 314upx;
+		height: 179upx;
+		display: block;
+		margin:0 auto;
+		margin-top: 300upx;
+	}
+	.desc{
+		color: #979b9a;
+		font-size: 30upx;
+	}
+}

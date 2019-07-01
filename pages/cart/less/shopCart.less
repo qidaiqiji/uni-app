@@ -1,0 +1,378 @@
+//out:false
+@import "../../../reset.less";
+
+.red-arrow {
+    padding-right: 22upx;
+    background-image: url('~@/static/images/shopCart/arrow_right_red.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 20upx 20upx;
+}
+
+.chosePro {
+    cursor: pointer;
+    margin-right: 20upx;
+    width: 32upx;
+    text-align: left;
+}
+
+.right-msg-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -25upx;
+    right: 0;
+    max-width: 110upx;
+    font-size: 24upx;
+    height: 50upx;
+    line-height: 50upx;
+
+    .text {
+        //display: block;
+        width: 90upx;
+        color: #ff3366;
+        font-size: 24upx;
+    }
+}
+
+.body {
+    position: relative;
+    width: 702upx;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.shopCart {
+    .swipeleft {
+        transform: translateX(-15%);
+        -webkit-transform: translateX(-15%);
+    }
+
+    background: #F3F5F7;
+}
+
+.cart_wrapper {
+	min-height: 1100upx;
+	margin-bottom: 0;
+	
+    .cartHead {
+        height: 68upx;
+        padding: 0 20upx;
+        line-height: 68upx;
+        overflow: hidden;
+        border-top: 1px solid #e5e5e5;
+
+        .changeShop {
+            float: right;
+            color: #007aff;
+            font-size: 24upx;
+        }
+    }
+
+    .price_tip {
+        position: relative;
+        //overflow: hidden;
+        //height: 81upx;
+        //line-height: 81upx;
+        background: #ffeb7a;
+
+        .body {
+            //display: flex;
+            //-webkit-box-align: center;
+            //justify-content: space-between;
+            //align-items: center;
+            padding: 24upx 0;
+        }
+
+        .left_tips {
+            font-size: 24upx;
+            background: #ffeb7a;
+            width: 580upx;
+            height: 100%;
+            //line-height: 30upx;
+
+            .reduce {
+                background: #ff3366;
+                padding: 2px 8upx;
+                border-radius: 10upx;
+                color: #fff;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .reduceNum {
+                width: 500upx;
+                color: #2f3a40;
+                margin-left: 10upx;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .right_tips {
+            background: #ffeb7a;
+            color: #ff3366;
+            font-size: 24upx;
+        }
+    }
+}
+
+
+.un-goods-head {
+    .chose-btn {
+        background: transparent;
+    }
+}
+
+.getAddress {
+    height: 90upx;
+    font-size: 24upx;
+    padding: 0 24upx;
+    background: #ffe1e9;
+
+    .body {
+        overflow: hidden;
+        height: 100%;
+        //padding: 18upx 0;
+        //display: flex;
+        //align-items: center;
+        //justify-content: space-between;
+    }
+
+    .addressLeft {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .addDetial {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        max-width: 110upx;
+
+        .text {
+            display: block;
+            font-size: 24upx;
+            color: #2f3a40;
+        }
+
+        .prov {
+            color: #ff3366;
+            font-size: 24upx;
+            margin-top: 2px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            position: relative;
+            max-width: 110upx;
+        }
+
+        .red-arrow {
+            background-image: url('~@/static/images/shopCart/arrow_down.png');
+        }
+    }
+
+    .finnaPrize {
+        width: 430upx;
+        color: #2f3a40;
+        font-size: 24upx;
+        //margin-left: 10upx;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        text {
+            color: #ff3366;
+        }
+    }
+
+    .addressRight {
+        position: absolute;
+        top: 50%;
+        margin-top: -25upx;
+        right: 0;
+        min-width: 110upx;
+        font-size: 24upx;
+        height: 50upx;
+        line-height: 50upx;
+
+        .text {
+            display: block;
+            width: 90upx;
+            color: #ff3366;
+            font-size: 24upx;
+        }
+    }
+}
+
+.payCon {
+    height: 98upx;
+    display: flex;
+    padding-left: 24upx;
+    justify-content: space-between;
+    background: #fff;
+
+    .payLeft {
+        font-size: 22upx;
+        display: flex;
+        height: 98upx;
+        align-items: center;
+        background: #fff;
+
+        .allChose {
+            font-size: 22upx;
+        }
+
+        .text {
+            color: #2f3a40;
+            font-size: 28upx;
+            margin-left: 20upx;
+        }
+
+        .payPrize {
+            font-size: 24upx;
+            color: #889696;
+            margin-left: 15upx;
+
+            .z {
+                display: block;
+            }
+
+            .p {
+                color: #ff3366;
+                font-size: 24upx;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .payRight {
+        button {
+            width: 230upx;
+            height: 98upx;
+            background: #ff3366;
+            color: #fff;
+            font-size: 34upx;
+            line-height: 98upx;
+            border-radius: 0;
+        }
+    }
+}
+
+.getPayment {
+    position: fixed;
+    width: 100%;
+    //bottom:50px;
+    z-index: 10;
+    bottom: @simpleBottom2;
+}
+
+.mbottom {
+    // height: @height;
+	height: 200upx;
+	visibility: hidden;
+}
+
+//
+.disCardDialog {
+    .mask {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 27;
+
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+        &.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .disCardCon {
+        background: #fff;
+        z-index: 29;
+        position: fixed;
+        bottom: @simpleBottom2;
+        width: 100%;
+        overflow: auto;
+
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+
+        &.show {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+
+    .coupen-title {
+        color: #2f3a40;
+        font-size: 34upx;
+        padding: 28upx 0;
+        text-align: center;
+    }
+
+    .coupon-body {
+        width: 100%;
+        height: 600upx;
+    }
+
+    .scroll-body {
+        height: 100%;
+    }
+
+    .confir-btn {
+        width: 100%;
+
+        .confirTip {
+            color: #677172;
+            font-size: 24upx;
+            height: 78upx;
+            line-height: 78upx;
+            padding-left: 32upx;
+            background: #fff3f6;
+        }
+
+        .button {
+            background: #ff3366;
+            height: 86upx;
+            line-height: 86upx;
+            text-align: center;
+            color: #fff;
+            font-size: 32upx;
+            font-weight: bold;
+            border-radius: 0;
+        }
+    }
+}
+
+
+.cart-list{
+    margin-bottom: 20upx;
+    // background: #fff;
+}
+
+.cart-list-view{
+	width: 100%;
+}
+
+.cart_listCon{
+	margin-bottom: 20upx;
+}

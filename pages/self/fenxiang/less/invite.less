@@ -1,0 +1,137 @@
+//out:false
+.inviteCon {
+    width: 100%;
+    background: #fff;
+    height: 100%;
+}
+.inviteCon {
+    background: url('~@/static/images/invite/img_bg.png');
+    background-size: 100% 100%;
+    overflow: hidden;
+    .inviteRule {
+        overflow: hidden;
+        color: #a36308;
+        font-size: 28upx;
+        text-align: right;
+        margin: 50upx 54upx 50upx 0;
+        text {
+            margin-left: 3upx;
+            font-size: bold;
+        }
+    }
+    .invitPart {
+        position: relative;
+        width: 668upx;
+        height: 1026upx;
+        margin-top: 30upx;
+        .inviteImg {
+            .img {
+                width: 668upx;
+                height: 1026upx;
+                margin-left: 28upx;
+            }
+        }
+        .inviteBtn {
+            position: absolute;
+            left: 140upx;
+            right: 0;
+            margin: auto;
+            bottom: 102upx;
+            button {
+                background: #ffe83e;
+                width: 269upx;
+                height: 93upx;
+                color: #e2001b;
+                font-size: 40upx;
+                font-weight: bold;
+                border-radius: 50upx;
+            }
+        }
+    }
+    .rulesDialog {
+        width: 600upx;
+        padding: 40upx;
+        height: 472upx;
+        box-sizing: border-box;
+        .rulesList {
+            line-height: 42upx;
+            .ruleTitle {
+                color: #2f3a40;
+                font-size: 28upx;
+            }
+            .ruleText {
+                color: #888;
+                font-size: 28upx;
+            }
+        }
+    }
+}
+
+// 登录模块的
+.loginForm {
+    position: absolute;
+    bottom: 50upx;
+    left: 45upx;
+}
+.login-page {
+    width: 668upx;
+    height: 400upx;
+    min-height: 400upx;
+    background: transparent;
+    .from {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 350upx;
+        width: 668upx;
+        padding-top: 0;
+        .input {
+            width: 550upx;
+            height: 88upx;
+            line-height: 88upx;
+            background: #b8061c;
+            input {
+                width: 550upx;
+                height: 88upx;
+                line-height: 88upx;
+                padding-left: 10upx;
+                color: #fff;
+                font-size: 28upx;
+            }
+        }
+        .drag {
+            width: 550upx;
+            height: 88upx;
+            background: #b8061c;
+            .drag_text {
+                color: #fff !important;
+            }
+        }
+        .drag_bg {
+            width: 550upx;
+            height: 88upx;
+            background: #b8061c;
+        }
+    }
+    .submit {
+        button {
+            background: #ffe83e !important;
+            width: 269upx;
+            height: 93upx;
+            color: #e2001b;
+            font-size: 40upx;
+            font-weight: bold;
+            border-radius: 50upx;
+        }
+    }
+    .disabled {
+        background: transparent !important;
+        margin-top: 38upx;
+    }
+}
+.handler_bg {
+    background: #b8061c url(/static/images/login/icon_righ@2x.png);
+    background-size: 100% auto;
+}

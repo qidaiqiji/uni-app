@@ -1,0 +1,92 @@
+
+
+.gray-arrow {
+    padding-right: 60upx;
+    background-image: url('~@/static/images/shopCart/back_right.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 24upx 24upx;
+}
+
+.chose-btn {
+    width: 32upx;
+    height: 32upx;
+    display: inline-block;
+    background-image: url('~@/static/images/shopCart/unsecletd.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32upx 32upx;
+    vertical-align: middle;
+
+    &.active {
+        background-image: url('~@/static/images/shopCart/secleted.png');
+    }
+}
+
+.cart_head {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68upx;
+    line-height: 68upx;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+
+    .chose-btn {
+        width: 75upx;
+    }
+
+    .title-name {
+        font-size: 28upx;
+    }
+
+    .head_left {
+        color: #2f3a40;
+        font-size: 28upx;
+
+        .text {
+            display: inline-block;
+        }
+    }
+
+    .head_right {
+        color: #ff3366;
+        font-size: 24upx;
+        width: 120upx;
+        text-align: center;
+    }
+}
+
+.cart-list-view {
+    width: 100%;
+
+    .cart_listCon {
+        margin-bottom: 20upx;
+    }
+
+    .totalPrize {
+        background-color: #fff;
+        height: 88upx;
+        padding: 0 24upx;
+        line-height: 88upx;
+        text-align: right;
+
+        .text1 {
+            color: #2f3a40;
+            font-size: 24upx;
+            margin-right: 20upx;
+        }
+
+        .text2 {
+            color: #2f3a40;
+            font-size: 24upx;
+
+            .pr {
+                color: #ff3366;
+                font-size: 28upx;
+                font-weight: 800;
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<template>
+	<view class="jfrules-page">
+		<!-- <uni-nav-bar left-icon="back" left-text="返回" right-text="菜单" title="导航栏组件"></uni-nav-bar> -->
+		<view class="jfrules-content">
+			<view class="item">
+				<text class="title">1、小美诚品销售的商品都是正品吗？</text>
+				<text class="desc">小美诚品与品牌方（总代）深度合作，取得品牌授权。产品均为原装进口的正品行货，均贴有中文标贴，可提供报关单、检疫检验证明等进口手续，可以在零售店合法销售。</text>
+			</view>
+			<view class="item">
+				<text class="title">2、平台都有哪些品类的产品？</text>
+				<text class="desc">小美诚品经营的产品覆盖面膜、护肤、个人护理、彩妆、家庭护理等各大品类，包含从韩国、日本、澳洲、欧美、台湾、香港等国家和地区进口的全球优质美妆，目前已有<text style="color:red;">180</text>个品牌入驻上线，共<text style="color:red;">3000</text>多个SKU，海量产品一站采购。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">3、产品的进口手续证件齐全吗？</text>
+				<text class="desc">
+					平台所有品牌产品报关单、检疫检验证明等进口手续证件齐全，可以在零售店合法销售
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">4、有中文标签吗？</text>
+				<text class="desc">
+					所有产品均贴有合格的中文标签
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">5、产品的有效期有保障吗？</text>
+				<text class="desc">
+					对于3年期保质期的产品，平台确保有效期在18个月以上
+				</text>
+				<view><text class="desc">对于2年期保质期的产品，平台确保有效期在12个月以上</text></view>
+			</view>
+			<view class="item">
+				<text class="title">6、平台商品的价格含税吗？</text>
+				<text class="desc">
+					不含税。如需要开具发票，需另外支付税费。
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">7、平台有没有特别的活动和采购政策？</text>
+				<text class="desc">
+					平台会不定期的推出团采、秒杀、满赠、满减、超值套餐等形式的特惠活动，敬请关注！
+				</text>
+			</view>
+			<view class="item">
+				<text class="title">8、平台的优惠券是怎样使用的？它的使用范围和限制是什么？</text>
+				<text class="desc">
+					1、平台活动参与积分赠送吗? 
+				</text>
+				<view><text class="desc">套餐/满减/优惠券/满赠活动商品均按平台规则赠送积分，秒杀活动和团采活动不参加积分赠送</text></view>
+				<image src="/static/images/helps/1.png" style="width: 100%;"></image>
+				<text class="desc">
+					  2、平台活动是否与优惠券同享？
+				</text>
+				<view><text class="desc">满赠活动与优惠券同享，秒杀、团采、套餐、满减）不能与优惠券同享。</text></view>
+				<image src="/static/images/helps/2.png" style="width: 100%;"></image>
+				<text class="desc">
+					  3、优惠券有哪些种类？它们的使用范围和限制分别是什么？
+				</text>
+				<view><text class="desc"> 优惠券使用的基本规则：每1笔订单，限使用1张优惠券。多张优惠券不能叠加使用。</text></view>
+				<image src="/static/images/helps/3.png" style="width: 100%;"></image>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			};
+		},
+		onLoad(option) {},
+		methods: {}
+	}
+</script>
+
+<style lang="less">
+	@import url('../less/detail.less');
+</style>

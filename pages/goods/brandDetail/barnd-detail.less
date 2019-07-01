@@ -1,0 +1,353 @@
+//out:false
+
+//品牌头部
+.brand-header {
+	position   : fixed;
+	z-index    : 12;
+	width      : 100%;
+	overflow   : hidden;
+	background : #07c2ff;
+	height     : 98upx;
+	line-height: 98upx;
+
+	.headBarList {
+		text-align: center;
+		width     : 25%;
+		float     : left;
+
+		.text {
+			font-size: 28upx;
+			color    : #7bdfff;
+		}
+	}
+
+	.activeTite {
+		.text {
+			color    : #fff;
+			font-size: 38upx;
+		}
+	}
+}
+
+.brand-banner {
+	height    : 336upx;
+	background: #d4d4d4;
+
+	.image {
+		width     : 100%;
+		max-height: 336upx;
+	}
+}
+
+.brand-list {
+	overflow  : hidden;
+	background: #fff;
+}
+
+.embed-bottom {
+	margin-bottom: 20upx;
+}
+
+.product-title {
+	background   : #fff;
+	line-height  : 88upx;
+	font-size    : 28upx;
+	font-family  : PingFang-SC-Bold;
+	font-weight  : bold;
+	color        : #2f3a40;
+	border-bottom: 1px solid #e5e5e5;
+
+	.title_text {
+		padding   : 0 24upx;
+		display   : block;
+		box-sizing: border-box;
+	}
+}
+
+.setTranslate(@x: 0, @y: 0) {
+	position         : absolute;
+	-webkit-transform: translate(@x, @y);
+	-ms-transform    : translate(@x, @y);
+	transform        : translate(@x, @y);
+}
+
+//品牌名称
+.brand-name-box {
+	position  : relative;
+	height    : 126upx;
+	background: #fff;
+	padding   : 0 24upx;
+
+	.logo {
+		margin-top    : -40upx;
+		width         : 140upx;
+		height        : 140upx;
+		display       : inline-block;
+		vertical-align: middle;
+		background    : #fff;
+		border        : 1px solid #e5e5e5;
+		border-radius : 4px;
+		position      : relative;
+		overflow      : hidden;
+
+		.image {
+			width: 120upx;
+			left : 50%;
+			top  : 50%;
+			.setTranslate(-50%, -50%);
+		}
+	}
+
+	.center {
+		left: 174upx;
+		top : 50%;
+		.setTranslate(0, -50%);
+		font-size     : 28upx;
+		margin-left   : 14upx;
+		display       : inline-block;
+		vertical-align: middle;
+
+		.name,
+		.described {
+			display: block;
+		}
+
+		.name {
+			font-family  : PingFangSC-Medium;
+			font-weight  : 500;
+			color        : #2f3a40;
+			margin-bottom: 14upx;
+		}
+
+		.described {
+			font-size: 22upx;
+			color    : #889696;
+		}
+	}
+
+	.look-brand-detail {
+		cursor       : pointer;
+		display      : inline-block;
+		overflow     : hidden;
+		border       : 1px solid #ff3366;
+		border-radius: 4upx;
+		font-size    : 24upx;
+		font-family  : PingFangSC-Regular;
+		font-weight  : 400;
+		color        : #ff3366;
+		.setTranslate(0, -50%);
+		right: 24upx;
+		top  : 50%;
+
+		&__text {
+			text-align: center;
+			display   : inline-block;
+			padding   : 12upx 18upx;
+		}
+	}
+}
+
+//品牌公告
+.brand-tips {
+	height       : 80upx;
+	background   : #fef1f8;
+	margin-bottom: 20upx;
+}
+
+.list-view {
+	position: relative;
+	width   : 100%;
+
+	.cell {
+		font-family        : PingFangSC-Regular;
+		font-size          : 26upx;
+		font-weight        : 400;
+		color              : #2f3a40;
+		box-sizing         : border-box;
+		padding            : 24upx 0;
+		width              : 702upx;
+		margin             : auto;
+		background-image   : url('~@/static/images/brand/icon_return@2x.png');
+		background-repeat  : no-repeat;
+		background-position: right center;
+		background-size    : 30upx 30upx;
+	}
+
+	.text {
+		width        : 670upx;
+		min-width    : 610upx;
+		position     : relative;
+		overflow     : hidden;
+		white-space  : nowrap;
+		text-overflow: ellipsis;
+		box-sizing   : border-box;
+	}
+
+	.tips {
+		padding-left       : 32upx+30upx;
+		background-image   : url('~@/static/images/brand/icon_play@2x.png');
+		background-repeat  : no-repeat;
+		background-position: left center;
+		background-size    : 30upx 30upx;
+
+		&:before {
+			width     : 1px;
+			height    : 100%;
+			background: rgba(47, 58, 64, 1);
+			content   : ' ';
+			position  : absolute;
+			left      : 46upx;
+		}
+	}
+}
+
+.brand-page {
+	width     : 100%;
+	min-height: 100vh;
+	background: #f3f3f3;
+	overflow  : hidden;
+}
+
+.act-content {
+	padding-top: 40upx;
+	font-size  : 24upx;
+	font-family: PingFang-SC-Medium;
+	font-weight: 500;
+	color      : rgba(136, 150, 150, 1);
+
+	.title {
+		font-size    : 28upx;
+		color        : #2f3a40;
+		margin-bottom: 10upx;
+	}
+
+	.longDesc {
+		text-indent: 26upx;
+		font-size  : 26upx;
+		font-family: PingFangSC-Regular;
+		font-weight: 400;
+		color      : rgba(136, 150, 150, 1);
+		line-height: 46upx;
+	}
+
+	.lookDetial {
+		text-align: right;
+		color     : #FF3366;
+		font-size : 24upx;
+	}
+}
+
+.info-line {
+	margin-bottom: 44upx;
+
+	.label {
+		display    : inline-block;
+		width      : 200upx;
+		font-size  : 24upx;
+		font-family: PingFangSC-Regular;
+		font-weight: 400;
+		color      : rgba(136, 150, 150, 1);
+	}
+
+	.message {
+		font-size  : 26upx;
+		font-family: PingFangSC-Regular;
+		font-weight: 400;
+		color      : rgba(47, 58, 64, 1);
+	}
+}
+
+.mainPingpai {
+	margin-top: 98upx;
+}
+
+.allProduct {
+	overflow: hidden;
+	width   : 100%;
+
+	.head {
+		position: fixed;
+		z-index : 8;
+		width   : 100%;
+		top     : calc(var(--window-top) + 98upx);
+	}
+
+	.brandList {
+		margin-top: 98upx+78upx;
+		background: #fff;
+	}
+}
+
+.zhsq {
+	text-align: center;
+
+	.image {
+		width        : 384upx;
+		height       : 335upx;
+		margin       : 0 auto;
+		display      : block;
+		margin-top   : 300upx;
+		margin-bottom: 30upx;
+	}
+
+	.desc {
+		text-align: center;
+		margin    : 500upx 0;
+		color     : #ccc;
+		font-size : 30upx;
+	}
+
+	.swiper {
+		min-height: 900upx;
+	}
+
+	.bg-image {
+		width : 750upx;
+		height: 750upx;
+	}
+}
+
+.coupon {
+	margin-top: 55upx;
+
+	.tip {
+		font-size : 22upx;
+		color     : #889696;
+		margin-top: 35upx;
+	}
+
+	.text {
+		display       : inline-block;
+		vertical-align: middle;
+	}
+
+	.color {
+		margin-right: 6upx;
+		color       : #ff3366;
+	}
+}
+
+.couCon {
+	.tag {
+		background   : #fc7014;
+		padding      : 1px 10upx;
+		color        : #fff;
+		font-size    : 22upx;
+		display      : inline-block;
+		border-radius: 8upx;
+	}
+
+	.couponList {
+		display: inline-block;
+	}
+
+	.item {
+		padding     : 8upx 10upx;
+		color       : #fa7113;
+		background  : #fedfca;
+		display     : inline-block;
+		font-size   : 24upx;
+		margin-right: 20upx;
+		border-top  : 3upx solid #fc7014;
+	}
+}

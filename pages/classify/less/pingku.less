@@ -1,0 +1,138 @@
+// out:false
+@import '../../../reset.less';
+
+.pingku {
+    width: 100%;
+    background: #fff;
+    position: relative;
+    // padding-bottom: 100upx;
+    // margin-bottom: 100upx;
+}
+
+.pingku {
+    .itemSortName {
+        width: 140upx;
+        height: 140upx;
+        background: rgba(0, 0, 0, 1);
+        opacity: 0.5;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 140upx;
+        color: #fff;
+        font-size: 58upx;
+        position: fixed;
+        z-index: 100;
+        left: 300upx;
+        top: 500upx;
+    }
+    .isShow {
+        display: none;
+        transition-delay: 3s;
+    }
+    .showOneItem {
+        display: block;
+    }
+    .isActive {
+        width: 36upx;
+        height: 36upx;
+        line-height: 36upx;
+        text-align: center;
+        color: #fff !important;
+        background: rgba(0, 0, 0, 1);
+        opacity: 0.5;
+        border-radius: 50%;
+    }
+    .hotpaiHead {
+        color: #2f3a40;
+        font-size: 32upx;
+        padding-top: 55upx;
+        padding-bottom: 21upx;
+        padding-left: 21upx;
+        font-weight: 500;
+    }
+}
+
+.sortByName {
+    right: 29upx;
+    width: 36upx;
+    text-align: center;
+    position: fixed;
+    z-index: 12;
+    // height: 980upx;
+	// bottom: 40upx;
+
+    .li {
+        font-size: 22upx;
+        color: #2f3a40;
+        margin-bottom: 0upx;
+        width: 36upx;
+        height: 36upx;
+    }
+}
+
+.pk-hotList {
+    .image-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 500upx;
+        margin: auto;
+    }
+
+    .image-line {
+        position: relative;
+        box-sizing: border-box;
+        width: 33%;
+        height: 145upx;
+    }
+
+    .hotImag {
+        width: 90%;
+        height: 80upx;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+.pk-allPing {
+    .sort {
+        background: #f3f3f3;
+        height: 40upx;
+        line-height: 40upx;
+        padding-left: 20upx;
+        color: #889696;
+        font-size: 26upx;
+    }
+
+    .pingList {
+        height: 78upx;
+        line-height: 78upx;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .pingLeft {
+        position: relative;
+        width: 120upx;
+        height: 78upx;
+        text-align: center;
+        vertical-align: middle;
+
+        .pingLeftImag {
+            // width: 67upx;
+            width: 80upx;
+            height: 36upx;
+        }
+    }
+
+    .pingRight {
+        width: 100%;
+        color: #2f3a40;
+        font-size: 26upx;
+        border-bottom: 1px solid #e5e5e5;
+    }
+}

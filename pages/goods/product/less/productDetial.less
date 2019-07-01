@@ -1,0 +1,872 @@
+// out:false
+@import '../../../../reset.less';
+
+.productDetial {
+	position  : relative;
+	overflow  : hidden;
+	background: #f3f3f3;
+}
+
+.productDetial {
+	//background: #fff;
+
+	.tabChose {
+		box-sizing     : border-box;
+		display        : flex;
+		align-content  : center;
+		justify-content: space-between;
+		height         : 78upx;
+		line-height    : 78upx;
+		font-size      : 28upx;
+		border-top     : 1px solid #f3f3f3;
+		background     : #fff;
+
+		.stright {
+			width     : 50%;
+			color     : #2f3a40;
+			text-align: center;
+		}
+
+		.detial {
+			width     : 50%;
+			text-align: center;
+		}
+
+		text {
+			height : 100%;
+			display: inline-block;
+		}
+
+		.tabActive {
+			color        : #ff3366;
+			border-bottom: 1px solid #ff3366;
+		}
+	}
+
+	.isFixed {
+		position        : fixed;
+		width           : 100%;
+		background-color: #fff;
+		top             : @simpleTop;
+		z-index         : 22;
+	}
+
+	//图片展示区
+	.imgAllShow {
+		background : #f3f3f3;
+		padding-top: 20upx;
+
+		.imgCon {
+			background: #fff;
+		}
+
+		.image {
+			width  : 100%;
+			display: block;
+		}
+	}
+}
+
+// banner
+.slideImg {
+	background: #fff;
+	height    : 520upx;
+	text-align: center;
+	position  : relative;
+
+	.dot {
+		position : absolute;
+		bottom   : 20upx;
+		left     : 50%;
+		transform: translate(-50%, 0);
+	}
+
+	.swiper {
+		height    : 520upx;
+		text-align: center;
+	}
+
+	.image {
+		margin: 0 auto;
+		width : 520upx;
+		height: 520upx;
+	}
+
+	.video {
+		width: 100%;
+	}
+}
+
+// 相关搭配
+.aboutOther {
+	background: #f3f3f3;
+	padding   : 20upx 0 0 0;
+
+	.ablutOtherCon {
+		background: #fff;
+	}
+
+	.aboutHead {
+		height       : 88upx;
+		padding-left : 24upx;
+		line-height  : 88upx;
+		color        : #2f3a40;
+		font-size    : 28upx;
+		border-bottom: 1px solid #dce4e6;
+	}
+
+	.otherList {
+		padding     : 24upx;
+		padding-left: 0;
+	}
+
+	.scroll-view_H {
+		/* 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 */
+		white-space: nowrap;
+		width      : 100%;
+
+		.scroll-view-item_H {
+			display    : inline-block;
+			width      : 230upx;
+			height     : 300upx;
+			text-align : center;
+			font-size  : 36upx;
+			margin-left: 24upx;
+		}
+
+		.scroll-view-item_H view {
+			box-sizing: border-box;
+			width     : 230upx;
+			text-align: center;
+		}
+
+		.scroll-view-item_H .imgView {
+			width: 100%;
+		}
+
+		.scroll-view-item_H .imgView image {
+			width : 100%;
+			height: 230upx;
+		}
+
+		.scroll-view-item_H .otherPrize {
+			margin-top: 16upx;
+			font-size : 26upx;
+			color     : #ff3366;
+		}
+	}
+}
+
+//底部的加入采购车
+.addTocart {
+	background: #fff;
+	z-index   : 5;
+	position  : fixed;
+	width     : 100%;
+	height    : 98upx;
+	bottom    : 0;
+
+	.addTocartCon {
+		display        : flex;
+		justify-content: space-between;
+		width          : 100%;
+	}
+}
+
+.addTocartCon {
+	.cartLeft {
+		width     : 334upx;
+		height    : 98upx;
+		background: #fff;
+	}
+
+	.cartRight {
+		width: 416upx;
+	}
+}
+
+.addTocartCon {
+	.nav-view {
+		width                  : 100%;
+		height                 : 98upx;
+		//display              : flex;
+		display                : -webkit-flex;
+		-webkit-box-align      : center;
+		-webkit-align-items    : center;
+		-webkit-justify-content: space-between;
+		// padding             : 0 10upx;
+		padding-right          : 10upx;
+		box-sizing             : border-box;
+	}
+
+	.nav-view-cell {
+		position  : relative;
+		text-align: center;
+		margin    : 0;
+	}
+
+	.toIndex {
+		width: 30%;
+	}
+
+	.toCart {
+		width: 30%;
+	}
+
+	.toBrand {
+		width: 40%;
+	}
+
+	.text {
+		display  : block;
+		color    : #2f3a40;
+		font-size: 22upx;
+	}
+
+	.button {
+		width        : 100%;
+		height       : 98upx;
+		text-align   : center;
+		line-height  : 98upx;
+		background   : #ff3366;
+		color        : #fff;
+		font-size    : 32upx;
+		border-radius: 0;
+	}
+}
+
+// 重构2个按钮
+.btn_two {
+	.nav-view {
+		padding: 0 20upx;
+	}
+
+	.toIndex {
+		width: 45%;
+	}
+
+	.toCart {
+		width: 50%;
+	}
+
+	.cartLeft {
+		width: 250upx;
+	}
+
+	.cartRight {
+		width: 500upx;
+	}
+}
+
+//规格弹框样式
+.bodyer {
+	padding: 0;
+}
+
+// 套餐详情
+.pro-taocan {
+	background: #f3f3f3;
+	overflow  : hidden;
+
+	.tancanCon {
+		padding    : 20upx 24upx;
+		padding-top: 10upx;
+		background : #1795ff;
+
+		.brand-item {
+			margin-top   : 10upx;
+			background   : #fff;
+			border-radius: 3px;
+		}
+	}
+
+	.taocanHead {
+		margin-top  : 20upx;
+		height      : 89upx;
+		line-height : 89upx;
+		color       : #2f3a40;
+		font-size   : 28upx;
+		background  : #fff;
+		padding-left: 25upx;
+		font-weight : bold;
+	}
+}
+
+// 套餐详情
+.pro-taocan-price {
+	text-align: right;
+	margin-top: 16upx;
+
+	text {
+		color    : #fff;
+		font-size: 30upx;
+	}
+
+	.num {
+		margin-right: 20upx;
+	}
+
+	.iconMoney {
+		font-size: 18upx;
+	}
+
+	.prize {
+		margin-right: 20upx;
+	}
+
+	.saveMoney {
+		border       : 1px solid #fff;
+		padding      : 3upx 5upx;
+		border-radius: 6upx;
+	}
+}
+
+.brandList {
+	background: #fff;
+
+	.cartCon {
+		display        : inline-block;
+		background-size: 100%;
+		float          : right;
+		margin-top     : 14upx;
+		color          : #2f3a40;
+		font-size      : 28upx;
+	}
+
+	.brand-item {
+		//width      : 702upx;
+		position     : relative;
+		margin       : auto;
+		overflow     : hidden;
+		padding      : 30upx 24upx;
+		//border-top : 1px solid #E5E5E5;
+		border-bottom: 1px solid #e5e5e5;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		&__img {
+			width : 150upx;
+			height: 150upx;
+			float : left;
+		}
+
+		&__right {
+			width: 440upx;
+			float: right;
+		}
+
+		.image {
+			width : 100%;
+			height: 100%;
+		}
+	}
+
+	.brand-item__right {
+
+		// 标题
+		&_title {
+			display    : block;
+			display    : -webkit-box;
+			font-size  : 28upx;
+			font-family: PingFangSC-Regular;
+			font-weight: 400;
+			color      : #2f3a40;
+			margin     : 14upx 0;
+			margin-top : 0;
+			line-height: 40upx;
+
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow          : hidden;
+			text-overflow     : ellipsis;
+
+			word-break : break-all;
+			white-space: normal;
+		}
+
+		// 描述
+		&_described {
+			font-size    : 24upx;
+			font-family  : PingFangSC-Regular;
+			font-weight  : 400;
+			color        : #b2b2b2;
+			margin-bottom: 30upx;
+
+			&_text {
+				display       : inline-block;
+				vertical-align: middle;
+				margin-right  : 40upx;
+			}
+		}
+
+		&_foot {
+			font-size: 24upx;
+			width    : 100%;
+
+			&_price {
+				font-size     : 24upx;
+				display       : inline-block;
+				vertical-align: middle;
+				margin-right  : 10upx;
+				height        : 60upx;
+
+				&_ident,
+				&_number,
+				&_mantissa {
+					display       : inline-block;
+					vertical-align: bottom;
+					font-family   : PingFangSC-Regular;
+					font-weight   : 400;
+					color         : #ff3366;
+				}
+
+				//标识
+				&_ident {
+					//font-size : 24upx;
+					margin-right: 6upx;
+				}
+
+				//价格数字
+				&_number {
+					font-size: 32upx;
+				}
+
+				//小数点后面的数
+				&_mantissa {
+					//font-size: 24upx;
+				}
+			}
+		}
+
+		.discount {
+			color    : #889696;
+			font-size: 20upx;
+		}
+	}
+}
+
+// 活动盒子
+.active-box {
+	.view-box {
+		display        : flex;
+		justify-content: space-between;
+		align-items    : center;
+		height         : 100%;
+	}
+
+	.left {
+		color          : #fff;
+		display        : flex;
+		justify-content: space-between;
+		align-items    : center;
+		padding-left   : 24upx;
+	}
+
+	.prize {
+		font-size: 58upx;
+
+		.sbtext {
+			font-size: 30upx;
+		}
+
+		.sbtext {
+			display: inline-block;
+		}
+
+		.number {
+			display: inline-block;
+		}
+
+		.mantissa {
+			display  : inline-block;
+			font-size: 30upx;
+		}
+	}
+
+	.saveMoney {
+		font-size  : 22upx;
+		margin-left: 45upx;
+
+		.num {
+			font-size: 22upx;
+		}
+
+		.money {
+			display        : flex;
+			justify-content: center;
+			align-items    : center;
+			font-size      : 22upx;
+			color          : #f8234f;
+			background     : #fff;
+			border-radius  : 4upx;
+			text-align     : center;
+			padding        : 0 8upx;
+			margin-top     : 4upx;
+		}
+	}
+
+	.right {
+		text-align: right;
+		height    : 100%;
+		color     : #fa2854;
+		font-size : 24upx;
+		width     : 249upx;
+		padding   : 25upx;
+		box-sizing: border-box;
+	}
+}
+
+// 聚划算
+.juhusua {
+	padding   : 0 0;
+	background: #f8234f;
+	height    : 108upx;
+
+	.saveMoney {
+		.money {
+			color: #f61e4b;
+		}
+	}
+
+	.right {
+		background     : url('~@/static/images/productDetial/icon_item_huasuan.png');
+		background-size: cover;
+	}
+}
+
+// 秒杀显示
+.miaosha {
+	height    : 108upx;
+	background: #f8234f;
+
+	.saveMoney {
+		.money {
+			color: #f8234f;
+		}
+	}
+
+	.right {
+		background     : url('~@/static/images/productDetial/icon_item_miaosha.png');
+		background-size: cover;
+	}
+
+	.dateText {
+		color: #2f3a40;
+
+		text {
+			height       : 36upx;
+			min-width    : 36upx;
+			padding      : 0 1px;
+			border-radius: 4upx;
+			display      : inline-block;
+			text-align   : center;
+			line-height  : 36upx;
+			background   : #2f3a40;
+			color        : #fff;
+			font-size    : 24upx;
+		}
+	}
+	
+	.un-sale {
+		display: flex;
+		align-items: baseline;
+	}
+
+	.un-flashtitle {
+		font-size: 24upx;
+	}
+
+	.un-flashsale {
+		display: flex;
+		align-items: baseline;
+		margin-left: 20upx;
+
+		.sbtext {
+			font-size: 30upx;
+		}
+
+		.un-number {
+			font-size: 42upx;
+		}
+	}
+}
+
+// 套餐价格显示
+.taocanPrice {
+	background     : url('~@/static/images/productDetial/icon_item_taocan.png');
+	background-size: cover;
+	height         : 108upx;
+
+	.tancanPriceCon {
+		display        : flex;
+		justify-content: space-between;
+		align-items    : center;
+		height         : 100%;
+	}
+
+	.saveMoney {
+		.money {
+			color: #16b4fa;
+		}
+	}
+}
+
+// vip
+.isVip {
+	width : 100%;
+	height: 108upx;
+
+	background-image   : url('~@/static/images/productDetial/img_vip_shopping.png');
+	background-position: center;
+	background-repeat  : no-repeat;
+	background-size    : 100% 108upx;
+
+	.vip-body {
+		position  : relative;
+		// padding: 0 24upx;
+		width     : 702upx;
+		height    : 108upx;
+		margin    : auto;
+
+		display          : flex;
+		-webkit-box-align: center;
+		align-items      : center;
+	}
+
+	.price-box {
+		font-size   : 30upx;
+		font-family : PingFang-SC-Bold;
+		font-weight : bold;
+		color       : rgba(250, 234, 196, 1);
+		line-height : 42upx;
+		display     : inline-block;
+		// position : absolute;
+		// top      : 50%;
+		// transform: translate(0, -50%);
+
+		.ident,
+		.number,
+		.mantissa {
+			display: inline-block;
+		}
+
+		//标识
+		.ident {
+			margin-right: 0upx;
+		}
+
+		//价格数字
+		.number {
+			font-size: 56upx;
+		}
+
+		//小数点后面的数
+		.mantissa {
+			font-size: 28upx;
+		}
+	}
+
+	.sp-price {
+		margin-left: 40upx;
+	}
+
+	.save-price {
+		font-size  : 22upx;
+		font-family: PingFang-SC-Medium;
+		font-weight: 500;
+		color      : rgba(237, 241, 244, 1);
+	}
+
+	.pt-price {
+		font-size  : 22upx;
+		font-family: PingFang-SC-Medium;
+		font-weight: 500;
+		color      : rgba(250, 234, 196, 1);
+		background : rgba(255, 255, 255, 0.2);
+
+		padding      : 6upx 10upx;
+		display      : inline-block;
+		border-radius: 4upx;
+	}
+}
+
+.banner-prizeShow {
+	background             : #fff;
+	height                 : 100upx;
+	padding                : 0 25upx;
+	display                : -webkit-flex;
+	-webkit-box-align      : center;
+	-webkit-align-items    : center;
+	-webkit-justify-content: space-between;
+
+	.left_prize {
+		font-size  : 24upx;
+		color      : #ff3366;
+		display    : flex;
+		align-items: center;
+	}
+
+	.prize {
+		font-size: 48upx;
+		color    : #ff3366;
+
+		.sbtext {
+			font-size: 30upx;
+		}
+
+		.sbtext {
+			display: inline-block;
+		}
+
+		.number {
+			display: inline-block;
+		}
+
+		.mantissa {
+			display  : inline-block;
+			font-size: 30upx;
+		}
+	}
+
+	.discount {
+		color        : #ff9600;
+		border       : 1px solid #ff9600;
+		padding      : 0 4upx;
+		font-size    : 16upx;
+		margin-left  : 10upx;
+		border-radius: 4upx;
+	}
+
+	.startPrize {
+		color    : #677172;
+		font-size: 22upx;
+	}
+}
+
+// 活动
+.pro-activeevent {
+	padding-top: 25upx;
+	background : #f3f3f3;
+}
+
+.pro-zhifawuliao {
+	width: 100%;
+}
+
+// @import 'wuliao.less';
+
+.activeIcon {
+	display       : inline-block;
+	vertical-align: middle;
+	margin-right  : 4upx;
+	line-height: 1;
+
+	&.juhuasuan {
+		background-image   : url('~@/static/images/productDetial/icon_huasuan.png');
+		background-position: left center;
+		background-repeat  : no-repeat;
+		background-size    : 120upx 34upx;
+		width              : 120upx;
+		height             : 88upx;
+	}
+
+	&.flashSale {
+		background-image   : url('~@/static/images/productDetial/icon_miaosha.png');
+		background-position: left center;
+		background-repeat  : no-repeat;
+		background-size    : 166upx 34upx;
+		width              : 166upx;
+		height             : 88upx;
+	}
+
+	&.taocan {
+		background   : #ff3366;
+		color        : #fff;
+		font-size    : 20upx;
+		padding      : 6upx 10upx;
+		border-radius: 4upx;
+	}
+}
+
+.active {
+	.itemList {
+		font-size    : 24upx;
+		color        : #666;
+		margin-bottom: 10upx;
+		line-height  : 40upx;
+	}
+}
+
+// 品牌信息
+.pro-shopName {
+	padding   : 20upx 0 0 0;
+	background: #f3f3f3;
+
+	.shopNameCon {
+		height         : 148upx;
+		padding        : 0 25upx;
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+		background     : #fff;
+	}
+
+	.shopLeft {
+		display    : flex;
+		align-items: center;
+
+		.shopImg {
+			width        : 100upx;
+			height       : 100upx;
+			border       : 1px solid rgba(220, 228, 230, 1);
+			border-radius: 4upx;
+			position     : relative;
+
+			.image {
+				width: 94upx;
+			}
+		}
+	}
+
+	.shopDesc {
+		margin-left: 24upx;
+
+		.name {
+			color    : #2f3a40;
+			font-size: 28upx;
+		}
+
+		.shopNum {
+			margin-top: 10upx;
+			color     : #889696;
+			font-size : 22upx;
+
+			.numText {
+				color: #ff3366;
+			}
+
+			.descText {
+				margin-left: 20upx;
+			}
+		}
+	}
+
+	.shopRight {
+		font-size: 28upx;
+		position : relative;
+
+		.brand-btn {
+			display      : inline-block;
+			padding      : 0upx 20upx;
+			text-align   : center;
+			background   : #ff3366;
+			color        : #fff;
+			font-size    : 28upx;
+			border-radius: 20px;
+			height       : 48upx;
+			line-height  : 48upx;
+		}
+	}
+}
