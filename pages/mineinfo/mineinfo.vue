@@ -71,178 +71,171 @@
 </template>
 
 <script>
-import mpvueCityPicker from '@/components/mpvue-citypicker/mpvueCityPicker1.vue';
 import uniPopup from '@/components/uni-popup/uni-popup.vue';
-import wPicker from '@/components/w-picker/w-picker.vue';
+import wPicker from '@/components/date-picker/date-picker.vue';
 export default {
-    components: {
-        mpvueCityPicker,
-        uniPopup,
-        wPicker
-    },
-    data() {
-        return {
-            sexData: [
-                {
-                    value: 0,
-                    text: '男'
-                },
-                {
-                    value: 1,
-                    text: '女'
-                }
-            ],
-            placeholderStyle: 'font-size: 26upx;color: #D4D4D4;',
-            type: '',
-
-            // model
-            userId: '',
-            nickname: '',
-            mobilePhone: '',
-            companyName: '',
-            birthday: '',
-            sex: '',
-            sexHidden: 0, //隐藏值
-            contact: '',
-            license: [],
-
-            nicknameIcon: false,
-            mobilePhoneIcon: false,
-            companyNameIcon: false,
-            birthdayIcon: false,
-            sexIcon: false,
-            contactIcon: false,
-            // 区域
-            cityPickerValueDefault: [0, 0, 0],
-            themeColor: '#FF3366',
-            // 时间选择器 设置
-            typeMode: 'date',
-            defaultVal: [0, 0, 0],
-
-            access_token: ''
-        };
-    },
-    computed: {
-        getTextareaValue() {
-            // return this.birthday && this.sex && this.contact ? false : true;
-			return false
+  components: {
+    uniPopup,
+    wPicker
+  },
+  data() {
+    return {
+      sexData: [
+        {
+          value: 0,
+          text: '男'
+        },
+        {
+          value: 1,
+          text: '女'
         }
-    },
-    onLoad() {
-        let token = uni.getStorageSync('access_token');
-        this.access_token = token;
-    },
-    onShow() {
-        this.getUserInfo();
-    },
-    methods: {
-        toggleTab(index) {
-            if (this.birthday) {
-            }
-            this.$refs.picker.show();
-        },
-        onConfirm(val) {
-            this.birthday = val.checkArr.join('-');
-            this[`birthdayIcon`] = true;
-        },
-        togglePopup(type) {
-            this.type = type;
-        },
-        getSexValue(item) {
-            this.sex = item.text;
-            this.sexHidden = item.value;
-            this[`sexIcon`] = true;
-            this.togglePopup('');
-        },
-        nicknameInput(event) {
-            let value = event.target.value;
-            this.nickname = value;
-            this[`nicknameIcon`] = value.length > 0 ? true : false;
-        },
-        mobilePhoneInput(event) {
-            let value = event.target.value;
-            this.mobilePhone = value;
-            this[`mobilePhoneIcon`] = value.length > 0 ? true : false;
-        },
-        companyNameInput(event) {
-            let value = event.target.value;
-            this.companyName = value;
-            this[`companyNameIcon`] = value.length > 0 ? true : false;
-        },
-        contactInput(event) {
-            let value = event.target.value;
-            this.contact = value;
-            this[`contactIcon`] = value.length > 0 ? true : false;
-        },
-        clearIcon(type) {
-            this[type] = '';
-            this[`${type}Icon`] = false;
-        },
-        setWPicker(birthday) {
-            birthday = birthday || this.birthday;
-            let _defaultVal = this.birthday.split('-');
-            if (_defaultVal && _defaultVal[0] >= 1969) {
-                let _Yindex = _defaultVal[0] - 1970;
-                let _Mindex = _defaultVal[1] - 1;
-                let _Dindex = _defaultVal[2] - 1;
-                this.$set(this, 'defaultVal', [_Yindex, _Mindex, _Dindex]);
-            }
-        },
-        async getUserInfo() {
-            let vm = this;
-            let res = await vm.$api.request({
-                method: 'GET',
-                access_token: this.access_token,
-                url: vm.$api.user_userInfo
-            });
-            if (res && res.code == 0) {
-                let data = res.data;
-                for (let key in data) {
-                    let value = data[key];
-                    if (key === 'sex') {
-                        value = data[key] > 0 ? '女' : '男';
-                        vm[key] = value;
-                        vm.sexHidden = data[key];
-                    } else {
-                        vm[key] = value;
-                    }
-                    if (key === 'birthday') {
-                        vm.setWPicker(data[key]);
-                    }
-                }
-                vm.birthdayIcon = true;
-                vm.sexIcon = true;
-                vm.contactIcon = true;
-            }
-        },
-        async changeUserInfo() {
-            let vm = this;
-            let res = await vm.$api.request({
-                method: 'POST',
-                access_token: this.access_token,
-                url: vm.$api.user_changeuserInfo,
-                data: {
-                    birthday: vm.birthday,
-                    sex: vm.sexHidden,
-                    contact: vm.contact
-                }
-            });
-            if (res && res.code == 0) {
-                uni.showToast({
-                    title: res.msg
-                });
-            }
-        }
+      ],
+      placeholderStyle: 'font-size: 26upx;color: #D4D4D4;',
+      type: '',
+
+      // model
+      userId: '',
+      nickname: '',
+      mobilePhone: '',
+      companyName: '',
+      birthday: '',
+      sex: '',
+      sexHidden: 0, //隐藏值
+      contact: '',
+      license: [],
+
+      nicknameIcon: false,
+      mobilePhoneIcon: false,
+      companyNameIcon: false,
+      birthdayIcon: false,
+      sexIcon: false,
+      contactIcon: false,
+      // 区域
+      cityPickerValueDefault: [0, 0, 0],
+      themeColor: '#FF3366',
+      // 时间选择器 设置
+      typeMode: 'date',
+      defaultVal: [0, 0, 0],
+
+      access_token: ''
+    };
+  },
+  computed: {
+    getTextareaValue() {
+      // return this.birthday && this.sex && this.contact ? false : true;
+      return false
     }
+  },
+  onLoad() {
+    let token = uni.getStorageSync('access_token');
+    this.access_token = token;
+  },
+  onShow() {
+    this.getUserInfo();
+  },
+  methods: {
+    toggleTab(index) {
+      if (this.birthday) {
+      }
+      this.$refs.picker.show();
+    },
+    onConfirm(val) {
+      this.birthday = val.checkArr.join('-');
+      this[`birthdayIcon`] = true;
+    },
+    togglePopup(type) {
+      this.type = type;
+    },
+    getSexValue(item) {
+      this.sex = item.text;
+      this.sexHidden = item.value;
+      this[`sexIcon`] = true;
+      this.togglePopup('');
+    },
+    nicknameInput(event) {
+      let value = event.target.value;
+      this.nickname = value;
+      this[`nicknameIcon`] = value.length > 0 ? true : false;
+    },
+    mobilePhoneInput(event) {
+      let value = event.target.value;
+      this.mobilePhone = value;
+      this[`mobilePhoneIcon`] = value.length > 0 ? true : false;
+    },
+    companyNameInput(event) {
+      let value = event.target.value;
+      this.companyName = value;
+      this[`companyNameIcon`] = value.length > 0 ? true : false;
+    },
+    contactInput(event) {
+      let value = event.target.value;
+      this.contact = value;
+      this[`contactIcon`] = value.length > 0 ? true : false;
+    },
+    clearIcon(type) {
+      this[type] = '';
+      this[`${type}Icon`] = false;
+    },
+    setWPicker(birthday) {
+      birthday = birthday || this.birthday;
+      let _defaultVal = this.birthday.split('-');
+      if (_defaultVal && _defaultVal[0] >= 1969) {
+        let _Yindex = _defaultVal[0] - 1970;
+        let _Mindex = _defaultVal[1] - 1;
+        let _Dindex = _defaultVal[2] - 1;
+        this.$set(this, 'defaultVal', [_Yindex, _Mindex, _Dindex]);
+      }
+    },
+    async getUserInfo() {
+      let vm = this;
+      let res = await vm.$api.request({
+        url: vm.$api.user_userInfo
+      });
+      if (res && res.code == 0) {
+        let data = res.data;
+        for (let key in data) {
+          let value = data[key];
+          if (key === 'sex') {
+            value = data[key] > 0 ? '女' : '男';
+            vm[key] = value;
+            vm.sexHidden = data[key];
+          } else {
+            vm[key] = value;
+          }
+          if (key === 'birthday') {
+            vm.setWPicker(data[key]);
+          }
+        }
+        vm.birthdayIcon = true;
+        vm.sexIcon = true;
+        vm.contactIcon = true;
+      }
+    },
+    async changeUserInfo() {
+      let vm = this;
+      let res = await vm.$api.request({
+        method: 'POST',
+        url: vm.$api.user_changeuserInfo,
+        data: {
+          birthday: vm.birthday,
+          sex: vm.sexHidden,
+          contact: vm.contact
+        }
+      });
+      if (res && res.code == 0) {
+        uni.showToast({
+          title: res.msg
+        });
+      }
+    }
+  }
 };
 </script>
 
+
 <style lang="less" scoped>
-@import url('../../static/style/icon.css');
 
 .addr-form-page {
-    //padding-bottom: 180upx;
-    //min-height: 100vh;
     overflow: hidden;
 
     .forms {
@@ -274,7 +267,6 @@ export default {
     .uni-input {
         display: block;
         font-size: 26upx;
-        font-family: PingFangSC-Regular;
         font-weight: 400;
     }
 
@@ -294,7 +286,6 @@ export default {
         display: inline-block;
         vertical-align: middle;
         font-size: 24upx;
-        font-family: PingFangSC-Regular;
         font-weight: 400;
         color: #889696;
         width: 160upx;

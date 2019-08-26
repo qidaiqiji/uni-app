@@ -1,0 +1,2 @@
+<import src="./xinpin.vue.wxml" />
+    <template is="5d968bc9" data="{{ ...$root['0'], $root }}"/>

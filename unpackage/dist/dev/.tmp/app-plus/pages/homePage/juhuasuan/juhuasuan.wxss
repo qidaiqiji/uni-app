@@ -1,0 +1,39 @@
+.juhuasuan-page {
+  background: #f3f3f3;
+  overflow: hidden;
+}
+.juhuasuan-banner .img {
+  width: 100%;
+  height: 360rpx;
+}
+.juhuasuan-title {
+  position: relative;
+  overflow: hidden;
+  margin-top: 16rpx;
+  width: 100%;
+  height: 76rpx;
+}
+.juhuasuan-title .image {
+  width: 100%;
+  height: 98rpx;
+}
+.juhuasuan-brand {
+  overflow: hidden;
+}
+.juhuasuan-goods-list {
+  background: #ffffff;
+  margin-bottom: 180rpx;
+}
+.jhs-foot {
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #d4d4d4;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+}
+.jhs-foot .text {
+  font-size: 24rpx;
+}
+

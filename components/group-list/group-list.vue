@@ -41,10 +41,10 @@
 					<text class="number">￥{{ mode.totalFee }}</text>
 				</view>
 				<view class="fr" v-if="mode.hasDelivery">
-					<view class="botton btn-wuliu" @tap="checkUseShip(mode.groupSn)">物流详情</view>
-					<view class="botton btn-sure" @tap="checkUsePackage(mode.groupSn)">确认收货</view>
+					<view class="botton btn-wuliu" v-if="mode.hasDelivery" @tap="checkUseShip(mode.groupSn)">物流详情</view>
+					<view class="botton btn-sure" v-if="mode.orderList[0].csStatus === '已发货'" @tap="checkUsePackage(mode.groupSn)">确认收货</view>
+					<view class="botton btn-sure" v-if="mode.needPay" @tap="toHuifuApp(mode.groupSn)">立即付款</view>
 				</view>
-				<view class="fr" v-if="mode.needPay"><view class="botton btn-sure" @tap="toHuifuApp(mode.groupSn)">立即付款</view></view>
 			</view>
 		</view>
 		<!-- <view class="textW">payInfo:: {{ payInfo }}</view> -->
@@ -88,10 +88,8 @@ export default {
 			this.$emit('change', groupSn);
 		},
 		checkUseShip(groupSn) {
-			console.log(JSON.stringify(groupSn))
-			// this.$emit('queryShip', groupSn);
-			// let url = `../wuliu/wuliu?groupSn=${groupSn}`;
-			// this.$api.goNavigateTo(url);
+			let url = `../wuliu/wuliu?groupSn=${groupSn}`;
+			this.$api.goNavigateTo(url);
 		},
 		// 确认收货
 		async checkUsePackage(groupSn) {
@@ -103,7 +101,8 @@ export default {
 					groupSn: groupSn
 				}
 			});
-			if (res && res.data) {
+			if (res && res.code == 0) {
+				this.$emit('updateList', true);
 			}
 			this.$api.showMessage(res.msg);
 		},

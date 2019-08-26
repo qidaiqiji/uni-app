@@ -44,26 +44,13 @@
                 <text class="botton-text">问题反馈</text>
             </view>
         </view>
-
-        <modal v-show="modalBox">
-            <view class="showMsg" style="height: 100%;" slot="body">
-                <scroll-view class="scroll-body" scroll-y="true">
-
-                </scroll-view>
-            </view>
-        </modal>
     </view>
 </template>
 
 <script>
-    import modal from '@/components/modal/modal.vue';
     export default {
-        components: {
-            modal
-        },
         data() {
             return {
-                modalBox: false,
                 helpsList: [{
                         name: '采购指南',
                         img: '/static/images/helps/icon_companion@2x.png',
@@ -234,7 +221,6 @@
     .scroll-body {
         max-height: 560upx;
         font-size: 28upx;
-        font-family: PingFang-SC-Medium;
         font-weight: 500;
         color: rgba(47, 58, 64, 1);
     }

@@ -1,0 +1,2 @@
+<import src="./remindlist.vue.wxml" />
+    <template is="66508fa7" data="{{ ...$root['0'], $root }}"/>

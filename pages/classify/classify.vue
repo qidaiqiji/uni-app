@@ -36,7 +36,8 @@
 								<view class="pk-hotList">
 									<view class="image-list">
 										<view class="image-line" v-for="(itemHot, itemHotKey) in hotpingpais" :key="itemHotKey" @tap="goDetail(itemHot.brandId)">
-											<image class="hotImag" :src="itemHot.img" mode=""></image>
+											<!-- <image class="hotImag" :src="itemHot.img" mode=""></image> -->
+											<view class="hotImg-bg" :style="{ 'background-image': 'url(' + itemHot.img + ')' }"></view>
 										</view>
 									</view>
 								</view>
@@ -44,9 +45,10 @@
 								<!-- 最新入驻 -->
 								<view class="hotpaiHead"><text>最新入驻</text></view>
 								<view class="pk-hotList">
-									<view class="image-list">
+									<view class="image-list newEn">
 										<view class="image-line" v-for="(itemnew, itemnewKey) in newpingpais" :key="itemnewKey" @tap="goDetail(itemnew.brandId)">
-											<image class="hotImag" :src="itemnew.img" mode=""></image>
+											<!-- <image class="hotImag" :src="itemnew.img" mode=""></image> -->
+											<view class="hotImg-bg" :style="{ 'background-image': 'url(' + itemnew.img + ')' }"></view>
 										</view>
 									</view>
 								</view>
@@ -120,7 +122,7 @@ export default {
 			newpingpais: [],
 			hotpingpais: [],
 			view: false,
-			sortByNameShow: true,
+			sortByNameShow: false,
 			access_token: '',
 			//
 			brandHeight: 1000,
@@ -189,6 +191,12 @@ export default {
 				let index = topArr.findIndex(i => i >= 0);
 				topArr[index] == 0 ? (vm.isCurrent = index) : (vm.isCurrent = index - 1);
 			}).exec();
+
+			if(scrollTop>150&&!this.sortByNameShow){
+				this.sortByNameShow = true;
+			}else if(scrollTop<150&&this.sortByNameShow){
+				this.sortByNameShow = false;
+			}
 
 			//节流的方法
 			// if (timer) {

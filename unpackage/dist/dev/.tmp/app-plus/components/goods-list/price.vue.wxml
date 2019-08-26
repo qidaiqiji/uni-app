@@ -1,0 +1,1 @@
+<template name="946dc850"><view class="_view M946dc850 prices">{{ getPrice }}</view></template>

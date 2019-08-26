@@ -54,17 +54,6 @@ export default {
 }
 .goods-info {
 	.goodcar {
-		// width: 44upx;
-		// height: 44upx;
-		// background: url('~@/static/images/pinleiguan/icon_shopping@2x.png');
-		// background-position: center;
-		// background-repeat: no-repeat;
-		// background-size: 100%;
-
-		// position: absolute;
-		// right: 20upx;
-		// bottom: 55upx;
-		// bottom: 48upx;
 		font-size: 20upx;
 		float: right;
 		margin-right: 10upx;

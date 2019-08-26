@@ -44,14 +44,16 @@
         display: inline-block;
         vertical-align: middle;
         margin-right: 10upx;
+		// display: flex;
+		// align-items: flex-end;
+		// justify-content: center;
 
         &_ident,
         &_number,
         &_mantissa {
-            display: inline-block;
-            vertical-align: bottom;
-            font-family: PingFangSC-Regular;
-            font-weight: 400;
+            // display: inline-block;
+            // vertical-align: bottom;
+            // font-weight: 400;
             color: #FF3366;
             line-height: 1;
         }
@@ -59,12 +61,13 @@
         //标识
         &_ident {
             font-size: 24upx;
-            margin-right: 6upx;
+            margin-right: 2upx;
         }
 
         //价格数字
         &_number {
             font-size: 32upx;
+			// font-family: PingFangSC-Regular;
         }
 
         //小数点后面的数
@@ -121,13 +124,13 @@
 
     // 
     .r-foot {
-		line-height: 1;
+		// line-height: 1;
         bottom: 0px;
         position: absolute;
         font-size: 32upx;
         width: 100%;
-        display: flex;
-        align-items: flex-end;
+        // display: flex;
+        // align-items: flex-end;
     }
 }
 

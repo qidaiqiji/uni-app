@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"goods-view { border-top: 1px solid #e5e5e5; background: #fff; }\n",],undefined,{path:"./pages/self/oftenBuyList/oftenBuyList.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/self/oftenBuyList/oftenBuyList.wxml') } }));

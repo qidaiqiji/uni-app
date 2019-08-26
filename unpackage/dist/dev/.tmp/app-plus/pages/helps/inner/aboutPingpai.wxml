@@ -1,0 +1,2 @@
+<import src="./aboutPingpai.vue.wxml" />
+    <template is="e7dfe82c" data="{{ ...$root['0'], $root }}"/>

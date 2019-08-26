@@ -23,8 +23,9 @@
 					<view class="youxiaoqi">有效期</view>
 					<view class="">{{ item.expireDate }}</view>
 				</view>
-				<text class="use-btn" v-if="item.canTake" :style="{ border: '1px solid ' + item.color, color: item.color }" @tap="takeCoupon(item.ruleId, iKey)">立即领取</text>
-				<text class="use-btn un-take" v-if="!item.canTake">已领取</text>
+				<text class="use-btn" v-if="item.canTake&&item.canTakeNums>0" :style="{ border: '1px solid ' + item.color, color: item.color }" @tap="takeCoupon(item.ruleId, iKey)">立即领取</text>
+				<text class="use-btn un-take" v-else-if="item.canTake&item.canTakeNums==0">已抢完</text>
+				<text class="use-btn un-take" v-else-if="!item.canTake">已领取</text>
 			</view>
 		</view>
 	</view>
@@ -32,7 +33,7 @@
 
 <script>
 export default {
-	props: ['list'],
+	props: ['list', 'update'],
 	data() {
 		return {};
 	},
@@ -43,16 +44,22 @@ export default {
 	},
 	methods: {
 		async takeCoupon(ruleId, index) {
+			let that = this;
 			let res = await this.$api.request({
 				method: 'GET',
 				url: `${this.$api.coupon_take}?ruleId=${ruleId}`
 			});
-			if (res.code == 0) {
+			if (res && res.data) {
 				let { canTakeCount } = res.data;
 				if (canTakeCount <= 0) {
-					this.list[index].canTake = false;
+					// this.list[index].canTake = false;
 				}
 				uni.showToast({ title: '领取成功' });
+				if (that.update) {
+					setTimeout(function() {
+						that.$emit('change', true);
+					}, 1200);
+				}
 			} else {
 				uni.showToast({ title: res.msg });
 			}

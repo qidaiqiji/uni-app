@@ -1,0 +1,61 @@
+@head: 78upx;
+
+.brandListhead {
+  width        : 100%;
+  height       : @head;
+  line-height  : @head;
+  border-bottom: 1px solid #e5e5e5;
+
+  .titleCon {
+    background: #fff;
+    width     : 100%;
+  }
+
+  .samecate {
+    width     : 25%;
+    text-align: center;
+    color     : #2f3a40;
+    font-size : 26upx;
+
+    &.active {
+      color: #ff3366;
+    }
+  }
+
+  .iconList {
+    margin-left: 5px;
+  }
+
+  .arrow {
+    width            : 20upx;
+    height           : 20upx;
+    display          : block;
+    background-repeat: no-repeat;
+    background-size  : 100%;
+  }
+
+  .up {
+    background-image   : url('~@/static/images/brandList/arrow_up_grey.png');
+    background-position: center center;
+
+    &.active {
+      background-image: url('~@/static/images/brandList/arrow_up_red.png');
+    }
+  }
+
+  .down {
+    background-image: url('~@/static/images/brandList/arrow_down_grey.png');
+
+    &.active {
+      background-image: url('~@/static/images/brandList/arrow_down_red.png');
+    }
+  }
+
+  .chosePart {
+    width          : 30upx;
+    height         : 30upx;
+    display        : block;
+    background     : url('~@/static/images/brandList/icon_screen_none.png');
+    background-size: 100%;
+  }
+}

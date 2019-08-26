@@ -1,0 +1,85 @@
+.address-page {
+  width: 100%;
+  height: 100%;
+  min-height: 1206rpx;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+.addr-content {
+  overflow: hidden;
+}
+.addr-content .item {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx 20rpx;
+  border-bottom: 1px solid #DCE4E6;
+  background: #ffffff;
+}
+.addr-content .left {
+  width: 610rpx;
+}
+.addr-content .user {
+  margin-bottom: 10rpx;
+}
+.addr-content .addr-info {
+  display: inline-block;
+  width: 100%;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #889696;
+  line-height: 32rpx;
+}
+.addr-content .name,
+.addr-content .phone,
+.addr-content .label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #2F3A40;
+}
+.addr-content .name {
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+.addr-content .phone {
+  margin-right: 10rpx;
+}
+.addr-content .label {
+  text-align: center;
+  width: 58rpx;
+  padding: 2rpx 4rpx;
+  border: 2rpx solid #0087EA;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  font-size: 20rpx;
+  color: #0087EA;
+}
+.addr-content .edit-btn {
+  cursor: pointer;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #FF3366;
+  position: absolute;
+  right: 25rpx;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.address-foot .botton {
+  margin-top: 20rpx;
+}
+.empty-foot {
+  visibility: hidden;
+  height: 170rpx;
+}
+

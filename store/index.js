@@ -110,6 +110,7 @@ const store = new Vuex.Store({
 				isNot: true
 			});
 			if (res && res.data) {
+				// console.log(res,'+++++')
 				let {
 					nickName,
 					userRank,

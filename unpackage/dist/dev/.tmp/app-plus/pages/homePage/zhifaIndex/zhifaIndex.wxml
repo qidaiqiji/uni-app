@@ -1,0 +1,2 @@
+<import src="./zhifaIndex.vue.wxml" />
+    <template is="a354c06e" data="{{ ...$root['0'], $root }}"/>

@@ -1,0 +1,430 @@
+.list-box .item {
+  position: relative;
+}
+.list-box .item_text {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+.shampoo-page {
+  background: #f3f3f3;
+  overflow: hidden;
+}
+.shampooServer {
+  height: 78rpx;
+  line-height: 78rpx;
+  background: #fff;
+  font-size: 22rpx;
+}
+.shampooServer .ul {
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 78rpx;
+  line-height: 78rpx;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.shampooServer .li {
+  width: 33.33333333%;
+  height: 100%;
+  color: #2f3a40;
+  font-size: 22rpx;
+  text-align: center;
+}
+.shampooServer .li:first-child {
+  width: 36%;
+}
+.shampooServer .text {
+  font-size: 22rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.shampoo-banner {
+  margin-top: 88rpx;
+}
+.shampoo-banner .img {
+  width: 100%;
+  height: 360rpx;
+}
+.shampoo-pinpai {
+  overflow: hidden;
+  margin: auto;
+  padding-top: 22rpx;
+}
+.list-box {
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.shampoo-hot {
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 702rpx;
+}
+.shampoo-hot__img {
+  display: block;
+  width: 100%;
+  height: 88rpx;
+}
+.shampoo-hot__list {
+  width: 100%;
+  min-height: 756rpx;
+  background: #ffffff;
+  -webkit-border-radius: 0px 0px 20rpx 20rpx;
+          border-radius: 0px 0px 20rpx 20rpx;
+  padding: 20rpx 16rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+.shampoo-hot .item {
+  width: 216rpx;
+  margin-bottom: 24rpx;
+}
+.shampoo-hot .item .img-box {
+  max-width: 216rpx;
+  height: 216rpx;
+  max-height: 216rpx;
+  margin: auto;
+  margin-bottom: 16rpx;
+}
+.shampoo-hot .item .image {
+  max-width: 216rpx;
+  max-height: 216rpx;
+}
+.shampoo-hot .item_text,
+.shampoo-hot .item_price,
+.shampoo-hot .item_count {
+  padding: 0 8rpx;
+}
+.shampoo-hot .item_text {
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #2f3a40;
+  margin-bottom: 1px;
+}
+.shampoo-hot .item_count {
+  font-size: 20rpx;
+  color: #889696;
+  margin-bottom: 20rpx;
+}
+.shampoo-hot .item_price {
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #ff3366;
+  margin-bottom: 10rpx;
+}
+.shampoo-hot .item_price_number {
+  display: inline-block;
+  font-size: 26rpx;
+}
+.shampoo-hot .mr {
+  margin-right: 0;
+}
+.shampoo-hot .icon_user_buy {
+  bottom: 8rpx;
+  right: 10rpx;
+}
+.waist-banner {
+  margin: 44rpx auto;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 150rpx;
+}
+.waist-banner__img {
+  display: block;
+  width: 702rpx;
+  margin: auto;
+  max-height: 150rpx;
+  -webkit-border-radius: 75rpx;
+          border-radius: 75rpx;
+}
+.shampoo-brands {
+  width: 702rpx;
+  margin: auto;
+  overflow: hidden;
+}
+.shampoo-brands .item {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  padding: 0 24rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.shampoo-brands .header {
+  margin: 24rpx 0;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  position: relative;
+}
+.shampoo-brands .header_img {
+  position: relative;
+  width: 90rpx;
+  height: 90rpx;
+  display: block;
+}
+.shampoo-brands .header_img .image {
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.shampoo-brands .header_warp {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 16rpx;
+  width: 420rpx;
+}
+.shampoo-brands .header_tag {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+.shampoo-brands .header_tag,
+.shampoo-brands .header_name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.shampoo-brands .header_name {
+  font-size: 30rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #2f3a40;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.shampoo-brands .header_title {
+  display: block;
+  font-size: 30rpx;
+}
+.shampoo-brands .header_described {
+  display: block;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #889696;
+}
+.shampoo-brands .header .product_number {
+  min-width: 60rpx;
+  padding: 0 10rpx;
+  text-align: center;
+  height: 32rpx;
+  line-height: 30rpx;
+  border: 1px solid #ff3366;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  margin-top: -16rpx;
+  right: 0;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: #ff3366;
+}
+.shampoo-brands .mr {
+  margin-right: 0;
+}
+.line-header {
+  position: relative;
+  margin: auto;
+  margin-top: 40rpx;
+  width: 702rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #2f3a40;
+  display: block;
+  text-align: center;
+}
+.line-header::before,
+.line-header::after {
+  width: 32rpx;
+  height: 1px;
+  background: #000000;
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.line-header::before {
+  left: 34%;
+}
+.line-header::after {
+  right: 34%;
+}
+.flash-sale-box {
+  width: 702rpx;
+  margin: auto;
+  overflow: hidden;
+}
+.flash-sale-list {
+  font-size: 0px;
+  overflow: hidden;
+}
+.flash-sale-list .item {
+  width: 344rpx;
+  min-height: 514rpx;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-bottom: 14rpx;
+  float: left;
+}
+.flash-sale-list .mr {
+  margin-right: 0;
+  float: right;
+}
+.flash-sale-list .image_box {
+  text-align: center;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 24rpx 0;
+  max-width: 342rpx;
+  height: 342rpx;
+  max-height: 342rpx;
+}
+.flash-sale-list .image_box .img {
+  height: 100%;
+}
+.flash-sale-list .intro_box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 180rpx;
+  margin-bottom: 24rpx;
+  padding-left: 8rpx;
+}
+.flash-sale-list .title {
+  width: 310rpx;
+  font-size: 26rpx;
+  color: #2f3a40;
+  margin: 15rpx 0;
+}
+.flash-sale-list .price {
+  width: 310rpx;
+  line-height: 44rpx;
+  position: relative;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+.flash-sale-list .price_number {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #ff3366;
+  float: left;
+}
+.flash-sale-list .icon_user_buy {
+  bottom: 4rpx;
+  right: 0rpx;
+}
+.tag2-box {
+  font-size: 20rpx;
+}
+.tag2 {
+  padding: 6rpx 8rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 8rpx;
+}
+.tag2-default {
+  color: #ff3366;
+  background: #ffe2e9;
+  border: 1px solid #ffe2e9;
+}
+.tag2-discount {
+  border: 1px solid #ff9600;
+  color: #ff9600;
+}
+.zhifafoot {
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+.zhifafoot .footerCon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 98rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.zhifafoot .itemSame {
+  width: 25%;
+  text-align: center;
+  color: #2f3a40;
+  font-size: 20rpx;
+}
+.zhifafoot .itemSame .img1 {
+  width: 51rpx;
+  height: 46rpx;
+}
+.zhifafoot .itemSame .img2 {
+  width: 47rpx;
+  height: 47rpx;
+}
+.zhifafoot .itemSame .img3 {
+  width: 47rpx;
+  height: 47rpx;
+}
+.zhifafoot .itemSame .img4 {
+  width: 48rpx;
+  height: 45rpx;
+}
+.zhifafoot .img-cart {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  margin: auto;
+}
+

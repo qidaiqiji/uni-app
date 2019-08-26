@@ -1,0 +1,353 @@
+//out:false
+
+// 商品名称
+.proTitle {
+	padding   : 10upx 24upx;
+	background: #fff;
+
+	.titleText {
+		margin-bottom: 20upx;
+
+		.zhifa {
+			line-height: 1;
+			background   : #ff3366;
+			color        : #fff;
+			font-size    : 20upx;
+			border-radius: 4upx;
+			padding      : 6upx 10upx;
+			text-align   : center;
+			display      : inline-block;
+			vertical-align: middle;
+		}
+
+		.textDesc {
+			text-align : justify;
+			color      : #2f3a40;
+			font-size  : 32upx;
+			margin-left: 10upx;
+		}
+	}
+
+	.prizeShow {
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+
+		.left_prize {
+			font-size  : 24upx;
+			color      : #ff3366;
+			display    : flex;
+			align-items: center;
+
+			.prize {
+				font-size: 34upx;
+				color    : #ff3366;
+			}
+
+			.discount {
+				color        : #ff9600;
+				border       : 1px solid #ff9600;
+				padding      : 1upx 3upx;
+				font-size    : 16upx;
+				margin-left  : 10upx;
+				border-radius: 4px;
+			}
+		}
+
+		.startPrize {
+			color    : #677172;
+			font-size: 22upx;
+		}
+	}
+
+	.productNum {
+		color          : #889696;
+		font-size      : 24upx;
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+		height         : 54upx;
+
+		.leftNum {
+			width: 34%;
+		}
+
+		.middleNum {
+			width: 33.3%;
+		}
+
+		.rightNum {
+			width     : 33.3%;
+			text-align: right;
+		}
+	}
+}
+
+// 组件项
+.productAdd {
+	background : #f3f3f3;
+	padding-top: 25upx;
+}
+
+// 公共类型
+.sameAddress {
+	position               : relative;
+	display                : -webkit-flex;
+	-webkit-box-align      : center;
+	-webkit-align-items    : center;
+	-webkit-justify-content: space-between;
+	background             : #fff;
+	//display              : flex;
+	//align-items          : center;
+	//justify-content      : space-between;
+	padding                : 25upx 25upx;
+	border-bottom          : 1px solid #dce4e6;
+
+	.Addressleft {
+		font-size: 22upx;
+	}
+
+	.addressRight {
+		font-size: 22upx;
+	}
+
+	.proAddress {
+		display    : flex;
+		align-items: center;
+	}
+
+	.sendWhere {
+		text-align: center;
+		color     : #889696;
+		font-size : 24upx;
+		display   : inline-block;
+		width     : 60upx;
+	}
+
+	.speciaAddress {
+		color        : #2f3a40;
+		font-size    : 24upx;
+		margin-left  : 30upx;
+		width        : 540upx;
+		overflow     : hidden;
+		white-space  : nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.guige {
+		display      : flex;
+		align-content: center;
+
+		.sendWhere {
+			display: block;
+		}
+	}
+}
+
+// 地址选项
+.addressPro {
+	margin-top: 20upx;
+
+	.proAddress:first-child {
+		margin-bottom: 10upx;
+	}
+}
+
+// 参数选项
+.proDate {
+	.proAddress:first-child {
+		margin-bottom: 10upx;
+	}
+}
+
+// 参数详情弹框
+.params-box {
+	font-size: 24upx;
+	width    : 100%;
+
+	.params-line {
+		width      : 100%;
+		min-height : 60upx;
+		line-height: 60upx;
+		font-size  : 24upx;
+		overflow   : hidden;
+	}
+
+	.label-title,
+	.label-value {
+		display       : inline-block;
+		vertical-align: top;
+	}
+
+	.label-title {
+		width    : 200upx;
+		font-size: 24upx;
+		color    : #889696;
+	}
+
+	.label-value {
+		width    : 490upx;
+		font-size: 24upx;
+		color    : #666;
+	}
+}
+
+// 七天选项
+.proQuaity {
+	.Addressleft {
+		font-size: 24upx;
+	}
+
+	.line {
+		position    : relative;
+		color       : #889696;
+		font-size   : 24upx;
+		padding-left: 34upx;
+		margin-right: 30upx;
+		display     : inline-block;
+	}
+}
+
+// 七天退换弹框
+.service-box {
+	.serverList {
+		margin-bottom: 45upx;
+	}
+
+	.title {
+		padding-left: 35upx;
+		font-size   : 24upx;
+		color       : #666;
+		position    : relative;
+
+		.text {
+			font-size: 24upx;
+			color    : #666;
+		}
+	}
+
+	.detial {
+		font-size  : 24upx;
+		color      : #889696;
+		margin-left: 30upx;
+		margin-top : 20upx;
+
+		.text {
+			font-size: 24upx;
+			color    : #889696;
+		}
+	}
+}
+
+// 参数详情弹框
+.params-box {
+	flex-wrap: wrap;
+	display  : flex;
+
+	.li {
+		height     : 60upx;
+		line-height: 60upx;
+	}
+
+	.title {
+		display    : block;
+		width      : 35%;
+		color      : #889696;
+		font-size  : 28upx;
+		color      : #666;
+		height     : 60upx;
+		line-height: 60upx;
+	}
+
+	.detial {
+		display    : block;
+		width      : 65%;
+		font-size  : 24upx;
+		color      : #666;
+		height     : 60upx;
+		line-height: 60upx;
+	}
+}
+
+// 图标设置
+.sp {
+	&:before {
+		content        : '';
+		background     : url('~@/static/images/productDetial/sprite-product.png');
+		background-size: 170upx 170upx;
+		display        : inline-block;
+		vertical-align : middle;
+	}
+
+	&.icon_arguments {
+		&:before {
+			width              : 30upx;
+			height             : 30upx;
+			background-position: -70upx -70upx;
+		}
+	}
+
+	&.p_star_no {
+		display       : inline-block;
+		vertical-align: middle;
+
+		&:before {
+			width              : 30upx;
+			height             : 30upx;
+			background-position: -140upx -80upx;
+		}
+	}
+
+	&.p_star {
+		&:before {
+			width              : 30upx;
+			height             : 30upx;
+			background-position: 0upx -140upx;
+		}
+	}
+
+	&.icon_ok {
+		&:before {
+			width              : 30upx;
+			height             : 30upx;
+			background-position: -140upx 0upx;
+			margin-right       : 5upx;
+			position           : absolute;
+			left               : 0;
+			top                : 50%;
+			transform          : translate(0, -50%);
+		}
+	}
+
+	&.icon_return {
+		&:before {
+			width              : 30upx;
+			height             : 30upx;
+			background-position: -140upx -40upx;
+		}
+	}
+
+	&.icon_home {
+		&:before {
+			width              : 60upx;
+			height             : 60upx;
+			background-position: -70upx 0upx;
+		}
+	}
+
+	&.icon_cart {
+		&:before {
+			width              : 60upx;
+			height             : 60upx;
+			background-position: 0upx -70upx;
+		}
+	}
+
+	&.icon_brand {
+		&:before {
+			width              : 60upx;
+			height             : 60upx;
+			background-position: 0upx 0upx;
+		}
+	}
+}

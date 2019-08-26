@@ -16,12 +16,12 @@
 					<block v-if="item.video">
 						<view class="videoContainer"><videoTag :source="item.video" :poster="item.videoImg"></videoTag></view>
 					</block>
-					<block v-if="!item.video && item.imgs.length > 1">
+					<block v-else-if="!item.video && item.imgs.length > 1">
 						<view class="imgList" v-for="(img, index) in item.imgs" :key="index">
 							<view class="list-img-bg" :style="{ 'background-image': 'url(' + img + ')' }" @tap="preview(item.imgs, img)"></view>
 						</view>
 					</block>
-					<block v-if="!item.video && item.imgs.length == 1">
+					<block v-else-if="!item.video && item.imgs.length == 1">
 						<view class="big-imgList" v-for="(img, index) in item.imgs" :key="index">
 							<image class="bigImages" :src="img" mode="widthFix" @tap="preview(item.imgs, img)"></image>
 						</view>
@@ -105,7 +105,6 @@ export default {
 				method: 'POST',
 				header: true,
 				url: this.$api.cartAdd,
-				access_token: this.$store.state.access_token,
 				data: data
 			});
 			if (res.code == 0) {

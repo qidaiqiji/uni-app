@@ -1,8 +1,11 @@
 <template>
 	<view class="pages arrival">
-		<view class="arrival-header"><myTabbar :modelData="navData" :initIndex="0" jfdetail="jfdetail" @change="getTabbar" /></view>
+		<view class="arrival-header"><myTabbar :modelData="navData" :initIndex="0" @change="getTabbar" /></view>
 
-		<view class="arrival-goods-list"><goods-list :list="arrayList" @detail="getGoodsId" @change="getUserBuy"></goods-list></view>
+		<view class="arrival-goods-list">
+			<goods-list :list="arrayList" @detail="getGoodsId" @change="getUserBuy"></goods-list>
+			
+		</view>
 
 		<!-- 无 -->
 		<block v-if="isEmpty">
@@ -161,19 +164,29 @@ export default {
 </script>
 
 <style lang="less" scoped="scoped">
+.arrival {
+	background: #f3f3f3;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
 .arrival-unset {
-	background: #fff;
+	background: #f3f3f3;
 	min-height: 800upx;
 	padding-top: 240upx;
 	margin: auto;
 }
 .arrival-goods-list {
-	margin-top: 20upx;
+	// margin-top: 20upx;
 	background: #fff;
 	width: 100%;
+	margin-top: 120upx;
 }
 
 .arrival-header {
 	background: #fff;
+	position: fixed;
+	width: 100%;
+	z-index: 9;
 }
 </style>

@@ -5,7 +5,7 @@
 			<view class="coupon-warp__select" :class="[navFixed ? 'isFixed' : '']">
 				<text v-for="(t, i) in typeList" :key="i" class="coupon-warp__select_item" :class="{ active: selectNav === t }" @click="changeCouponType(t)">{{ t }}</text>
 			</view>
-			<view class="tiket tiket-list"><couponList :list="couponList"></couponList></view>
+			<view class="tiket tiket-list"><couponList :list="couponList" :update="true" @change="changeCoupon"></couponList></view>
 			<view class="emptyview">em</view>
 		</scroll-view>
 
@@ -59,10 +59,14 @@ export default {
 			if (key == '全部') {
 				key = '';
 			}
+			this.type = key;
 			if (this.usescrollTop > uni.upx2px(240)) {
 				this.scrollBox = uni.upx2px(240) - 20 + parseInt(Math.random() * 10);
 			}
 			this.getCouponList(key, this.brandId);
+		},
+		changeCoupon() {
+			this.getCouponList(this.type, this.brandId);
 		},
 		// 获取列表
 		async getCouponList(type, brandId) {
@@ -74,7 +78,7 @@ export default {
 					brandId: brandId
 				}
 			});
-			if (res.code == 0) {
+			if (res && res.data) {
 				let data = res.data;
 				self.typeList = data.typeList;
 				self.couponList = data.couponList;

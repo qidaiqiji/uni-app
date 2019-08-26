@@ -5,7 +5,7 @@
 		<view class="empty-header"></view>
 
 		<!-- 订单列表 -->
-		<view class="body"><group-list :mode="orderMode" @change="orderView" @queryShip="orderQueryShipping"></group-list></view>
+		<view class="body"><group-list :mode="orderMode" @change="orderView" @queryShip="orderQueryShipping" @updateList="updateList"></group-list></view>
 
 		<!-- 已经到底了 -->
 		<view class="lock-end" v-show="end">已经到底了</view>
@@ -60,7 +60,7 @@ export default {
 	onLoad(params) {
 		if (params.status) {
 			this.status = params.status;
-			this.tabbarIndex = params.tab;
+			this.tabbarIndex = Number(params.tab);
 		}
 	},
 	// onPageScroll(e) {
@@ -116,6 +116,16 @@ export default {
 				}
 			} else {
 				vm.$api.showMessage(res.msg);
+			}
+		},
+		updateList(value) {
+			let that = this;
+			if (value) {
+				setTimeout(() => {
+					that.currentPage = 0;
+					that.orderMode = [];
+					that.getOrderGroupList();
+				}, 1000);
 			}
 		}
 	}

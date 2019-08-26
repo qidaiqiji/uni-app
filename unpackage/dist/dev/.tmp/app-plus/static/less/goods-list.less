@@ -1,0 +1,154 @@
+//out:false
+
+.goods-list-box {
+    width: 100%;
+    font-size: 24upx;
+    padding: 0;
+
+    .item {
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+        padding: 30upx 24upx;
+        border-bottom: 1px solid #E5E5E5;
+		
+		&:first-child{
+			border-top: 1px solid #E5E5E5;
+		}
+    }
+
+    .img-box {
+        position: relative;
+        width: 240upx;
+        height: 240upx;
+        box-sizing: border-box;
+
+        .image {
+            width: 240upx;
+            height: 240upx;
+        }
+    }
+
+    .thumb-images{
+        width: 240upx;
+        height: 240upx;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: none;
+    }
+
+    //价格
+    .price {
+        font-size: 32upx;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10upx;
+
+        &_ident,
+        &_number,
+        &_mantissa {
+            display: inline-block;
+            vertical-align: bottom;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: #FF3366;
+            line-height: 1;
+        }
+
+        //标识
+        &_ident {
+            font-size: 24upx;
+            margin-right: 6upx;
+        }
+
+        //价格数字
+        &_number {
+            font-size: 32upx;
+        }
+
+        //小数点后面的数
+        &_mantissa {
+            font-size: 24upx;
+        }
+    }
+}
+
+.r-info-box {
+    position: relative;
+    font-size: 28upx;
+    width: 440upx;
+    height: 240upx;
+
+    // 标题
+    .r-title {
+        width: 418upx;
+        font-size: 28upx;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: #2F3A40;
+        margin-top: 10upx;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    // 描述
+    .r-described {
+        margin-top: 6upx;
+        font-size: 24upx;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: #B2B2B2;
+
+        .text {
+            width: auto;
+        }
+
+        .rateRange {
+            margin-right: 0upx;
+        }
+
+        .salesCount {
+			margin-left: 24upx;
+        }
+    }
+
+    // 
+    .r-foot {
+		line-height: 1;
+        bottom: 0px;
+        position: absolute;
+        font-size: 32upx;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.shoppingBuy {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    // width: 44upx;
+    // height: 44upx;
+    // right: 24upx;
+    // bottom: 30upx;
+    // background: url('~@/static/images/public/icon_shopping_red.png');
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: 44upx 44upx;
+    width: 60upx;
+    height: 60upx;
+    background: url('~@/static/images/s60/helps_companion.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50upx 50upx;
+    right: 24upx;
+    bottom: 24upx;
+}

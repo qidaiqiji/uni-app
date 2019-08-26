@@ -1,0 +1,18 @@
+.find-container {
+  padding: 50rpx 20rpx 10rpx 20rpx;
+}
+.find-container .find-detail-container {
+  text-align: justify;
+}
+.find-container .find-detail-container .content {
+  font-size: 35rpx;
+}
+.find-container .find-buttom-container {
+  color: #b2b2b2;
+  font-size: 24rpx;
+  margin-top: 50rpx;
+}
+.find-container .find-buttom-container .count {
+  margin-left: 60rpx;
+}
+

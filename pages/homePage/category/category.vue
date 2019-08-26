@@ -10,7 +10,7 @@
 				<image src="../../../static/images/icons/category/img_bg_1.png" v-if="navVal == 2" class="top-bg"></image>
 				<image src="../../../static/images/icons/category/img_bg_2.png" v-if="navVal == 3" class="top-bg"></image>
 				<image src="../../../static/images/icons/category/img_bg_3.png" v-if="navVal == 4" class="top-bg"></image>
-				<view class="navbg">
+				<view class="navbg" v-show="hideSearch">
 					<view class="searchPart" @tap="focusIn">
 						<view class="search-icon"></view>
 						<input type="text" placeholder="搜索商品、品牌" disabled="disabled" />
@@ -150,6 +150,7 @@ export default {
 	},
 	data() {
 		return {
+			hideSearch: true,
 			current: 0,
 			old: {
 				current: 0
@@ -191,6 +192,21 @@ export default {
 		setTimeout(function() {
 			that.getMoreGoods();
 		}, 500);
+	},
+	onPageScroll(event) {
+		let { scrollTop } = event;
+		// 隐藏搜索框
+		if (scrollTop > 150 && this.hideSearch) {
+			this.hideSearch = false;
+		} else if (scrollTop < 150 && !this.hideSearch) {
+			this.hideSearch = true;
+		}
+		// 返回顶部
+		if(scrollTop>500&&!this.showTop){
+			this.showTop = true;
+		}else if(scrollTop<500&&this.showTop){
+			this.showTop = false;
+		}
 	},
 	methods: {
 		backToTop() {
@@ -297,32 +313,6 @@ export default {
 				that.goodslist = that.goodslist.concat(list);
 			}
 			that.loadingText = false;
-			// this.$http({
-			// 	method: 'GET',
-			// 	url: this.$api.getGoodsList,
-			// 	data: {
-			// 		page: that.pages,
-			// 		pageSize: 10,
-			// 		catId: that.catId
-			// 	},
-			// 	success: function(res) {
-			// 		if (res && res.data) {
-			// 			let list = res.data.goodsList;
-			// 			that.totalCount = res.data.totalCount;
-			// 			for (let t = 0; t < list.length; t++) {
-			// 				let goodsPrice = list[t].goodsInfo.goodsPrice;
-			// 				let array = goodsPrice.split('.');
-			// 				list[t].big = array[0];
-			// 				list[t].min = array[1];
-			// 			}
-			// 			that.goodslist = that.goodslist.concat(list);
-			// 		}
-			// 		that.loadingText = false;
-			// 	},
-			// 	fail: function(res) {
-			// 		that.loadingText = false;
-			// 	}
-			// });
 		},
 		focusIn() {
 			let that = this;

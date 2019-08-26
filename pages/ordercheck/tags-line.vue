@@ -41,7 +41,6 @@
 		display: -webkit-box;
 		-webkit-box-align: start;
 		font-size: 22upx;
-		font-family: PingFang-SC-Medium;
 		font-weight: 500;
 		color: #000;
 		align-content: center;

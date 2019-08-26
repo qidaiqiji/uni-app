@@ -189,7 +189,6 @@
 </template>
 
 <script>
-// import uParse from '@/components/gaoyia-parse/parse.vue';
 import minNav from '@/components/min-nav/min-nav.vue';
 import toastPopup from '@/components/toast-popup/toast-popup2.vue';
 import goodsList from '@/components/goods-list/goods-list.vue';
@@ -205,7 +204,6 @@ export default {
 		buyPopup,
 		leftpop,
 		brandListhead
-		// uParse
 	},
 	data() {
 		return {
@@ -394,28 +392,27 @@ export default {
 			}
 		},
 		// 获取品牌资质
-		getBrandLice() {
+		async getBrandLice() {
 			let that = this;
 			// 如果存在就不再进行请求
 			if (that.licenseSrc.length > 1) {
 				return;
 			}
-			that.$http({
-				method: 'GET',
+			let res = this.$api.request({
 				url: that.$api.brandLicense,
 				data: {
 					brandId: that.brandId
-				},
-				success: function(res) {
-					if (res.data) {
-						let { licenseSrc } = res.data;
-						that.licenseSrc = licenseSrc;
-						if (licenseSrc.length < 1) {
-							that.licensebox = true;
-						}
-					}
 				}
 			});
+			if (res && res.data) {
+				let { licenseSrc } = res.data;
+				that.licenseSrc = licenseSrc;
+				if (licenseSrc.length < 1) {
+					that.licensebox = true;
+				}else{
+					that.licensebox = false;
+				}
+			}
 		},
 		preview(urls, current, $event) {
 			uni.previewImage({

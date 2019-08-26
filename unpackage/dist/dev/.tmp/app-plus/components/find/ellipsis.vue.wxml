@@ -1,0 +1,1 @@
+<template name="3f6c66c4"><view bindtap="handleProxy" data-eventid="{{'3f6c66c4-0'}}" data-comkey="{{$k}}" class="_view M3f6c66c4"><view class="_view M3f6c66c4 secCon">{{ content }}</view><view class="_view M3f6c66c4 more" wx:if="{{showMore}}">全文</view></view></template>

@@ -1,0 +1,2 @@
+<import src="./oftenBuyList.vue.wxml" />
+    <template is="7e656487" data="{{ ...$root['0'], $root }}"/>

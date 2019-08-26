@@ -1,0 +1,261 @@
+.ibt {
+  display: inline-block;
+  vertical-align: top;
+}
+.o-border {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 24rpx;
+  background: #ffffff;
+  margin-bottom: 12rpx;
+}
+.o-header {
+  padding: 0 24rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #2f3a40;
+  background: #ffffff;
+  margin-bottom: 12rpx;
+}
+.o-header .sn {
+  color: #889696;
+}
+.o-addressInfo {
+  position: relative;
+  overflow: hidden;
+}
+.o-addressInfo .img {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(data:image/png;base64,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);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 40rpx 40rpx;
+}
+.o-addressInfo .info {
+  position: relative;
+  padding-left: 44rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #2f3a40;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.o-addressInfo .name,
+.o-addressInfo .phone {
+  display: inline-block;
+}
+.o-addressInfo .phone {
+  margin-left: 20rpx;
+}
+.o-addressInfo .address {
+  word-spacing: normal;
+  word-break: break-all;
+  white-space: normal;
+  margin-top: 10rpx;
+}
+.o-shippingInfo {
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #889696;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.o-shippingInfo .item {
+  margin-bottom: 20rpx;
+}
+.o-shippingInfo .label {
+  width: 200rpx;
+  display: inline-block;
+}
+.o-shippingInfo .value {
+  color: #2f3a40;
+}
+.o-shippingInfo .pay-value {
+  color: #ff3867;
+}
+.o-feeInfo {
+  background: #cde6ff;
+  font-size: 24rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.o-feeInfo .tips {
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei-Bold;
+  font-weight: bold;
+  color: #ff3366;
+  margin-bottom: 24rpx;
+}
+.o-feeInfo .zhifa {
+  color: #2f3a40;
+}
+.o-feeInfo .zhifa .i {
+  color: #ff3366;
+}
+.o-feeInfo .daifa {
+  color: #2f3a40;
+}
+.o-feeInfo .daifa .i {
+  color: #ff3366;
+}
+.o-subOrderList {
+  padding-bottom: 0rpx;
+}
+.o-subOrderList .head {
+  position: relative;
+  padding: 0 24rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ecf1f5;
+  font-size: 28rpx;
+}
+.o-subOrderList .head::after {
+  content: ' ';
+  width: 702rpx;
+  height: 1px;
+  background: #e9f3f5;
+  position: absolute;
+  bottom: 0;
+  left: 24rpx;
+}
+.o-subOrderList .head .text {
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #5aaefc;
+}
+.o-subOrderList .body {
+  background: #ffffff;
+}
+.o-subOrderList .body .item {
+  padding: 24rpx 0;
+  position: relative;
+  width: 702rpx;
+  margin: auto;
+}
+.o-subOrderList .body .item::after {
+  content: ' ';
+  width: 702rpx;
+  height: 1px;
+  background: #e9f3f5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.o-subOrderList .body .img-box {
+  margin-right: 20rpx;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 110rpx;
+  height: 110rpx;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e9f3f5;
+  -webkit-border-radius: 6rpx;
+          border-radius: 6rpx;
+}
+.o-subOrderList .body .img-box .img {
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.o-subOrderList .body .img-box .text {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 4rpx 0;
+  color: #ffffff;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+}
+.o-subOrderList .body .isWuliao {
+  border: 1px solid #53a7fd;
+}
+.o-subOrderList .body .isWuliao .text {
+  background: rgba(83, 167, 253, 0.8);
+}
+.o-subOrderList .body .isGift {
+  border: 1px solid #ff3366;
+}
+.o-subOrderList .body .isGift .text {
+  background: rgba(255, 79, 123, 0.8);
+}
+.o-subOrderList .body .info-box {
+  display: inline-block;
+  position: relative;
+  width: 400rpx;
+  height: 110rpx;
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #333333;
+}
+.o-subOrderList .body .title {
+  color: #333333;
+  word-break: break-all;
+  word-spacing: normal;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  overflow: hidden;
+}
+.o-subOrderList .body .foot {
+  font-size: 28rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.o-subOrderList .body .f-price {
+  color: #333333;
+}
+.o-subOrderList .body .f-text {
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.foot-count {
+  padding: 0 24rpx;
+  overflow: hidden;
+  background: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #889696;
+}
+.foot-count .f-price {
+  color: #2f3a40;
+}
+.o-page-foot-empty {
+  width: 100%;
+  height: 98rpx;
+}
+.o-page-foot {
+  width: 100%;
+  height: 98rpx;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+}
+.o-page-foot .fr {
+  margin-top: 22rpx;
+  padding-right: 24rpx;
+}
+.order-detail {
+  overflow: hidden;
+}
+

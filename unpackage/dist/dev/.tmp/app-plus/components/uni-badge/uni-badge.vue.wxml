@@ -1,0 +1,1 @@
+<template name="ce6c9d98"><text class="_text data-v-2e4db6b8 uni-badge {{setClass}}" wx:if="{{text && text > 0}}">{{ getText }}</text></template>

@@ -1,0 +1,77 @@
+.lock-end {
+  margin-bottom: 160rpx;
+}
+.album-detail-page {
+  background: #f3f3f3;
+}
+.album-title-box {
+  position: absolute;
+  z-index: 2;
+  left: 26rpx;
+  bottom: 26rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+}
+.album-title-box .title {
+  font-weight: 700;
+  display: block;
+  font-size: 38rpx;
+}
+.album-title-box .desc {
+  display: block;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+}
+.album-look-number {
+  position: absolute;
+  z-index: 2;
+  right: 26rpx;
+  bottom: 26rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 35rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACkklEQVRIS+2WOWjUYRDFf88bD1BEhSAigkSUNJ7YiDaKB6iggo3aaOHVqIVnIXhVNh6ksjAqqCheoIWF4NUIXoiCrXfjiQfqyAvfhm//2WTNFiZgptnd/8z3vZk3b+a/opNMnYRLN/A/Y75rUx0RPYEZwBxgCjAWGAb0BT4Dr4AnwE3gsqRn1ahrt+KIGASsB9YCI6tdlvlvA/tTElHpXJvAEbEcOAiM6ABgMfQOsEbS46KjFXBEmL5GYGUh+C1wFrgOPEz0fgcGJzamAgtSO/pkZ7+ZMUnH8vvKgCOiv+kBZmVBL4BdQJOkH9Wqj4g6YAuwDuid4k33Dkl7S+dbgJOALgFzs8uP+wJJn3LAiBgIrAJGA/eA05J+FWIagFPAhOz5BkmH/DsHdjZbsyBnuKdYYUQMASyecZnPCS+UVCakJM6LwMwU+9PfJd1qBo6IycBdwGNj2y8pT6IFIyJ2AzsrUG5gg5RZRAwAbgCTkuM50FAC3gaUqvsI1En6UqmfEXEeWFTBtz3vYYH2iaklpcezS8BjgEeAxWVrAlYUqUvsdLTiXkmwXj62d0B93mOrsLnxyY56eUj6XcjePfaGGp89vwAsrtBjj5WLWJpirYElks4Vx8mzZrWW7Kp/S3pTAHffPOclVZ+pkKB9J4Hp2dl9ktzW8vdxRJiWE8CyLPh96n9jcaza0MDQtGY3Ax67kh2W5PXbbJU2Vw/gALCp4P8AeGyuAfeBl4AF2A8YlVQ7H5iXacUYHiGPpu9ssfZ2tcVwBLDwajXvaO9q7+wyq/Z28t5eDWxMr8K/TeBBYq3VRmuT6rZujohpaZ36sx4Ynmj+CrwGngKu7IokA7drXfsfSLXsa/F3V1wLazWd+f+o/gPmUtB01jggUwAAAABJRU5ErkJggg==);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30rpx 30rpx;
+}
+.album-detail-head {
+  position: relative;
+  overflow: hidden;
+  height: 330rpx;
+}
+.album-detail-head .img-box {
+  width: 100%;
+  height: 100%;
+}
+.album-detail-head .bg-image {
+  width: 100%;
+  height: 100%;
+}
+.album-detail-head .bottom-box {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 160rpx;
+}
+.album-detail-head .bottom-box-mask {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  background: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.5;
+}
+.album-detail-goods-list {
+  margin-top: 20rpx;
+  overflow: hidden;
+  background: #ffffff;
+}
+

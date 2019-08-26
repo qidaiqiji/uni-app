@@ -1,0 +1,632 @@
+.price {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #de0e0e;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: #FF3366;
+}
+.price_ident,
+.price_number,
+.price_mantissa {
+  display: inline-block;
+  vertical-align: unset;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+.price_ident {
+  font-size: 24rpx;
+}
+.price_number {
+  font-size: 48rpx;
+}
+.price_mantissa {
+  font-size: 24rpx;
+}
+.redbox-goods-view {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 40rpx;
+}
+.redbox-goods-view .redbox-goods-view-coll {
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding: 32rpx 24rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.redbox-goods-view .img-box {
+  position: relative;
+  width: 240rpx;
+  height: 240rpx;
+  float: left;
+  background: #ccc;
+}
+.redbox-goods-view .img-box .image {
+  width: 100%;
+  height: 100%;
+}
+.redbox-goods-view .info-box {
+  float: right;
+  overflow: hidden;
+  width: 450rpx;
+}
+.redbox-goods-view .hidden-text {
+  word-break: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.redbox-goods-view .goods-name {
+  font-size: 28rpx;
+  color: #2f3a40;
+  margin-bottom: 10rpx;
+}
+.redbox-goods-view .goods-desc {
+  font-size: 24rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: #889696;
+}
+.redbox-goods-view .goods-bottom {
+  position: absolute;
+  bottom: 20rpx;
+}
+.redbox-goods-view .goods-review {
+  display: inline-block;
+  padding: 12rpx 14rpx;
+  text-align: center;
+  background: #de0e0e;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  position: absolute;
+  z-index: 3;
+  right: 24rpx;
+  bottom: 32rpx;
+}
+.redbox-goods-view .discount {
+  vertical-align: text-bottom;
+}
+.goods-wantTo {
+  background: #14a275 !important;
+}
+
+.redbox-brand-view {
+  width: 100%;
+  overflow: hidden;
+}
+.redbox-brand-view .redbox-brand-view-coll {
+  position: relative;
+  width: 702rpx;
+  height: 314rpx;
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  margin: auto;
+  margin-bottom: 18rpx;
+}
+.redbox-brand-view .bg-mask {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 468rpx;
+  height: 314rpx;
+  background: -webkit-gradient(linear, left top, right top, color-stop(55%, #ffffff), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+}
+.redbox-brand-view .bg-con {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 16rpx;
+  padding-left: 24rpx;
+}
+.redbox-brand-view .content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+}
+.redbox-brand-view .image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.redbox-brand-view .brandLogo {
+  font-size: 24rpx;
+  width: 130rpx;
+  height: 58rpx;
+  margin-bottom: 20rpx;
+}
+.redbox-brand-view .brandName {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #2f3a40;
+  margin-bottom: 12rpx;
+}
+.redbox-brand-view .sellingPoint {
+  display: inline-block;
+  background: #ffe2e9;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #de0e0e;
+  padding: 0 6rpx;
+}
+.redbox-brand-view .goods-view {
+  position: absolute;
+  bottom: 22rpx;
+  left: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.redbox-brand-view .goods-view-coll {
+  width: 102rpx;
+  height: 102rpx;
+  margin-right: 8rpx;
+}
+
+.price.data-v-15ed82b9 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #de0e0e;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: #FF3366;
+}
+.price_ident.data-v-15ed82b9,
+.price_number.data-v-15ed82b9,
+.price_mantissa.data-v-15ed82b9 {
+  display: inline-block;
+  vertical-align: unset;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+.price_ident.data-v-15ed82b9 {
+  font-size: 24rpx;
+}
+.price_number.data-v-15ed82b9 {
+  font-size: 48rpx;
+}
+.price_mantissa.data-v-15ed82b9 {
+  font-size: 24rpx;
+}
+.red-wrap.data-v-15ed82b9 {
+  background-color: #de0e0e;
+  width: 100%;
+  height: 644rpx;
+  position: relative;
+}
+.redbox-swiper-box.data-v-15ed82b9 {
+  height: 453rpx;
+  overflow: hidden;
+}
+.redbox-swiper-box-left.data-v-15ed82b9 {
+  position: relative;
+  margin-top: 45rpx;
+  margin-left: 24rpx;
+  width: 300rpx;
+  height: 370rpx;
+}
+.redbox-swiper-box-left .date-time.data-v-15ed82b9 {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #970706;
+  margin-bottom: 10rpx;
+}
+.redbox-swiper-box-left .mouth-new.data-v-15ed82b9 {
+  font-size: 58rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #920504;
+  margin-bottom: 20rpx;
+}
+.redbox-swiper-box-left .goods-name.data-v-15ed82b9 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #feffff;
+  line-height: 36rpx;
+  white-space: normal;
+  word-break: break-all;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.redbox-swiper-box-left .goods-price.data-v-15ed82b9 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #feffff;
+  width: 100%;
+  position: absolute;
+  top: 260rpx;
+}
+.redbox-swiper-box-left .price.data-v-15ed82b9 {
+  color: #feffff;
+}
+.redbox-swiper-box-left .redbox-tips.data-v-15ed82b9 {
+  font-size: 24rpx;
+}
+.redbox-swiper-box-right.data-v-15ed82b9 {
+  position: absolute;
+  z-index: 8;
+  top: 35rpx;
+  right: 0;
+  width: 425rpx;
+  height: 418rpx;
+  background-image: url(data:image/png;base64,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35RVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tyiqd2pRVOrUpq3RqU1bp1Kas0qlNWaVTm7JKpzZllU5tCvbKILdBGIqC10FVwgIUAZJRCEJp73+i1vqh2b0qbrDeYmbBEkt/PN8KJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0pXAyRVMKJ1M0VZVz1abOmCo3lanSVNBAITHB4qYwVY08w7ZaU23bQCGnNlOjqbgPawNFrDHGCk3FIf29gSLueZI1mooj+mkjqiLWrZtC1enopkJUN25fuHqZ9XObh32YhzUVqvIni5pv1yWldIEXSGm53uZhzFmFqAOaet6D/O8hRF2CD/iLp6rloap/iCpuSpuKXMcfUcuSkFSga1fV9cF0QFMZRP2L3w045KxC1Fub2h+qfavmzYeob3brWCdiGAjC8MNQYRcjnUhAWkVcdMr7vxKeXQwJNJCMUNDtX1zpwp8m511UZf1n1Qoo2aZiVHSKQREqmfbvqlPxVi+Ukm7q4v4dKvd0oJjV5FaE0m2qH+lOUw7qSIBbxazaBF4cahJtiieGUwyKTihgJft56JHK34Bu9Uwp0aZ4ntPzzRdQ2d5qRUWfVbMilGxTPM6d/MtXgIraQvZ7pohWjYpWTLUpyk90alDcU82OB8SsXmcm2tQ8fzgNBQmlaBzNUPwRyESbIjud+OEzG1s1O8bEzIyzcivRpogeT3NzqLQSOG2srqJNXa8bp7TSOIUV3Eq0qcGdQKfv2V2GnRn7SlUGiDa1DAElNcK9Zu+tqRbRpm61fEKd5tLLfw1YcfEH402yKVItAdSZTn9Pw7nbej0tDUqwqewvEmzq4TF7Y7/edhQEgiCAPriJCgG5CKioLJdo9v9/cBsmnWIGgs1uwlPXJ3BSNc1Gaf/Xqe5Hs1G6tZ2ikNTeSHlvLdVGad+ekdrvCUrWKUgdvfrVqdUGabtX7R0FUvOdOpBUEJyv+eWWZWHzPBXF/RFFZen7fhzHSZKklKr61nxIVaUU+mD02ejjlWUUPe5FcXo2YZbdLvn1HAQkdZB3irIkNUtFVpoPSeehlqS+ljsFKT4p6kGKqMKwGUkxFVlpREkYaizVhCFBDVI1HxSQknRqZ0vlg5SZvxGVWq1zsqCG8TNSuS21E3fKlXLnD1SDlUaU2IJyx8+RWt8pPFRcKt4/plItmRKgePu4UnimJFIclhqdFDx/KBWoyEojjj+CQqV4/HBQ4Md3vlPTMx3zx6UClbFSLDkTnBgKlcL4OUf6VGrp+DPzZ0plU5GVZkVKB4oqxZff7OkHKflDZZeqp1Krvzr1UHalVjxTOP7chwrzR6VyqIyVcomQjJMLRZXC+OGZcqUWO4WHCqViKlj1WBpRIsvJQKFSeKYEnXJOCsyfKdWEiqwIS/Pbfh2sthEEURTdhGSZTTBGkED+/yeTp0vrelTjVmFpWRe88+7wqkftfsepQDEpj9/ug0Kr+lDdRsX9gyoXMF2thquFlMLE5btCcfucVHmmTqXo9PxlVPn8k4pZYZVpTfsYE04MSqh8+GVS5fg93FQ9f4zqSJVZBQuuaRtIMMXpDopJlePX3JTnj1FJlbdqWQVravdTp7xRQjEpj1+RevRQOSru340Kq2BN/WDC6QbF7XNS/eN3Mirun1RYLazh6iLBtJyE4vY1J6XVQcr7FyoOoFZgpT/TLozCdHDK6QPK29eRovpNkfsnFbPCKlpTP5RwYlBC5fYhJdR2U+ejOlItq2ANVx+JLjodoE4mFSulzE3dvVRSaRWsaIVranZBKUw6CXV4pcrxa4yqUGEVLLTeL1Ovd5hwKlBMqnv8kNpQYbWwwjU1ewvSYsJpA1WkOqNaVFqBld6mZiAtJp0WVGNSxSlSlYpZYQXWlWtq9ytIYdIpgwKqOSmtqFIxK6yCFa1wTd1AYk1hihOD2kAhVakMqUIVq4UVrcma/ZUpTndQqUA1RxUqrRZWtMKVBu0xD0AgRWkx6RSoD5NaVv9RqlNGtaGKlVhoBWxqBlGUZMKpQplA+0/1ahUstPCammGEEkzVqX5NPBpVpdJKrXhNvTRSSacCJdV5MdxQYQUWXBM1A0kmnCrUt/2k6q8qqLASC63pqb7LhBNQSOkkU4EikippFa3xesoIJZ0qlKOysqqNFVhoTV/uh0w7J5n6s9JKrRH7opBKOgmFFW2d7t6qUGElll5Tt2Ikk051UXsrQ2tZiTU9lUw6EePACat9+Y9PrIbrlUjVyWTqzsrPdbGG7BVAKtUn6rqWxqTKqmKl1vSSZHJQplJ7VVoN1+uRdMpfXVRzVTLdsAbshUQyPV7UP+WyLv21Cr9aAAAAAElFTkSuQmCC);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 425rpx 418rpx;
+}
+.redbox-swiper-box-right .dot.data-v-15ed82b9 {
+  position: absolute;
+  bottom: 0;
+  right: 40rpx;
+}
+.redbox-swiper-box-right .redbox-swiper.data-v-15ed82b9 {
+  width: 314rpx;
+  height: 314rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 35rpx;
+  left: 60rpx;
+}
+.redbox-swiper-box-right .swiper-item.data-v-15ed82b9 {
+  width: 314rpx;
+  height: 314rpx;
+  background: #ffffff;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+}
+.redbox-swiper-box-right .swiper-item .image.data-v-15ed82b9 {
+  width: 100%;
+  height: 100%;
+}
+.poswrap.data-v-15ed82b9 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 702rpx;
+  margin: auto;
+  margin-top: 30rpx;
+  margin-bottom: -72rpx;
+  background: #ffffff;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  -webkit-box-shadow: 0px 9px 38px 0px rgba(188, 185, 185, 0.14);
+          box-shadow: 0px 9px 38px 0px rgba(188, 185, 185, 0.14);
+  min-height: 240rpx;
+  padding: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.poswrap .leftwrap.data-v-15ed82b9 {
+  float: left;
+  width: 148rpx;
+  height: 192rpx;
+}
+.poswrap .new-tips.data-v-15ed82b9 {
+  width: 100%;
+  height: 100%;
+}
+.poswrap .brand-box.data-v-15ed82b9 {
+  overflow: hidden;
+  width: 490rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.poswrap .brand-coll.data-v-15ed82b9 {
+  float: left;
+  width: 160rpx;
+  text-align: center;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 96rpx;
+}
+.poswrap .brandmr.data-v-15ed82b9 {
+  border-right: 0;
+}
+.poswrap .brandmb.data-v-15ed82b9 {
+  border-bottom: 0;
+}
+.poswrap .brand-image.data-v-15ed82b9 {
+  width: 124rpx;
+  height: 42rpx;
+  margin: auto;
+}
+.poswrap .brand-image-bg.data-v-15ed82b9 {
+  width: 160rpx;
+  height: 96rpx;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 60rpx;
+  background-image: none;
+}
+.empty-box.data-v-15ed82b9 {
+  height: 100rpx;
+}
+.boxTab.data-v-15ed82b9 {
+  width: 100%;
+  margin-top: 20rpx;
+}
+.redbox-nav-view.data-v-15ed82b9 {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 24rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.redbox-nav-view .redbox-nav-view-coll.data-v-15ed82b9 {
+  display: inline-block;
+  position: relative;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #889696;
+  margin-right: 30rpx;
+}
+.redbox-nav-view .redbox-nav-view-coll .text.data-v-15ed82b9 {
+  position: relative;
+  z-index: 5;
+}
+.redbox-nav-view .redbox-nav-view-coll.data-v-15ed82b9:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 88%;
+  height: 8rpx;
+  background: #de0e0e;
+  -webkit-border-radius: 6rpx;
+          border-radius: 6rpx;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  bottom: 16rpx;
+  visibility: hidden;
+}
+.redbox-nav-view .redbox-nav-view-coll.active.data-v-15ed82b9 {
+  color: #2f3a40;
+}
+.redbox-nav-view .redbox-nav-view-coll.active.data-v-15ed82b9:after {
+  visibility: visible;
+}
+.red-find.data-v-15ed82b9 {
+  border-bottom: 1px solid #ccc;
+}
+.red-find .findTag.data-v-15ed82b9 {
+  width: 149rpx;
+  height: 46rpx;
+  background: #f3f3f3;
+  color: #ff3366;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 46rpx;
+  -webkit-border-radius: 23rpx;
+          border-radius: 23rpx;
+  margin: 0 49rpx;
+}
+.red-find .findText.data-v-15ed82b9 {
+  font-size: 32rpx;
+  color: #2f3a40;
+  margin: 30rpx 49rpx 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: normal;
+}
+.red-find .activeText.data-v-15ed82b9 {
+  display: block;
+}
+.red-find .shouAll.data-v-15ed82b9 {
+  color: #ff5882;
+  font-size: 32rpx;
+  margin: 15rpx 49rpx 0;
+}
+.red-find .imgShow.data-v-15ed82b9 {
+  padding: 24rpx 13rpx 24rpx 24rpx;
+  height: 226rpx;
+}
+.red-find .imgShow .img.data-v-15ed82b9 {
+  width: 226rpx;
+  height: 226rpx;
+  margin-right: 13rpx;
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
+}
+.red-find .imgShow .image-bg.data-v-15ed82b9 {
+  display: inline-block;
+  width: 226rpx;
+  height: 226rpx;
+  margin-right: 13rpx;
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
+  background-image: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.red-find .imgText.data-v-15ed82b9 {
+  color: #b2b2b2;
+  font-size: 24rpx;
+  padding: 15rpx 26rpx;
+}
+.redbox-brand-view.data-v-15ed82b9 {
+  width: 100%;
+  overflow: hidden;
+}
+.redbox-brand-view .redbox-brand-view-coll.data-v-15ed82b9 {
+  position: relative;
+  width: 702rpx;
+  height: 314rpx;
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  margin: auto;
+  margin-bottom: 18rpx;
+}
+.redbox-brand-view .bg-mask.data-v-15ed82b9 {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 468rpx;
+  height: 314rpx;
+  background: -webkit-gradient(linear, left top, right top, color-stop(55%, #ffffff), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+}
+.redbox-brand-view .bg-con.data-v-15ed82b9 {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 16rpx;
+  padding-left: 24rpx;
+}
+.redbox-brand-view .content.data-v-15ed82b9 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+}
+.redbox-brand-view .image.data-v-15ed82b9 {
+  max-width: 100%;
+  max-height: 100%;
+}
+.redbox-brand-view .brandLogo.data-v-15ed82b9 {
+  font-size: 24rpx;
+  width: 130rpx;
+  height: 58rpx;
+  margin-bottom: 20rpx;
+}
+.redbox-brand-view .brandName.data-v-15ed82b9 {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #2f3a40;
+  margin-bottom: 12rpx;
+}
+.redbox-brand-view .sellingPoint.data-v-15ed82b9 {
+  display: inline-block;
+  background: #ffe2e9;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #de0e0e;
+  padding: 0 6rpx;
+}
+.redbox-brand-view .goods-view.data-v-15ed82b9 {
+  position: absolute;
+  bottom: 22rpx;
+  left: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.redbox-brand-view .goods-view-coll.data-v-15ed82b9 {
+  width: 102rpx;
+  height: 102rpx;
+  margin-right: 8rpx;
+}
+.isFd.data-v-15ed82b9 {
+  background: #de0e0e;
+  position: fixed;
+  z-index: 8;
+  top: 0px;
+}
+.isFd .redbox-nav-view-coll.data-v-15ed82b9 {
+  color: rgba(0, 0, 0, 0.6);
+}
+.isFd .redbox-nav-view-coll.active.data-v-15ed82b9 {
+  color: #fff;
+}
+.isFd .redbox-nav-view-coll.active.data-v-15ed82b9:after {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.3);
+}
+.redbox-swiper .uni-swiper-dots-horizontal.data-v-15ed82b9 {
+  position: absolute;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  left: auto;
+  right: 32rpx;
+  bottom: 10rpx;
+}
+.redbox-swiper .uni-swiper-slides.data-v-15ed82b9 {
+  width: 314rpx;
+  height: 314rpx;
+  background: #ffffff;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+.redbox-swiper .uni-swiper-dot.data-v-15ed82b9 {
+  width: 12rpx;
+  height: 12rpx;
+}
+

@@ -26,8 +26,8 @@
 									</view>
 								</swiper-item>
 								<swiper-item v-for="(item, index) in swiperImgArr.src" :key="index">
-									<view class="swiper-item">
-										<image class="image" :src="item" mode="" v-if="swiperImgArr.type == 'img'" @tap="preview(swiperImgArr.src, item)"></image>
+									<view class="swiper-item" v-if="swiperImgArr.type == 'img'">
+										<image class="image" :src="item" mode="" @tap="preview(swiperImgArr.src, item)"></image>
 									</view>
 								</swiper-item>
 							</swiper>
@@ -40,7 +40,7 @@
 			</view>
 
 			<!-- 聚划算显示 -->
-			<view class="active-box juhusua" v-cloak v-if="status.isJuHuaSuan">
+			<view class="active-box juhusua" v-if="status.isJuHuaSuan">
 				<view class="view-box">
 					<view class="left">
 						<view class="prize">
@@ -81,7 +81,7 @@
 							</view>
 						</view>
 					</view>
-					<view class="left un-sale" v-if="status.isNotStartFlashSale">
+					<view class="left un-sale" v-else-if="status.isNotStartFlashSale">
 						<!-- 未开始秒杀 -->
 						<view class="un-flashtitle">限时秒杀</view>
 						<view class="un-flashsale">
@@ -116,9 +116,8 @@
 					</view>
 				</view>
 			</view>
-
-			<!-- 套餐	 -->
 			<block v-if="status.isSuperPkg">
+				<!-- 套餐	 -->
 				<view class="active-box taocanPrice">
 					<view class="view-box">
 						<view class="left">
@@ -202,8 +201,7 @@
 								<text class="wuliaoText">{{ item.desc }}</text>
 							</view>
 						</view>
-
-						<view class="wuliao_Con icon_pro_arrow" v-if="item.type != '优惠券'" @tap="showPop('wuliaoPopup', item.tag)">
+						<view class="wuliao_Con icon_pro_arrow" v-else-if="item.type != '优惠券'" @tap="showPop('wuliaoPopup', item.tag)">
 							<view class="wuliao_Left">
 								<text class="wuliaoTag" :style="{ backgroundColor: item.tagColor }">{{ item.tag }}</text>
 								<text class="wuliaoText">{{ item.desc }}{{ item.desc }}</text>
@@ -219,10 +217,7 @@
 				<view class="Addressleft">
 					<view class="proAddress">
 						<text class="sendWhere">送至</text>
-						<text class="speciaAddress pro_address">
-							<!-- <text class="address"></text> -->
-							{{ proviceName }}
-						</text>
+						<text class="speciaAddress pro_address">{{ proviceName }}</text>
 					</view>
 					<view class="proAddress">
 						<text class="sendWhere">包邮</text>
@@ -364,79 +359,67 @@
 
 			<!-- 加入购物车模块 -->
 			<block v-if="getSurpAzf">
-				<!-- 通用底部按钮 -->
 				<view class="addTocart">
-					<view class="addTocartCon">
-						<view class="cartLeft">
-							<view class="nav-view">
-								<view class="nav-view-cell toIndex" @tap="goPage(1)">
-									<view class="pro_icon icon_home"></view>
-									<text class="text">首页</text>
-								</view>
-								<view class="nav-view-cell toCart" @tap="goPage(2)">
-									<view class="pro_icon icon_cart"><uni-badge :text="cartNumber" type="error" :inverted="false" styles="pros" ntype="true"></uni-badge></view>
-									<text class="text">采购车</text>
-								</view>
-								<view class="nav-view-cell toBrand" @tap="goBrandPage(brand.brandId)">
-									<view class="pro_icon icon_brand"></view>
-									<text class="text">品牌主页</text>
-								</view>
+					<!-- <view class="addTocartCon"> -->
+					<view class="cartLeft">
+						<view class="nav-view">
+							<view class="nav-view-cell toIndex" @tap="goPage(1)">
+								<view class="pro_icon icon_home"></view>
+								<text class="text">首页</text>
+							</view>
+							<view class="nav-view-cell toCart" @tap="goPage(2)">
+								<view class="pro_icon icon_cart"><uni-badge :text="cartNumber" type="error" :inverted="false" styles="pros" ntype="true"></uni-badge></view>
+								<text class="text">采购车</text>
+							</view>
+							<view class="nav-view-cell toBrand" @tap="goBrandPage(brand.brandId)">
+								<view class="pro_icon icon_brand"></view>
+								<text class="text">品牌主页</text>
 							</view>
 						</view>
-						<view class="cartRight" @tap="showPop('rulesPopup')"><view class="button" style="background: #FF3366;">加入采购车</view></view>
 					</view>
+					<view class="cartRight" @tap="showPop('rulesPopup')"><view class="button" style="background: #FF3366;">加入采购车</view></view>
+					<!-- </view> -->
 				</view>
 			</block>
-
-			<!-- 加入购物车模块 -->
 			<block v-if="status.isJuHuaSuan || status.isVip">
-				<!-- 通用底部按钮 -->
-				<view class="addTocart">
-					<view class="addTocartCon btn_two">
-						<view class="cartLeft">
-							<view class="nav-view">
-								<view class="nav-view-cell toIndex" @tap="goPage(1)">
-									<view class="pro_icon icon_home"></view>
-									<text class="text">首页</text>
-								</view>
-								<view class="nav-view-cell toCart" @tap="goPage(2)">
-									<view class="pro_icon icon_cart"><uni-badge :text="cartNumber" type="error" :inverted="false" styles="pros" ntype="true"></uni-badge></view>
-									<text class="text">采购车</text>
-								</view>
+				<view class="addTocart btn_two">
+					<!-- <view class="addTocartCon btn_two"> -->
+					<view class="cartLeft">
+						<view class="nav-view">
+							<view class="nav-view-cell toIndex" @tap="goPage(1)">
+								<view class="pro_icon icon_home"></view>
+								<text class="text">首页</text>
 							</view>
-						</view>
-						<view v-if="status.isJuHuaSuan" class="cartRight" @tap="showPop('rulesPopup')">
-							<view class="button" style="background: #FFE339;color: #FF3366;">加入采购车</view>
-						</view>
-
-						<view v-if="status.isVip" class="cartRight" @tap="showPop('rulesPopup')">
-							<view class="button" style="background: #271D1E;color: #FAEAC4;">加入采购车</view>
+							<view class="nav-view-cell toCart" @tap="goPage(2)">
+								<view class="pro_icon icon_cart"><uni-badge :text="cartNumber" type="error" :inverted="false" styles="pros" ntype="true"></uni-badge></view>
+								<text class="text">采购车</text>
+							</view>
 						</view>
 					</view>
+					<view v-if="status.isJuHuaSuan" class="cartRight" @tap="showPop('rulesPopup')">
+						<view v-if="status.isJuHuaSuan" class="button" style="background: #FFE339;color: #FF3366;">加入采购车</view>
+						<view v-else-if="status.isVip" class="button" style="background: #271D1E;color: #FAEAC4;">加入采购车</view>
+					</view>
+					<!-- </view> -->
 				</view>
 			</block>
-
-			<!-- 加入购物车模块 -->
 			<block v-if="getFaleModel">
-				<!-- 通用底部按钮 -->
-				<view class="addTocart">
-					<view class="addTocartCon btn_two">
-						<view class="cartLeft">
-							<view class="nav-view">
-								<view class="nav-view-cell toIndex" @tap="goPage(1)">
-									<view class="pro_icon icon_home"></view>
-									<text class="text">首页</text>
-								</view>
-								<view class="nav-view-cell toCart" @tap="goPage(2)">
-									<view class="pro_icon icon_cart"><uni-badge :text="cartNumber" type="error" :inverted="false" styles="pros" ntype="true"></uni-badge></view>
-									<text class="text">采购车</text>
-								</view>
+				<view class="addTocart btn_two">
+					<view class="cartLeft">
+						<view class="nav-view">
+							<view class="nav-view-cell toIndex" @tap="goPage(1)">
+								<view class="pro_icon icon_home"></view>
+								<text class="text">首页</text>
+							</view>
+							<view class="nav-view-cell toCart" @tap="goPage(2)">
+								<view class="pro_icon icon_cart"><uni-badge :text="cartNumber" type="error" :inverted="false" styles="pros" ntype="true"></uni-badge></view>
+								<text class="text">采购车</text>
 							</view>
 						</view>
-						<view v-if="status.isFlashSale" class="cartRight" @tap="showPop('rulesPopup')">
-							<view class="button" style="background: #FFE339;color: #FF3366;">立即采购</view>
-						</view>
-						<view v-if="status.isSuperPkg" class="cartRight" @tap="showPop('rulesPopup')"><view class="button" style="background: #FF3366;">加入采购车</view></view>
+					</view>
+					<view class="cartRight" @tap="showPop('rulesPopup')">
+						<view v-if="status.isFlashSale" class="button" style="background: #FFE339;color: #FF3366;">立即采购</view>
+						<view v-else-if="status.isSuperPkg" class="button" style="background: #FF3366;">加入采购车</view>
 					</view>
 				</view>
 			</block>
@@ -453,8 +436,9 @@
 		<toast-popup :show="activityInfoPopup" :title="actTitle" @close="hidePop">
 			<view class="wuliao-popup" v-for="(item, eventKey) in activityInfo" :key="eventKey">
 				<view class="wuliao_Head">
-					<text class="wuliaoTag" :style="{ backgroundColor: item.tagColor }">{{ item.tag }}</text>
-					<text class="wuliaoText">{{ item.desc }}</text>
+					<text class="wuliaoTag" :style="{ backgroundColor: item.tagColor }" v-if="item.tag != ''">{{ item.tag }}</text>
+					<!-- <text class="wuliaoText">{{ item.desc }}</text> -->
+					<!-- <rich-text class="wuliaoText" :nodes="item.desc"></rich-text> -->
 				</view>
 				<view class="wuliao_Con" v-if="item.goodsList.length > 0">
 					<view class="wuliao_List" v-for="(list, index) in item.goodsList" :key="index" @tap="toGoodsDetail(list.goodsId)">
@@ -545,441 +529,510 @@
 			<!-- <view class="item" @click="showMobile"><view class="s842_icons s842_public_kefu"></view></view> -->
 			<view class="item" v-if="showTop" @click="backToTop"><view class="s842_icons s842_public_top"></view></view>
 		</view>
+
+		<!-- 视频播放层 -->
+		<!-- <block v-if="showVideo"> -->
+			<view v-show="showVideo" class="video-page-container" :style="{ height: videoHeight }">
+				<view class="mask" @tap="closeVideo"></view>
+				<video id="myVideo" :src="source" controls></video>
+			</view>
+		<!-- </block> -->
 	</view>
 </template>
 
 <script>
 import { getEndTime } from '@/common/util.js';
 import toastPopup from '@/components/toast-popup/toast-popup2.vue';
-import price from '@/components/goods-list/price.vue';
 import buyPopup from '@/components/buy-popup/buy-popup.vue';
-import mpvueProvincePicker from '@/components/mpvue-provincepicker/mpvueProvincePicker.vue';
 import question from './question.vue';
 import market from '@/components/productDetial/market.vue';
 import brand from '@/components/productDetial/brand.vue';
+import mpvueProvincePicker from '@/components/mpvue-citypicker/mpvueProvincePicker.vue';
 import dot from '@/components/dot.vue';
 import couponList from '@/components/coupon-list/coupon-list.vue';
 import uniBadge from '@/components/uni-badge/uni-badge.vue';
 export default {
-	components: { toastPopup, price, buyPopup, question, market, brand, mpvueProvincePicker, dot, couponList, uniBadge },
-	data() {
-		return {
-			showTop: false,
-			// 页面参数
-			scrollY: true,
-			scrollBox: 0,
-			scrollHeight: 1000,
-			// 城市选择参数
-			themeColor: '#FF3366',
-			cityPickerVal: [0, 0, 0],
-			current: 0,
-			// 套餐设置
-			allNum: 0,
+    components: { dot, toastPopup, buyPopup, question, market, brand, mpvueProvincePicker, couponList, uniBadge },
+    data() {
+        return {
+            // 视频参数
+            source: '',
+            videoHeight: 1000,
+            showVideo: false,
+            videoContext: null,
+            //
+            showTop: false,
+            // 页面参数
+            scrollY: true,
+            scrollBox: 0,
+            scrollHeight: 1000,
+            // 城市选择参数
+            themeColor: '#FF3366',
+            cityPickerVal: [0, 0, 0],
+            current: 0,
+            // 套餐设置
+            allNum: 0,
 
-			// 活动设置
-			eventList: [],
-			activityInfo: [],
-			actTitle: '活动规则',
-			activityInfoPopup: false,
-			wuliaoPopup: false,
-			couponPopup: false,
+            // 活动设置
+            eventList: [],
+            activityInfo: [],
+            actTitle: '活动规则',
+            activityInfoPopup: false,
+            wuliaoPopup: false,
+            couponPopup: false,
 
-			// 地址更新
-			proviceName: '',
-			shippingDesc: '',
+            // 地址更新
+            proviceName: '',
+            shippingDesc: '',
 
-			// 大小价格
-			big: 0,
-			min: 0,
-			//
-			isdetial: 1,
-			scrollTop: 0,
-			searchBarFixed: false,
-			rulesPopup: false,
-			paramsPopup: false,
-			servicePopup: false,
-			goodsNum: 1,
-			productId: '',
-			allproductArr: {},
-			swiperImgArr: [],
-			addCartList: {},
-			attributes: '',
-			marketSuggest: '',
-			spuList: '',
-			goodsState: true,
-			marketComment: [],
-			pkgList: [],
-			brand: {},
-			linkGoods: [],
-			status: {},
+            // 大小价格
+            big: 0,
+            min: 0,
+            //
+            isdetial: 1,
+            scrollTop: 0,
+            searchBarFixed: false,
+            rulesPopup: false,
+            paramsPopup: false,
+            servicePopup: false,
+            goodsNum: 1,
+            productId: '',
+            allproductArr: {},
+            swiperImgArr: [],
+            addCartList: {},
+            attributes: '',
+            marketSuggest: '',
+            spuList: '',
+            goodsState: true,
+            marketComment: [],
+            pkgList: [],
+            brand: {},
+            linkGoods: [],
+            status: {},
 
-			searchBarTop: 0,
-			goodsId: 0,
-			userRank: '',
-			popShow: false,
+            searchBarTop: 0,
+            goodsId: 0,
+            userRank: '',
+            popShow: false,
 
-			day: 0,
-			hour: 0,
-			minute: 0,
-			seconds: 0,
-			countDownTime: null,
-			// 定时器
-			clock: null,
-			clock2: null,
-			clock3: null,
-			animate: false,
-			requestUrl: '',
-			lastOrderInfo: [],
+            day: 0,
+            hour: 0,
+            minute: 0,
+            seconds: 0,
+            countDownTime: null,
+            // 定时器
+            clock: null,
+            clock2: null,
+            clock3: null,
+            animate: false,
+            requestUrl: '',
+            lastOrderInfo: [],
 
-			imgAllTop: 0,
-			// 优惠券
-			coupon_list: [],
-			// 模块判断
-			showSimplezhifa: false,
-			tagType: '',
-			//
-			hidden: false
-		};
-	},
-	onLoad(params) {
-		// console.log("onLoad");
-		// params = { goodsId: 6429 };
-		// 第一次加载锁定页面在最顶部
-		uni.pageScrollTo({ scrollTop: 0, duration: 0 });
-		let res = uni.getSystemInfoSync();
-		this.scrollHeight = res.windowHeight;
-		this.productId = params.goodsId;
-		let url = '';
-		if (params.goodsId) {
-			url = `?goodsId=${params.goodsId}`;
-		}
-		if (params.userRank) {
-			this.userRank = params.userRank;
-			url = url + `&userRank=${params.userRank}`;
-		}
-		if (params.hidden) {
-			this.hidden = true;
-		}
-		this.requestUrl = url;
-		this.getDetialData(this.requestUrl);
-		// this.showCoupon(this.productId)
-	},
-	onShow() {
-		if (this.countDownTime) {
-			this.startClock();
-		}
-		if (this.clock3) {
-			clearInterval(this.clock3);
-		}
-		this.cartNumber = uni.getStorageSync('cartNumber');
-		// this.clock3 = setInterval(this.scroll, 5000);
-	},
-	computed: {
-		//
-		getSurpAzf() {
-			return (this.status.isSuperPkg && !this.hidden) || (this.showSimplezhifa && !this.hidden) || (this.status.isNotStartFlashSale && !this.hidden);
-		},
-		getFaleModel() {
-			return this.status.isFlashSale || this.hidden || (this.status.isSuperPkg || this.hidden);
-		},
-		// 是否秒杀商品
-		getProductSale() {
-			return this.status.isFlashSale || this.status.isNotStartFlashSale;
-		}
-	},
-	methods: {
-		backToTop(){
-			uni.pageScrollTo({ scrollTop: 0, duration: 10 });
-		},
-		// 优惠券
-		showCoupon(list) {
-			this.getMacthCoupon(list);
-		},
-		async getMacthCoupon(list) {
-			let vm = this;
-			let res = await this.$api.request({
-				method: 'POST',
-				header: true,
-				url: this.$api.coupon_matchcouponlist,
-				data: {
-					goodsIdList: list
-				},
-				access_token: this.access_token
-			});
-			if (res.code == 0) {
-				vm.coupon_list = res.data.couponList;
-			}
-		},
+            imgAllTop: 0,
+            // 优惠券
+            coupon_list: [],
+            // 模块判断
+            showSimplezhifa: false,
+            tagType: '',
+            //
+            hidden: false
+        };
+    },
+    onLoad(params) {
+        // params = { goodsId: 6429 };
+        // 第一次加载锁定页面在最顶部
+        uni.pageScrollTo({ scrollTop: 0, duration: 0 });
+        let res = uni.getSystemInfoSync();
+        this.scrollHeight = res.windowHeight;
+        this.videoHeight = res.windowHeight;
+        this.productId = params.goodsId;
+        let url = '';
+        if (params.goodsId) {
+            url = `?goodsId=${params.goodsId}`;
+        }
+        if (params.userRank) {
+            this.userRank = params.userRank;
+            url = url + `&userRank=${params.userRank}`;
+        }
+        if (params.hidden) {
+            this.hidden = true;
+        }
+        this.requestUrl = url;
+        this.getDetialData(this.requestUrl);
+        // this.showCoupon(this.productId)
+    },
+    onShow() {
+        if (this.countDownTime) {
+            this.startClock();
+        }
+        if (this.clock3) {
+            clearInterval(this.clock3);
+        }
+        this.cartNumber = uni.getStorageSync('cartNumber');
+        // this.clock3 = setInterval(this.scroll, 5000);
+    },
+    computed: {
+        //
+        getSurpAzf() {
+            return (this.status.isSuperPkg && !this.hidden) || (this.showSimplezhifa && !this.hidden) || (this.status.isNotStartFlashSale &&
+                !this.hidden);
+        },
+        getFaleModel() {
+            return this.status.isFlashSale || this.hidden || (this.status.isSuperPkg || this.hidden);
+        },
+        // 是否秒杀商品
+        getProductSale() {
+            return this.status.isFlashSale || this.status.isNotStartFlashSale;
+        }
+    },
+    methods: {
+        backToTop() {
+            uni.pageScrollTo({
+                scrollTop: 0,
+                duration: 10
+            });
+        },
+        // 优惠券
+        showCoupon(list) {
+            this.getMacthCoupon(list);
+        },
+        async getMacthCoupon(list) {
+            let vm = this;
+            let res = await this.$api.request({
+                method: 'POST',
+                header: true,
+                url: this.$api.coupon_matchcouponlist,
+                data: {
+                    goodsIdList: list
+                },
+                access_token: this.access_token
+            });
+            if (res.code == 0) {
+                vm.coupon_list = res.data.couponList;
+            }
+        },
 
-		slideImgChange(event) {
-			this.current = event.detail.current;
-		},
-		scroll() {
-			this.animate = true; // 因为在消息向上滚动的时候需要添加css3过渡动画，所以这里需要设置true
-			setTimeout(() => {
-				//  这里直接使用了es6的箭头函数，省去了处理this指向偏移问题，代码也比之前简化了很多
-				this.lastOrderInfo.push(this.lastOrderInfo[0]); // 将数组的第一个元素添加到数组的
-				this.lastOrderInfo.shift(); //删除数组的第一个元素
-				this.animate = false; // margin-top 为0 的时候取消过渡动画，实现无缝滚动
-			}, 500);
-		},
-		// 城市选择方法
-		showMulLinkageThreePicker() {
-			// 显示地址的选择
-			this.$refs.mpvueProPicker.show();
-		},
-		async onConfirm(e) {
-			let { label, cityCode } = e;
-			this.proviceName = label.replace(/\-/g, '  ');
-			let res = await this.$api.request({
-				method: 'post',
-				url: this.$api.goods_shipping_info,
-				data: {
-					provinceId: cityCode,
-					goodsId: this.productId
-				}
-			});
-			if (res.code == 0 && res.data) {
-				this.shippingDesc = res.data.shippingDesc;
-			}
-		},
-		//
-		toGoodsDetail(goodsId) {
-			let url = `./product?goodsId=${goodsId}`;
-			this.$api.goNavigateTo(url);
-		},
-		// end
-		showTips(message) {
-			this.$api.showMessage(message);
-		},
-		tabtype(index, name) {
-			this.isdetial = index;
-			this.scrollBox = name == 'headTop' ? 0 : this.imgAllTop - uni.upx2px(88);
-		},
-		preview(urls, current) {
-			uni.previewImage({
-				current: encodeURI(current),
-				indicator: 'number',
-				urls: urls.map(item => encodeURI(item))
-			});
-		},
-		closeCart() {
-			this.scrollY = true;
-			this.rulesPopup = false;
-		},
-		async addCart(data) {
-			let that = this;
-			let res = await this.$api.request({
-				method: 'POST',
-				header: true,
-				url: this.$api.cartAdd,
-				data: data
-			});
-			if (res.code == 0 && res.data) {
-				let { totalCount } = res.data;
-				that.$store.commit('updateCart', totalCount);
-				this.cartNumber = totalCount > 99 ? '99+' : totalCount;
-			}
-			this.$api.showMessage(res.msg);
-			this.closeCart();
-		},
-		// 显示类型弹层
-		showPop(type, tag) {
-			if (type == 'activityInfoPopup') {
-				this.actTitle = tag ? '活动专享' : '活动规则';
-			}
-			if (type == 'couponPopup') {
-				this.eventList.map(e => {
-					if (e.type == '优惠券') {
-						this.coupon_list = e.couponList;
-					}
-				});
-				// this.showCoupon(this.productId);
-			}
-			if (type == 'wuliaoPopup') {
-				this.tagType = tag;
-			}
-			this.scrollY = false;
-			this[type] = true;
-		},
-		// 关闭类型弹层
-		hidePop() {
-			this.scrollY = true;
-			['rulesPopup', 'paramsPopup', 'servicePopup', 'wuliaoPopup', 'couponPopup', 'activityInfoPopup'].map(e => {
-				this[e] = false;
-			});
-		},
-		// 跳首页
-		goPage(urlPath) {
-			let url = '../../index/index';
-			if (urlPath == 2) {
-				url = '../../cart/cart';
-			}
-			if (urlPath == 3) {
-			}
-			uni.switchTab({
-				url: url
-			});
-		},
-		//跳到当前页面
-		gocurrentPage(id) {
-			// uni.redirectTo(`../../goods/product/product?goodsId=${id}`);//微信小程序可以 其他还没试
-			this.$api.goNavigateTo(`./product?goodsId=${id}`);
-		},
-		goBrandPage(urlPath) {
-			let _url = '../brandDetail/brandDetail?brandId=' + urlPath;
-			this.$api.goNavigateTo(_url);
-		},
-		//获取商品详情参数
-		async getDetialData(params) {
-			let that = this;
-			let res = await this.$api.request({
-				method: 'GET',
-				url: `${this.$api.getGoodsView}${params}`
-			});
-			if (res.code == 0 && res.data) {
-				let { status } = res.data;
-				// 移除&& !status.isNotStartFlashSale  未开始以原价购买
-				that.showSimplezhifa = status.isZhiFa && !status.isSuperPkg && !status.isJuHuaSuan && !status.isVip && !status.isFlashSale;
+        slideImgChange(event) {
+            this.current = event.detail.current;
+        },
+        scroll() {
+            this.animate = true; // 因为在消息向上滚动的时候需要添加css3过渡动画，所以这里需要设置true
+            setTimeout(() => {
+                //  这里直接使用了es6的箭头函数，省去了处理this指向偏移问题，代码也比之前简化了很多
+                this.lastOrderInfo.push(this.lastOrderInfo[0]); // 将数组的第一个元素添加到数组的
+                this.lastOrderInfo.shift(); //删除数组的第一个元素
+                this.animate = false; // margin-top 为0 的时候取消过渡动画，实现无缝滚动
+            }, 500);
+        },
+        // 城市选择方法
+        showMulLinkageThreePicker() {
+            // 显示地址的选择
+            this.$refs.mpvueProPicker.show();
+        },
+        async onConfirm(val) {
+            let { label, cityCode } = val;
+            this.proviceName = label.replace(/\-/g, '  ');
+            let res = await this.$api.request({
+                method: 'post',
+                url: this.$api.goods_shipping_info,
+                data: {
+                    provinceId: cityCode,
+                    goodsId: this.productId
+                }
+            });
+            if (res.code == 0 && res.data) {
+                this.shippingDesc = res.data.shippingDesc;
+            }
+        },
+        //
+        toGoodsDetail(goodsId) {
+            let url = `./product?goodsId=${goodsId}`;
+            this.$api.goNavigateTo(url);
+        },
+        // end
+        showTips(message) {
+            this.$api.showMessage(message);
+        },
+        tabtype(index, name) {
+            this.isdetial = index;
+            this.scrollBox = name == 'headTop' ? 0 : this.imgAllTop - uni.upx2px(88);
+        },
+        preview(urls, current) {
+            uni.previewImage({
+                current: encodeURI(current),
+                indicator: 'number',
+                urls: urls.map(item => encodeURI(item))
+            });
+        },
+        closeCart() {
+            this.scrollY = true;
+            this.rulesPopup = false;
+        },
+        async addCart(data) {
+            let that = this;
+            let res = await this.$api.request({
+                method: 'POST',
+                header: true,
+                url: this.$api.cartAdd,
+                data: data
+            });
+            if (res.code == 0 && res.data) {
+                let { totalCount } = res.data;
+                that.$store.commit('updateCart', totalCount);
+                this.cartNumber = totalCount > 99 ? '99+' : totalCount;
+            }
+            this.$api.showMessage(res.msg);
+            this.closeCart();
+        },
+        // 显示类型弹层
+        showPop(type, tag) {
+            if (type == 'activityInfoPopup') {
+                this.actTitle = tag ? '活动专享' : '活动规则';
+            }
+            if (type == 'couponPopup') {
+                this.eventList.map(e => {
+                    if (e.type == '优惠券') {
+                        this.coupon_list = e.couponList;
+                    }
+                });
+                // this.showCoupon(this.productId);
+            }
+            if (type == 'wuliaoPopup') {
+                this.tagType = tag;
+            }
+            this.scrollY = false;
+            this[type] = true;
+        },
+        // 关闭类型弹层
+        hidePop() {
+            this.scrollY = true;
+            ['rulesPopup', 'paramsPopup', 'servicePopup', 'wuliaoPopup', 'couponPopup', 'activityInfoPopup'].map(e => {
+                this[e] = false;
+            });
+        },
+        // 跳首页
+        goPage(urlPath) {
+            let url = '../../index/index';
+            if (urlPath == 2) {
+                url = '../../cart/cart';
+            }
+            if (urlPath == 3) {}
+            uni.switchTab({ url: url });
+        },
+        //跳到当前页面
+        gocurrentPage(id) {
+            this.$api.goNavigateTo(`./product?goodsId=${id}`);
+        },
+        goBrandPage(urlPath) {
+            let _url = '../brandDetail/brandDetail?brandId=' + urlPath;
+            this.$api.goNavigateTo(_url);
+        },
+        //获取商品详情参数
+        async getDetialData(params) {
+            let that = this;
+            let res = await this.$api.request({
+                method: 'GET',
+                url: `${this.$api.getGoodsView}${params}`
+            });
+            if (res && res.data) {
+                let {
+                    status
+                } = res.data;
+                // 移除&& !status.isNotStartFlashSale  未开始以原价购买
+                that.showSimplezhifa = status.isZhiFa && !status.isSuperPkg && !status.isJuHuaSuan && !status.isVip && !status.isFlashSale;
 
-				let res1 = res.data;
-				that.allproductArr = res1;
+                let res1 = res.data;
+                that.allproductArr = res1;
+                // 视频播放控制源
+                if (res.data.video) {
+                    this.source = res.data.video;
+                }
 
-				// 解析商品价格为一大一小
-				let _array = that.allproductArr.price.split('.');
-				that.big = _array[0];
-				that.min = '.' + _array[1];
+                // 解析商品价格为一大一小
+                let _array = that.allproductArr.price.split('.');
+                that.big = _array[0];
+                that.min = '.' + _array[1];
 
-				that.swiperImgArr = res1.gallery;
-				that.countDownTime = res1.activityEndTime;
-				if (this.countDownTime) {
-					this.startClock();
-				}
-				that.addCartList = res1.addCartList;
-				that.proviceName = res1.defaultShippingProvince.provinceName;
-				that.attributes = res1.attributes;
-				that.marketSuggest = res1.marketSuggest;
-				that.spuList = res1.addCartList.spuList;
-				that.marketComment = res1.marketComment;
-				that.brand = res1.brand;
-				that.pkgList = res1.pkgList;
-				that.linkGoods = res1.linkGoods;
-				that.status = res1.status;
-				that.lastOrderInfo = res1.lastOrderInfo;
-				// 活动
-				that.eventList = res1.eventList;
-				that.activityInfo = res1.activityInfo;
+                that.swiperImgArr = res1.gallery;
+                that.countDownTime = res1.activityEndTime;
+                if (this.countDownTime) {
+                    this.startClock();
+                }
+                that.addCartList = res1.addCartList;
+                that.proviceName = res1.defaultShippingProvince.provinceName;
+                that.attributes = res1.attributes;
+                that.marketSuggest = res1.marketSuggest;
+                that.spuList = res1.addCartList.spuList;
+                that.marketComment = res1.marketComment;
+                that.brand = res1.brand;
+                that.pkgList = res1.pkgList;
+                that.linkGoods = res1.linkGoods;
+                that.status = res1.status;
+                that.lastOrderInfo = res1.lastOrderInfo;
+                // 活动
+                that.eventList = res1.eventList;
+                that.activityInfo = res1.activityInfo;
 
-				if (that.spuList && that.spuList.length > 0) {
-					for (var i = 0; i < that.spuList.length; i++) {
-						that.goodsNum = that.spuList[i].startNum;
-					}
-				}
-				for (var i = 0; i < that.pkgList.length; i++) {
-					that.allNum += parseInt(that.pkgList[i].num);
-				}
-				if (res1.activityEndTime && that.status.isFlashSale) {
-					that.startClock();
-				}
-			} else {
-				uni.navigateBack({
-					delta: 1
-				});
-			}
-		},
-		startClock() {
-			if (this.clock) {
-				clearInterval(this.clock);
-			}
-			let time = this.countDownTime;
-			this.getSetDownTime(time);
-			this.clock = setInterval(() => {
-				this.getSetDownTime(time);
-			}, 1000);
-		},
-		getSetDownTime(val) {
-			let end = getEndTime(val, 'all', true);
-			let { day, hour, minute, seconds } = end;
-			this.day = day;
-			this.hour = hour;
-			this.minute = minute;
-			this.seconds = seconds;
-		},
-		posterClick() {
-			let videoUrl = `../../video/video?source=${encodeURI(this.allproductArr.video)}`;
-			this.$api.goNavigateTo(videoUrl);
-		},
-		scrollView(event) {
-			let _event = (event && event.detail) || event;
-			let { scrollTop } = _event;
-			this.pageTabbar(scrollTop);
-		},
-		pageTabbar(scrollTop) {
-			if (scrollTop < this.searchBarTop && this.searchBarFixed) {
-				// 锁定存在searchBar已经定位的情况下重置不再定位
-				this.searchBarFixed = false;
-				this.isdetial = 1;
-			} else if (scrollTop > this.searchBarTop && this.searchBarTop > 1 && !this.searchBarFixed) {
-				// 锁定存在searchBar非定位的情况下重置定位
-				this.searchBarFixed = true;
-				this.isdetial = 2;
-			}
-			// 返回顶部显示
-			if(scrollTop > 600 && !this.showTop){
-				this.showTop = true;
-			} else if(scrollTop < 600 && this.showTop){
-				this.showTop = false;
-			}
-		},
-		clearPage() {
-			if (this.clock) {
-				clearInterval(this.clock);
-			}
-			if (this.clock2) {
-				clearTimeout(this.clock2);
-			}
-			if (this.clock3) {
-				clearTimeout(this.clock3);
-			}
-			this.clock = null;
-			this.clock2 = null;
-			this.clock3 = null;
-		}
-	},
-	onPageScroll(event) {
-		this.scrollView(event);
-	},
-	onReady() {
-		this.hidePop();
-		let that = this;
-		setTimeout(function() {
-			if (that.imgAllTop < 1) {
-				let view = uni.createSelectorQuery().selectAll('.imgAllShow');
-				let tabbarView = uni.createSelectorQuery().selectAll('.tabChose');
-				view.boundingClientRect(data => {
-					let _top = data && data[0] && data[0].top;
-					that.imgAllTop = _top;
-				}).exec();
-
-				tabbarView
-					.boundingClientRect(data => {
-						let _top = data && data[0] && data[0].top;
-						that.searchBarTop = _top;
-					})
-					.exec();
-			}
-		}, 700);
-	},
-	onUnload() {
-		this.clearPage();
-	},
-	onHide() {},
-	destory() {}
+                if (that.spuList && that.spuList.length > 0) {
+                    for (var i = 0; i < that.spuList.length; i++) {
+                        that.goodsNum = that.spuList[i].startNum;
+                    }
+                }
+                for (var i = 0; i < that.pkgList.length; i++) {
+                    that.allNum += parseInt(that.pkgList[i].num);
+                }
+                if (res1.activityEndTime && that.status.isFlashSale) {
+                    that.startClock();
+                }
+            } else {
+                uni.navigateBack({
+                    delta: 1
+                });
+            }
+        },
+        startClock() {
+            if (this.clock) {
+                clearInterval(this.clock);
+            }
+            let time = this.countDownTime;
+            this.getSetDownTime(time);
+            this.clock = setInterval(() => {
+                this.getSetDownTime(time);
+            }, 1000);
+        },
+        getSetDownTime(val) {
+            let end = getEndTime(val, 'all', true);
+            let { day, hour, minute, seconds } = end;
+            this.day = day;
+            this.hour = hour;
+            this.minute = minute;
+            this.seconds = seconds;
+        },
+        posterClick() {
+            let videoUrl = `../../video/video?source=${encodeURI(this.allproductArr.video)}`;
+            // this.$api.goNavigateTo(videoUrl);
+            this.videoPlay();
+        },
+        scrollView(event) {
+            let _event = (event && event.detail) || event;
+            let { scrollTop } = _event;
+            this.pageTabbar(scrollTop);
+        },
+        pageTabbar(scrollTop) {
+            if (scrollTop < this.searchBarTop && this.searchBarFixed) {
+                // 锁定存在searchBar已经定位的情况下重置不再定位
+                this.searchBarFixed = false;
+                this.isdetial = 1;
+            } else if (scrollTop > this.searchBarTop && this.searchBarTop > 1 && !this.searchBarFixed) {
+                // 锁定存在searchBar非定位的情况下重置定位
+                this.searchBarFixed = true;
+                this.isdetial = 2;
+            }
+            // 返回顶部显示
+            if (scrollTop > 600 && !this.showTop) {
+                this.showTop = true;
+            } else if (scrollTop < 600 && this.showTop) {
+                this.showTop = false;
+            }
+        },
+        clearPage() {
+            if (this.clock) {
+                clearInterval(this.clock);
+            }
+            if (this.clock2) {
+                clearTimeout(this.clock2);
+            }
+            if (this.clock3) {
+                clearInterval(this.clock3);
+            }
+            this.clock = null;
+            this.clock2 = null;
+            this.clock3 = null;
+        },
+        videoPlay() {
+            this.showVideo = true;
+            this.videoContext = uni.createVideoContext('myVideo');
+            setTimeout(() => {
+                if (this.videoContext) this.videoContext.play();
+            }, 500);
+        },
+        closeVideo() {
+            if (this.videoContext) {
+                this.videoContext.pause();
+            }
+            // this.videoContext = null;
+            this.showVideo = false;
+        }
+    },
+    onPageScroll(event) {
+        this.scrollView(event);
+    },
+    onReady() {
+        this.hidePop();
+        let that = this;
+        setTimeout(function() {
+            if (that.imgAllTop < 1) {
+                let view = uni.createSelectorQuery().selectAll('.imgAllShow');
+                let tabbarView = uni.createSelectorQuery().selectAll('.tabChose');
+                view.boundingClientRect(data => {
+                    let _top = data && data[0] && data[0].top;
+                    that.imgAllTop = _top;
+                }).exec();
+                tabbarView
+                    .boundingClientRect(data => {
+                        let _top = data && data[0] && data[0].top;
+                        that.searchBarTop = _top;
+                    })
+                    .exec();
+            }
+        }, 700);
+    },
+    onUnload() {
+        this.clearPage();
+    },
+    onHide() {},
+    destory() {}
 };
 </script>
 
+
 <style lang="less" scoped>
 @import url('less/productDetial.less');
+
+.video-page-container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 1);
+	z-index: 22;
+
+	.mask {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+
+	#myVideo {
+		width: 100%;
+		height: 300px;
+		position: absolute;
+		z-index: 5;
+		top: 50%;
+		left: 0;
+		margin-top: -150px;
+	}
+}
+
+/* #ifdef H5 */
+.video-page-container {
+	top: 44px;
+}
+/* #endif */
 
 .orderList {
 	overflow: hidden;
@@ -1034,12 +1087,12 @@ export default {
 	margin-top: -45upx;
 }
 
-.users-foot{
+.users-foot {
 	bottom: 100upx;
 }
 
 /* #ifdef H5 */
-.users-foot{
+.users-foot {
 	bottom: 100upx;
 }
 /* #endif */

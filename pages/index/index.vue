@@ -35,7 +35,9 @@
 						</view>
 					</view>
 				</view>
-
+				<view style="{width: 100%,height:200px,textAlign:center,lineHeight:200px}"  class="linshi" @tap="linshi" >
+					临时入口
+				</view>
 				<view class="vipArea" v-if="isVip" @tap="nextPage('../homePage/vipIndex/vipIndex')">
 					<image class="image" src="../../static/images/index/homepage_vip.png" mode="widthFix"></image>
 				</view>
@@ -47,7 +49,7 @@
 				</view>
 
 				<!-- 限时秒杀 -->
-				<view class="secLimit" v-if="flashSale.goods">
+				<view class="secLimit" v-if="getFlashSales">
 					<view class="limitSecCon">
 						<view class="limitSecHead">
 							<view class="limitHeadLeft">
@@ -205,7 +207,7 @@
 			<view class="indexAds">
 				<view class="ads-mask"></view>
 				<view class="ads-body">
-					<view class="ads-img" @tap="nextPage(ads.url)"><image class="image" :src="ads.img" mode=""></image></view>
+					<view class="ads-img" @tap="nextPage(ads.url)"><image class="image" :src="ads&&ads.img" mode=""></image></view>
 					<view class="close" @tap="closeAds"></view>
 				</view>
 			</view>
@@ -228,67 +230,75 @@ import { getNowTime, getDateTime, getEndTime } from '@/common/util.js';
 import buyPopup from '@/components/buy-popup/buy-popup.vue';
 import { userValidateLogin } from '@/common/auth.js';
 export default {
-	components: {
-		buyPopup
-	},
-	data() {
-		return {
-			showTop: false,
-			keywords: '',
-			scrollTop: 0,
-			// 轮播参数 使用标签设置模式，测试是否因为后台轮播后，该实例未被销毁
-			//
-			isVip: false,
-			// 限时秒杀
-			flashSale: {},
+    components: {
+        buyPopup
+    },
+    data() {
+        return {
+            showTop: false,
+            keywords: '',
+            scrollTop: 0,
+            // 轮播参数 使用标签设置模式，测试是否因为后台轮播后，该实例未被销毁
+            //
+            isVip: false,
+            // 限时秒杀
+            flashSale: {},
 
-			// 首页弹窗广告
-			adsPop: false,
-			ads: {},
+            // 首页弹窗广告
+            adsPop: false,
+            ads: {},
 
-			// 服务器接口参数
-			actPage: null,
-			bannerList: null,
-			botAds: null,
-			midAds: null,
-			category: null,
-			newBrandList: null,
-			sTop: false,
+            // 服务器接口参数
+            actPage: null,
+            bannerList: null,
+            botAds: null,
+            midAds: null,
+            category: null,
+            newBrandList: null,
+            sTop: false,
 
-			// 定时器参数
-			day: 0,
-			hour: 0,
-			minute: 0,
-			seconds: 0,
-			countDownTime: null,
+            // 定时器参数
+            day: 0,
+            hour: 0,
+            minute: 0,
+            seconds: 0,
+            countDownTime: null,
 
-			// 商品列表参数
-			pages: 0,
-			pageSize: 10,
-			totalCount: 0,
-			goodslist: [],
-			loadingText: '',
+            // 商品列表参数
+            pages: 0,
+            pageSize: 10,
+            totalCount: 0,
+            goodslist: [],
+            loadingText: '',
 
-			//购物车窗口参数
-			showCart: false,
-			goodInfo: {},
+            //购物车窗口参数
+            showCart: false,
+            goodInfo: {},
 
-			//定时器
-			clock: null,
-			clock2: null,
-			userinfo: '',
-			access_token: '',
-			lastOrderInfo: [],
-			animate: false,
-			activeIndex: 0,
+            //定时器
+            clock: null,
+            clock2: null,
+            userinfo: '',
+            access_token: '',
+            lastOrderInfo: [],
+            animate: false,
+            activeIndex: 0,
 
 			//
 			deepAction: true,
 			scrollPageTop: 0
 		};
 	},
-	// computed: {},
+	computed: {
+		getFlashSales() {
+			return this.flashSale && this.flashSale.goods;
+		}
+	},
 	methods: {
+		linshi(){
+			let url = `/pages/superBrand/superBrand`
+				this.$api.goNavigateTo(url);
+		},
 		backToTop() {
 			uni.pageScrollTo({ scrollTop: 0, duration: 10 });
 		},
@@ -367,7 +377,7 @@ export default {
 				let datas = res.data;
 				that.isVip = datas.isVip;
 				that.flashSale = datas.flashSale;
-				that.countDownTime = that.flashSale.date;
+				that.countDownTime = datas.flashSale && datas.flashSale.date;
 				that.bannerList = datas.bannerList;
 				that.newBrandList = datas.newBrandList;
 				that.botAds = datas.botAds;
@@ -493,13 +503,14 @@ export default {
 					uni.hideTabBarRedDot(_index);
 				}
 			}
+			// uni.showTabBarRedDot({index:2});
 		}
 	},
 	onLoad() {
 		// 默认测试用户,启动一次首页，运行后马上关闭即可
 		// let token = `Basic ${Base64.encode('hWtBoZdRjIY5UFYnAmh4DMQhgqynDYMk:')}`;
-		// let token = `Basic ${Base64.encode('fy1KKZixMqvh76cfhz1Rj83ZpD8JOBvp:')}`;
-		// uni.setStorageSync('access_token', token);
+		let token = `Basic ${Base64.encode('d-DNNh6s4WEmu-wbI7Ws2OTPzY8Ba49D:')}`;
+		uni.setStorageSync('access_token', token);
 		// uni.setStorageSync('access_token', 'Basic a2MxZkZDcWRWaVhCXzZval9QcHBmaUwzZUhkWGU3Z0Q6');
 		// uni.setStorageSync('access_token', 'Basic aThrQlktTG9CTnJFRF96ZE16RmVVOUFsV0I4OGt1Sk86');
 		// uni.setStorageSync('access_token', 'Basic bzlac2ZIa084d2JBcHF5eHBPZkJpSFVHdktTa1lac246');
@@ -558,4 +569,13 @@ export default {
 
 <style lang="less" scoped="scoped">
 @import url('less/index.less');
+.linshi{
+	width: 100%;
+	height: 100upx;
+	line-height: 100upx;
+	text-align: center;
+	background: #f3f3f3;
+	font-size: 32upx;
+}
 </style>
+

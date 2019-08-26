@@ -2,7 +2,7 @@
 	<view class="cartDiglog">
 		<view class="mask" @tap="closeDiaCart()" @touchmove.stop.prevent="moveHandle"></view>
 		<view class="cartdiaCon">
-			<view class="cartDetial">
+			<view class="cartDetial" @touchmove.stop.prevent="moveHandle">
 				<view class="cartDeLeft"><image class="img" :src="thumb"></image></view>
 				<view class="buy-cartDeRight">
 					<view class="buy-descFirst">
@@ -43,40 +43,7 @@
 
 <script>
 import addType from '@/components/buy-popup/add-type.vue';
-/**
- * 格式化数字
- * @param  {[string | number]} number  [要格式化的数字]
- * @param  {[number]} decimals         [保留几位小数]
- * @param  {[string]} dec_point        [小数点符号]
- * @param  {[string]} thousands_sep    [千分位符号]
- * @param  {[string]} roundtag         [舍入参数，默认 "ceil" 向上取,"floor"向下取,"round" 四舍五入]
- * @return {[string]} 格式化后的结果
- */
-function number_format(opt) {
-	let { number, decimals, dec_point, thousands_sep, roundtag } = opt;
-	number = (number + '').replace(/[^0-9+-Ee.]/g, '');
-	roundtag = roundtag || 'ceil'; //"ceil","floor","round"
-	var n = !isFinite(+number) ? 0 : +number,
-		prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-		sep = typeof thousands_sep === 'undefined' ? ',' : thousands_sep,
-		dec = typeof dec_point === 'undefined' ? '.' : dec_point,
-		s = '',
-		toFixedFix = function(n, prec) {
-			var k = Math.pow(10, prec);
-			return '' + parseFloat(Math[roundtag](parseFloat((n * k).toFixed(prec * 2))).toFixed(prec * 2)) / k;
-		};
-	s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-	var re = /(-?\d+)(\d{3})/;
-	while (re.test(s[0])) {
-		s[0] = s[0].replace(re, '$1' + sep + '$2');
-	}
-
-	if ((s[1] || '').length < prec) {
-		s[1] = s[1] || '';
-		s[1] += new Array(prec - s[1].length + 1).join('0');
-	}
-	return s.join(dec);
-}
+import {number_format,watchData} from './watch';
 export default {
 	components: {
 		addType
@@ -122,110 +89,7 @@ export default {
 	watch: {
 		datas: {
 			handler(newValue, oldValue) {
-				if (!newValue.spuList) {
-					//非商品详情页
-					let entitys = newValue.goodsInfo || newValue;
-					let { reminder, thumb, goodsName, stock, startNum, goodsSn, goodsPrice, maxNum, goodsId, numberPerBox, boxNum, buyByBox, isZhifa, isBuyByBox, isMix } = entitys;
-					let tagList = newValue.tagList;
-					this.thumb = thumb;
-					this.goodsName = goodsName;
-					this.stock = stock;
-					this.startNum = startNum;
-					this.tagList = tagList;
-					this.isZhifa = isZhifa;
-					this.isBuyByBox = isBuyByBox;
-					this.isMix = isMix;
-					this.addList = [
-						{
-							reminder,
-							thumb,
-							goodsName,
-							stock,
-							startNum,
-							goodsSn,
-							goodsPrice,
-							maxNum,
-							boxNum,
-							buyByBox,
-							goodsId,
-							numberPerBox,
-							selected: true,
-							goodsNum: startNum
-						}
-					];
-					if (maxNum > startNum || maxNum == startNum) {
-						this.added = [
-							{
-								goodsId,
-								goodsNum: startNum,
-								goodsPrice
-							}
-						];
-						this.totalCount = parseInt(startNum);
-						let _price = startNum * (goodsPrice - 0);
-						this.totalPrice = number_format({
-							number: _price,
-							decimals: 2,
-							roundtag: 'ceil'
-						});
-					}
-				} else {
-					let { goodsThumb, goodsName, goodsNum, start, tagList, isZhifa, isBuyByBox, isMix } = newValue;
-					if (!tagList) {
-						this.tagList = null;
-					}
-					this.thumb = goodsThumb;
-					this.goodsName = goodsName;
-					this.stock = goodsNum;
-					this.startNum = start;
-					this.isZhifa = isZhifa;
-					this.isBuyByBox = isBuyByBox;
-					this.isMix = isMix;
-					let { maxNum, startNum, goodsId, price } = newValue.spuList[0];
-					if (maxNum > startNum || maxNum == startNum) {
-						this.added = [
-							{
-								goodsId,
-								goodsNum: startNum,
-								goodsPrice: price
-							}
-						];
-						this.totalCount = parseInt(startNum);
-						let _price = startNum * (price - 0);
-						this.totalPrice = number_format({
-							number: _price,
-							decimals: 2,
-							roundtag: 'ceil'
-						});
-					}
-					this.addList = newValue.spuList.map((item, index) => {
-						let { selected, goodsNum } =
-							index === 0
-								? {
-										selected: true,
-										goodsNum: item.startNum
-								  }
-								: {
-										selected: false,
-										goodsNum: 0
-								  };
-						return {
-							goodsId: item.goodsId,
-							boxNum: item.numberPerBox,
-							goodsName: item.skuSize,
-							goodsNum: goodsNum,
-							selected: selected,
-							goodsPrice: item.price,
-							goodsSn: item.goodsSn,
-							maxNum: item.maxNum,
-							reminder: item.reminder,
-							startNum: item.startNum,
-							stock: item.goodsNum,
-							thumb: item.goodsThumb,
-							numberPerBox: item.numberPerBox
-						};
-					});
-				}
+				watchData(newValue, this);
 			},
 			immediate: true
 		}
@@ -294,7 +158,7 @@ export default {
 				isVip: this.$store.state.userrank == 4 ? 1 : 0
 			});
 		},
-		moveHandle(){}
+		moveHandle() {}
 	}
 };
 </script>
@@ -380,10 +244,11 @@ export default {
 		// width: 308upx;
 		width: 360upx;
 		overflow: hidden;
-		// text-overflow: ellipsis;
-		// display: -webkit-box;
-		// -webkit-line-clamp: 2;
-		// -webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		margin-bottom: 10upx;
 	}
 
 	.closeCart {
@@ -413,31 +278,17 @@ export default {
 	.text {
 		color: #889696;
 		font-size: 22upx;
-		// margin-right: 73upx;
 	}
 }
 
 .buy-cartBtn {
-	font-size: 22upx;
+	line-height: 1;
 	margin-top: 20upx;
 
-	// position: absolute;
-	// bottom: 0;
-
-	.tag {
-		font-size: 20upx;
-		padding: 0upx 3upx;
-		border-radius: 4px;
-		margin-right: 15upx;
-		border-style: solid;
-		border-width: 1px;
-	}
-
 	.is-tag {
-		// font-size: 24upx;
-		font-size: 19upx;
-		padding: 0 9upx;
-		border-radius: 4px;
+		font-size: 24upx;
+		padding: 0 10upx;
+		border-radius: 4upx;
 		margin-right: 15upx;
 		border: 1px solid transparent;
 	}

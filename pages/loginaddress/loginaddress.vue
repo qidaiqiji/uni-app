@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import mpvueProvincePicker from '@/components/mpvue-provincepicker/mpvueProvincePicker.vue';
+import mpvueProvincePicker from '@/components/mpvue-citypicker/mpvueProvincePicker.vue';
 export default {
     components: {
         mpvueProvincePicker

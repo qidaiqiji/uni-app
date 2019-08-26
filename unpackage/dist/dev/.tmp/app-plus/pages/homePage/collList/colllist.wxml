@@ -1,0 +1,2 @@
+<import src="./colllist.vue.wxml" />
+    <template is="1721fd29" data="{{ ...$root['0'], $root }}"/>

@@ -1,0 +1,136 @@
+//out:false
+
+.jf-icon,
+.jf-auth,
+.jf-grade,
+.jf-number {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.jf-icon {
+    // width: 30upx;
+    // height: 30upx;
+    // margin-right: 6upx;
+    background-image: url('/static/images/integral/icon_vip@2x.png');
+    background-position: left center;
+    background-size: 30upx 30upx;
+    background-repeat: no-repeat;
+}
+
+.jf-auth {
+    width: 100upx;
+    height: 40upx;
+    line-height: 40upx;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4upx;
+    text-align: center;
+    margin-right: 16upx;
+
+    font-size: 24upx;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #fff;
+}
+
+.jf-grade {
+    margin-left: 0upx;
+
+    &.jf-icon {
+        padding-left: 40upx;
+    }
+}
+
+.jf-number {
+    margin-left: 16upx;
+}
+
+.jf-users {
+    &__img {
+        position: relative;
+        overflow: hidden;
+        width: 126upx;
+        height: 126upx;
+        margin-right: 18upx;
+        border-radius: 50%;
+    }
+
+    &__info {
+        font-size: 32upx;
+        //display: inline-block;
+        display: block;
+    }
+
+    .title {
+        display: block;
+        font-size: 32upx;
+        font-family: PingFang-SC-Bold;
+        font-weight: bold;
+        color: #fefefe;
+        margin-bottom: 16upx;
+    }
+
+    .desc {
+        display: block;
+        font-size: 24upx;
+        line-height: 30upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    width: 702upx;
+    margin: auto;
+    margin-top: 66upx;
+    display: flex;
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+
+.jf-rules {
+    z-index: 5;
+    cursor: pointer;
+    text-align: center;
+    width: 145upx;
+    height: 64upx;
+    //line-height:64upx;
+    background: rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 32upx;
+    border-bottom-left-radius: 32upx;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -64upx/2;
+    //.setTransform(0,-50%);
+
+    //font-size:24upx;
+    //font-family:PingFang-SC-Medium;
+    //font-weight:500;
+    //color: #FFFFFF;
+
+    &__img,
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__img {
+        width: 30upx;
+        //height: 30upx;
+        height: 64upx;
+        margin-right: 6upx;
+        background-image: url('~@/static/images/users/icon_crown_white@3x.png');
+        background-position: center center;
+        background-size: 30upx 30upx;
+        background-repeat: no-repeat;
+    }
+
+    &__text {
+        line-height: 64upx;
+        font-size: 24upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: #ffffff;
+    }
+}

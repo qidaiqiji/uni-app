@@ -9,8 +9,7 @@
 						<text>></text>
 					</view>
 				</view>
-
-				<view class="collectHead" v-if="eventDesc && showTop">
+				<view class="collectHead" v-else-if="eventDesc && showTop">
 					<view class="left">{{ eventDesc }}</view>
 				</view>
 
@@ -25,9 +24,9 @@
 
 		<!-- 加载更多 -->
 		<view class="loadingText" v-if="loadingText"><image class="image" src="../../static/images/loading/loading.gif" mode=""></image></view>
-		<view class="loadingText2" v-if="loadingText"><image class="image" src="../../static/images/loading/loading.gif" mode=""></image></view>
+		<view class="loadingText2" v-if="loadingText&&page<=1"><image class="image" src="../../static/images/loading/loading.gif" mode=""></image></view>
 
-		<view class="fillyPrize-empty">123456789</view>
+		<view class="fillyPrize-empty">empty</view>
 
 		<BottomBar :type="type" :entityMode="entityMode"></BottomBar>
 
@@ -57,7 +56,7 @@
 </template>
 
 <script>
-import leftpop from '@/components/toast-popup/leftpop.vue';
+// import leftpop from '@/components/toast-popup/leftpop.vue';
 import goodsList from '@/components/goods-list/goods-list.vue';
 import buyPopup from '@/components/buy-popup/buy-popup.vue';
 import toastPopup from '@/components/toast-popup/toast-popup2.vue';
@@ -66,7 +65,7 @@ import brandListhead2 from '@/components/brand-list-head/brand-list-head2.vue';
 import { goodsQueryParams, goodsChoseThis, goodsResetNavStyle } from '@/common/goods.js';
 export default {
 	components: {
-		leftpop,
+		// leftpop,
 		goodsList,
 		buyPopup,
 		toastPopup,
@@ -171,8 +170,7 @@ export default {
 				method: 'POST',
 				header: true,
 				url: this.$api.cartAdd,
-				data: data,
-				access_token: this.access_token
+				data: data
 			});
 			if (res.code == 0) {
 				vm.$store.commit('updateCart', res.data.totalCount);
@@ -196,11 +194,9 @@ export default {
 					break;
 			}
 			let res = await this.$api.request({
-				method: 'GET',
-				url: url,
-				access_token: this.access_token
+				url: url
 			});
-			if (res.code == 0) {
+			if (res && res.data) {
 				this.entityMode = res.data;
 				this.eventDesc = res.data.eventDesc ? res.data.eventDesc : '';
 			}
@@ -259,7 +255,6 @@ export default {
 			that.pages++;
 			that.loadingText = true;
 			let res = await this.$api.request({
-				method: 'GET',
 				url: this.$api.getGoodsList,
 				data: getUrl
 			});

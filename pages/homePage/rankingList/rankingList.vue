@@ -69,14 +69,15 @@ export default {
         this.getRankingList();
     },
     onShow() {},
-    // onPageScroll(e) {
-    //     if (e.scrollTop <= 0 && this.showTop) {
-    //         this.showTop = false;
-    //     }
-    //     if (e.scrollTop > 150 && !this.showTop) {
-    //         this.showTop = true;
-    //     }
-    // },
+    onPageScroll(event) {
+        let { scrollTop } = event;
+		// 返回顶部
+		if(scrollTop>500&&!this.showTop){
+			this.showTop = true;
+		}else if(scrollTop<500&&this.showTop){
+			this.showTop = false;
+		}
+    },
     methods: {
 		backToTop() {
 			uni.pageScrollTo({ scrollTop: 0, duration: 10 });

@@ -3,7 +3,7 @@
         <view class="modal-mask transition" :class="{ show: show }"></view>
         <view class="modal-body transition" :class="{ show: show }">
             <view class="modal-body-head"><text class="text">{{title}}</text></view>
-            <view class="modal-body-content"><slot name="body"></slot></view>
+            <view class="modal-body-content"><slot></slot></view>
             <view class="modal-foot-botton" @tap="close"><text class="text">确定</text></view>
         </view>
     </view>
@@ -96,7 +96,6 @@ export default {
 
     .text {
         font-size: 32upx;
-        font-family: PingFang-SC-Bold;
         font-weight: bold;
         color: rgba(103, 113, 114, 1);
 

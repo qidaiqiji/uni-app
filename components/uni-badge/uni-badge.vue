@@ -64,8 +64,7 @@ export default {
 	z-index: 5;
 	position: absolute;
 	right: -10upx;
-
-	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, sans-serif;
 	box-sizing: border-box;
 	font-size: @bage-size;
 	line-height: 1;

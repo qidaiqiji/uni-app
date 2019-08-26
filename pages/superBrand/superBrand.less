@@ -1,0 +1,537 @@
+page {
+	background: #c3e1f8;
+}
+.banner {
+	width: 750upx;
+	height: 600upx;
+	background: rgba(1, 108, 229, 1);
+	.logo {
+		width: 100%;
+		height: 88upx;
+		padding-left: 26upx;
+		line-height: 88upx;
+		& > image {
+			width: 224upx;
+			height: 35upx;
+		}
+	}
+	.swiper {
+		width: 100%;
+		height: 336upx;
+		.swiper-item {
+			width: 100%;
+			height: 336upx;
+			display: flex;
+			justify-content: center;
+			position: relative;
+			& > image {
+				width: 702upx;
+				height: 336upx;
+				border-radius: 20upx;
+				overflow: hidden;
+			}
+			.item_time {
+				position: absolute;
+				bottom: 14upx;
+				left: 44upx;
+				// width:120px;
+				box-sizing: border-box;
+				padding: 0 8upx;
+				height: 38upx;
+				background: rgba(47, 58, 64, 0.8);
+				// border: 1px solid rgba(255, 255, 255, 1);
+				border-radius: 8upx;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				& > image {
+					width: 20upx;
+					height: 20upx;
+					margin-right: 4upx;
+				}
+				& > .line {
+					width: 1upx;
+					height: 30upx;
+					border: 1upx solid rgba(168, 182, 184, 1);
+				}
+				& > .time_ {
+					height: 24upx;
+					font-size: 24upx;
+					font-family: PingFang-SC-Bold;
+					font-weight: bold;
+					color: rgba(220, 228, 230, 1);
+					line-height: 24upx;
+					margin-left: 8upx;
+				}
+			}
+		}
+	}
+}
+.swiper_dots {
+	margin-top: 16upx;
+	width: 750upx;
+	height: 20upx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.item_dot {
+		width: 12rpx;
+		height: 12rpx;
+		background: rgba(255, 255, 255, 0.6);
+		border-radius: 50%;
+		margin-right: 12upx;
+	}
+	.item_dot:last-child {
+		margin-right: 0;
+	}
+	.Click_dot {
+		background: #fff;
+	}
+}
+.coupon_list {
+	height: 104upx;
+	width: 100%;
+	position: relative;
+	.coupon_list_ {
+		width: 702upx;
+		height: 222upx;
+		background: rgba(255, 255, 255, 1);
+		box-shadow: 0upx 8upx 20upx 0upx rgba(188, 185, 185, 0.2);
+		border-radius: 20upx;
+		// margin: 0 auto;
+		position: absolute;
+		top: -118upx;
+		left: 50%;
+		transform: translateX(-50%);
+		.slogan {
+			width: 100%;
+			height: 30upx;
+			padding: 0 24upx 0 18upx;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 38upx;
+			margin-bottom: 10upx;
+			.left {
+				width: 600upx;
+				height: 30upx;
+				display: flex;
+				align-items: center;
+				.left_icon {
+					width: 30upx;
+					height: 30upx;
+					margin-right: 10upx;
+					line-height: 30upx;
+					& > image {
+						width: 30upx;
+						height: 30upx;
+					}
+				}
+				.left_txt {
+					width: 558upx;
+					height: 24upx;
+					font-size: 24upx;
+					font-family: PingFangSC-Light;
+					font-weight: 300;
+					color: rgba(47, 58, 64, 1);
+					line-height: 24upx;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+			.right {
+				width: 30upx;
+				height: 30upx;
+				line-height: 30upx;
+				& > image {
+					width: 20upx;
+					height: 24upx;
+				}
+			}
+		}
+		.coupons {
+			width: 100%;
+			height: 124upx;
+			.coupons_scroll {
+				width: 702upx;
+				height: 124upx;
+				display: flex;
+				align-items: center;
+				padding: 0 24upx 0 15upx;
+				box-sizing: border-box;
+			}
+			.coupons_ {
+				height: 124upx;
+				display: flex;
+				align-items: center;
+			}
+			.coupon_item {
+				background-image: url('~@/static/images/superBrand/img_youhui.png');
+				background-size: 100%;
+				background-repeat: no-repeat;
+				margin-right: 16upx;
+				width: 254upx;
+				height: 100upx;
+				border-radius: 10upx;
+				flex-shrink: 0;
+				// white-space: nowrap;
+				display: flex;
+				justify-content: space-between;
+				// display: inline-block;
+				box-sizing: border-box;
+				.item_left {
+					padding-top: 18upx;
+					padding-left: 10upx;
+					box-sizing: border-box;
+					.price::before {
+						content: '￥';
+						font-size: 24upx;
+					}
+					.price {
+						height: 36upx;
+						font-size: 48upx;
+						font-family: PingFang-SC-Bold;
+						font-weight: bold;
+						color: rgba(255, 51, 102, 1);
+						margin-bottom: 8upx;
+						line-height: 0.6;
+					}
+					.condition {
+						height: 18upx;
+						font-size: 24upx;
+						font-family: PingFang-SC-Bold;
+						font-weight: bold;
+						color: rgba(255, 51, 102, 1);
+						line-height: 0.6;
+					}
+				}
+				.item_right {
+					width: 82upx;
+					height: 100upx;
+					line-height: 100upx;
+					text-align: center;
+					font-size: 24upx;
+				}
+				.yetGet {
+					font-family: PingFangSC-Regular;
+					font-weight: 400;
+					color: rgba(254, 195, 212, 1);
+				}
+				.notYetGet {
+					font-family: PingFang-SC-Bold;
+					font-weight: bold;
+					color: rgba(255, 51, 102, 1);
+				}
+			}
+		}
+	}
+}
+
+.BrandShow {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 24upx;
+	.brandItem {
+		width: 702upx;
+		height: 526upx;
+		background: rgba(255, 255, 255, 1);
+		box-shadow: 0upx 9upx 38upx 0upx rgba(188, 185, 185, 0.14);
+		border-radius: 20upx;
+		overflow: hidden;
+		margin-top: 20upx;
+		.item_thumb {
+			width: 702upx;
+			height: 314upx;
+			border-radius: 20upx;
+			overflow: hidden;
+			& > image {
+				width: 702upx;
+				height: 314upx;
+				background: #aae;
+			}
+		}
+		.item_msg {
+			width: 702upx;
+			height: 212upx;
+			box-sizing: border-box;
+			padding: 0 22upx;
+			position: relative;
+			display: flex;
+
+			.msg_desc {
+				max-width: 440upx;
+				.title {
+					margin-top: 28upx;
+					width: 430upx;
+					height: 64upx;
+					font-size: 28upx;
+					font-family: PingFang-SC-Medium;
+					font-weight: 500;
+					color: rgba(47, 58, 64, 1);
+					line-height: 32upx;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+					margin-bottom: 8upx;
+				}
+				.desc {
+					width: 426upx;
+					height: 56upx;
+					font-size: 24upx;
+					font-family: PingFang-SC-Regular;
+					font-weight: 400;
+					color: rgba(136, 150, 150, 1);
+					line-height: 30upx;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+				}
+			}
+
+			.msg_cart {
+				width: 208upx;
+				height: 210upx;
+				background: rgba(255, 255, 255, 1);
+				// border: 1upx solid rgba(220, 228, 230, 1);
+				border-radius: 20upx;
+				position: absolute;
+				right: 20upx;
+				top: -36upx;
+				.goods_thumb {
+					width: 148upx;
+					height: 148upx;
+					margin: 0 auto;
+					margin-bottom: 20upx;
+					& > image {
+						width: 148upx;
+						height: 148upx;
+					}
+				}
+				.goods_price {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					width: 100%;
+					height: 44upx;
+					box-sizing: border-box;
+					padding: 0 12upx;
+					.prices {
+						.new_price {
+							height: 22upx;
+							line-height: 22upx;
+							font-family: PingFang-SC-Bold;
+							font-weight: bold;
+							color: rgba(255, 51, 102, 1);
+							display: flex;
+							align-items: flex-end;
+							margin-bottom: 4upx;
+							.new_int::before {
+								content: '￥';
+								font-size: 22upx;
+							}
+							.new_int {
+								font-size: 28upx;
+							}
+							.new_min {
+								font-size: 22upx;
+							}
+						}
+						.old_price::before {
+							content: '￥';
+						}
+						.old_price {
+							height: 16upx;
+							line-height: 16upx;
+							font-size: 20upx;
+							font-family: PingFangSC-Light;
+							font-weight: 300;
+							text-decoration: line-through;
+							color: rgba(168, 182, 184, 1);
+						}
+					}
+					.addCart {
+						width: 44upx;
+						height: 44upx;
+						& > image {
+							width: 44upx;
+							height: 44upx;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.found_ad {
+		width: 702upx;
+		height: 388upx;
+		background-image: url('~@/static/images/superBrand/found_adBg.png');
+		background-size: 100%;
+		background-repeat: no-repeat;
+		margin-top: 20upx;
+		box-sizing: border-box;
+		padding-top: 30upx;
+		.promulgator {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20upx;
+			margin-left: 32upx;
+			.img {
+				width: 32upx;
+				height: 32upx;
+				margin-right: 14upx;
+				& > image {
+					width: 32upx;
+					height: 32upx;
+				}
+			}
+			.name {
+				height: 32upx;
+				font-size: 32upx;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: rgba(47, 58, 64, 1);
+				line-height: 32upx;
+			}
+		}
+		.ad_text {
+			margin-left: 36upx;
+			width: 624upx;
+			height: 60upx;
+			font-size: 24upx;
+			font-family: PingFang-SC-Regular;
+			font-weight: 400;
+			color: rgba(47, 58, 64, 1);
+			line-height: 32upx;
+			margin-bottom: 12upx;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+		}
+		.ad_imgs {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding: 0 24upx;
+			.itemImg {
+				width: 210upx;
+				height: 210upx;
+				border-radius: 4upx;
+				overflow: hidden;
+				margin-right: 12upx;
+			}
+			.itemImg:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+// 商品列表
+@import '../../static/less/price.less';
+
+.goods_msg {
+	width: 100%;
+	// height: 1000upx;
+	box-sizing: border-box;
+	padding: 0 24upx;
+	.title {
+		height: 110upx;
+		font-size: 48upx;
+		font-family: PingFang-SC-Bold;
+		font-weight: bold;
+		color: rgba(47, 58, 64, 1);
+		line-height: 110upx;
+	}
+	.price {
+		color: #fff;
+		padding-left: 15upx;
+	}
+	.hidden-text {
+		word-break: break-word;
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.act-data {
+		font-size: 22upx;
+		height: 40upx;
+
+		.image {
+			width: 46upx;
+			height: 28upx;
+		}
+	}
+}
+.intrList {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	overflow: hidden;
+	margin-bottom: 70upx;
+
+	.img-box {
+		width: 344upx;
+		height: 344upx;
+		margin-bottom: 20upx;
+		position: relative;
+
+		.image {
+			width: 344upx;
+			height: 344upx;
+		}
+	}
+
+	.info-box {
+		padding-left: 20upx;
+
+		.goods-name {
+			font-size: 28upx;
+			font-weight: 400;
+			color: rgba(47, 58, 64, 1);
+			margin-bottom: 15upx;
+		}
+	}
+
+	.intrList-item {
+		width: 344upx;
+		background: #fff;
+		margin-bottom: 14upx;
+		border-radius: 4upx;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.buy-box {
+		width: 100%;
+		height: 64upx;
+		background: rgba(222, 14, 14, 1);
+		box-shadow: 0px -9upx 38upx 0px rgba(188, 185, 185, 0.14);
+		position: relative;
+	}
+
+	.buycar {
+		cursor: pointer;
+		width: 44upx;
+		height: 44upx;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translate(0, -50%);
+		-ms-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+		right: 10upx;
+	}
+
+	.discount {
+		border: 1px solid #fff;
+		color: #fff;
+	}
+}

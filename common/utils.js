@@ -3,20 +3,22 @@
  */
 let USE_DEBUG = typeof window == 'undefined' ? true : false;
 // 请求设置
+let Env=true;
 let _Post = 'http://xm.rdmate.com/company/xiaopost';
 let _Get = 'http://xm.rdmate.com/company/xiaoget';
-let _xiaomei360 = 'http://api.xiaomei360.com';
+let _xiaomei360 =  Env?'https://api.xiaomei360.com':'https://testapi.xiaomei360.com';
+
 if (USE_DEBUG) {
-	_Post = 'https://api.xiaomei360.com';
-	_Get = 'https://api.xiaomei360.com';
-	_xiaomei360 = 'https://api.xiaomei360.com';
+	_Post = Env?'https://api.xiaomei360.com':'https://testapi.xiaomei360.com';
+	_Get = Env?'https://api.xiaomei360.com':'https://testapi.xiaomei360.com';
+	_xiaomei360 = Env?'https://api.xiaomei360.com':'https://testapi.xiaomei360.com';
 }
 export const Post = _Post;
 export const Get = _Get;
 export const xiaomei360 = _xiaomei360;
 
 // 首页
-export let getIndex = `${xiaomei360}/v2/index/index`;
+export let getIndex = `${xiaomei360}/v2/found/unread`;
 // 首页弹窗广告
 export let indexAds = `${xiaomei360}/v2/index/ads`;
 
@@ -157,6 +159,7 @@ export let foundGetCategory = `${xiaomei360}/v2/found/category`
 export let foundGetAll = `${xiaomei360}/v2/found/all`
 export let foundGetByIndex = `${xiaomei360}/v2/found/index`;
 export let foundGetUnread = `${xiaomei360}/v2/found/unread`;
+export let foundGetRecord = `${xiaomei360}/v2/found/record`;
 
 // 购物车
 // ---- 拉取购物车列表
@@ -204,8 +207,6 @@ export let orderGroup_shippingList = `${xiaomei360}/v2/order-group/shipping-list
 export let orderGroup_paydone = `${xiaomei360}/v2/order-group/pay-done`;
 // ---- 订单不同状态数量列表
 export let orderGroup_statusNumList = `${xiaomei360}/v2/order-group/status-num-list`;
-// ---- 物流状态
-export let orderGroup_wuliu = `${xiaomei360}/v2/order-group/query-shipping`;
 
 
 // 积分商城
@@ -244,14 +245,32 @@ export let coupon_matchcouponlist = `${xiaomei360}/v2/coupon/match-coupon-list`;
 // ---- 已邀请好友数
 export let user_invite = `${xiaomei360}/v2/user/invite`;
 
+// 热销商品
+export let hot_goods = `${xiaomei360}/v2/hot-goods/index`;
+
+//大牌名品
+
+export let famous_brand = `${xiaomei360}/v2/famous-brand/index`;
+
+//大牌名品->分类title
+export let famous_category_list = `${xiaomei360}/v2/famous-brand/category-list`;
+//大牌名品->商品列表
+export let famous_goods_List = `${xiaomei360}/v2/famous-brand-goods/index`;
+
+// 超级品牌日
+export let superBrand_index = `${xiaomei360}/v2/super-brand/index`;
+ // 超级品牌->精选列表
+export let superBrand_hotList = `${xiaomei360}/v2/super-brand/hot-list`;
+
+
 
 // 信息提示框
 export function showMessage(message) {
-	uni.showToast({
-		icon: "none",
-		title: message,
-		duration: 1500
-	})
+    uni.showToast({
+        icon: "none",
+        title: message,
+        duration: 1500
+    })
 }
 
 /**
@@ -259,36 +278,36 @@ export function showMessage(message) {
  * @param {*} message 可选提示内容
  */
 function _errorModal(message) {
-	message = message || '数据请求失败，请检查当前网络是否稳定';
-	uni.showModal({
-		title: "提示",
-		content: message
-	})
+    message = message || '数据请求失败，请检查当前网络是否稳定';
+    uni.showModal({
+        title: "提示",
+        content: message
+    })
 }
 
 /**
  * 登录失效, 提示重新登录
  */
 function _showErrorLogin(type) {
-	uni.showModal({
-		title: '提示',
-		content: "登录已失效，请重新授权登录",
-		success: (res) => {
-			uni.removeStorageSync('access_token');
-			uni.removeStorageSync('userinfo');
-			if (res.confirm) {
-				uni.removeStorageSync('untoken');
-				uni.redirectTo({
-					url: '/pages/wxlogin/wxlogin'
-				})
-			} else if (res.cancel) {
-				uni.removeStorageSync('untoken');
-				uni.switchTab({
-					url: '/pages/index/index'
-				});
-			}
-		}
-	});
+    uni.showModal({
+        title: '提示',
+        content: "登录已失效，请重新授权登录",
+        success: (res) => {
+            uni.removeStorageSync('access_token');
+            uni.removeStorageSync('userinfo');
+            if (res.confirm) {
+                uni.removeStorageSync('untoken');
+                uni.redirectTo({
+                    url: '/pages/wxlogin/wxlogin'
+                })
+            } else if (res.cancel) {
+                uni.removeStorageSync('untoken');
+                uni.switchTab({
+                    url: '/pages/index/index'
+                });
+            }
+        }
+    });
 }
 
 /**
@@ -296,152 +315,156 @@ function _showErrorLogin(type) {
  * @param {*} params 
  * 
  */
-export const request = async (params) => {
-	let {
-		method,
-		url,
-		data,
-		header,
-		isDebug,
-		isNot,
-		loading,
-		loadingType
-	} = params;
-	let _url = Get;
-	let _data = {};
+export const request = async(params) => {
+    let {
+        method,
+        url,
+        data,
+        header,
+        isDebug,
+        isNot,
+        loading,
+        loadingType
+    } = params;
+    let _url = Get;
+    let _data = {};
 
-	if (method) {
-		method = method.toUpperCase();
-	} else {
-		method = "GET";
-	}
+    if (method) {
+        method = method.toUpperCase();
+    } else {
+        method = "GET";
+    }
 
-	if (!USE_DEBUG) {
-		// console.log(`USE_DEBUG : ${USE_DEBUG}`);
-		// 请求类型
-		if (method === 'POST') {
-			_url = Post;
-			if (data) {
-				for (let key in data) {
-					_data[key] = data[key];
-				}
-			}
-		} else if (method === 'GET') {
-			let query = '';
-			if (data) {
-				query = '?';
-				for (let key in data) {
-					query += (query == '?') ? `${key}=${data[key]}` : `&${key}=${data[key]}`;
-				}
-			}
-			url = (url + query);
-		}
+    if (!USE_DEBUG) {
+        // console.log(`USE_DEBUG : ${USE_DEBUG}`);
+        // 请求类型
+        if (method === 'POST') {
+            _url = Post;
+            if (data) {
+                for (let key in data) {
+                    _data[key] = data[key];
+                }
+            }
+        } else if (method === 'GET') {
+            let query = '';
+            if (data) {
+                query = '?';
+                for (let key in data) {
+                    query += (query == '?') ? `${key}=${data[key]}` : `&${key}=${data[key]}`;
+                }
+            }
+            url = (url + query);
+        }
 
-		// 是否更换参数类型
-		if (header) {
-			_data.url_json = url;
-		} else {
-			_data.url = url;
-		}
-	} else {
-		_url = url;
-		if (data) {
-			for (let key in data) {
-				_data[key] = data[key];
-			}
-		}
-		console.log(_url + " => " + method);
-	}
+        // 是否更换参数类型
+        if (header) {
+            _data.url_json = url;
+        } else {
+            _data.url = url;
+        }
+    } else {
+        _url = url;
+        if (data) {
+            for (let key in data) {
+                _data[key] = data[key];
+            }
+        }
+        console.log(_url + " => " + method);
+    }
 
-	let _access_token = uni.getStorageSync('access_token');
-	let _header = {
-		'Authorization': _access_token ? _access_token : ''
-	};
+    let _access_token = uni.getStorageSync('access_token');
+    let _header = {
+        'Authorization': _access_token ? _access_token : ''
+    };
 
-	// 登录失效返回 
-	let unRes = {
-		data: null,
-		msg: "登录失效",
-		code: 401
-	};
+    // 登录失效返回 
+    let unRes = {
+        data: null,
+        msg: "数据请求失败，请检查当前网络是否稳定",
+        code: 401
+    };
 
-	try {
-		(loading && !loadingType) && uni.showNavigationBarLoading();
-		(!loading && loadingType) && uni.showLoading({
-			title: '加载中'
-		});
+    try {
+        (loading && !loadingType) && uni.showNavigationBarLoading();
+        (!loading && loadingType) && uni.showLoading({
+            title: '加载中'
+        });
 
-		var [error, res] = await uni.request({
-			method: method,
-			url: _url,
-			data: _data,
-			header: _header,
-		});
+        var [error, res] = await uni.request({
+            method: method,
+            url: _url,
+            data: _data,
+            header: _header,
+        });
 
-		(loading && !loadingType) && uni.hideNavigationBarLoading();
-		(!loading && loadingType) && uni.hideLoading();
+        (loading && !loadingType) && uni.hideNavigationBarLoading();
+        (!loading && loadingType) && uni.hideLoading();
 
-		if (error) {
-			console.log(`error:` + JSON.stringify(error));
-			_errorModal();
-		}
+        if (error) {
+            console.log(`error:` + JSON.stringify(error));
+            _errorModal();
+        }
+        if (isDebug) {
+            console.log(JSON.stringify(res));
+        }
 
-		if (res && res.statusCode === 200) {
-			let datas = res.data;
-			if (datas.status == 401 && !isNot) {
-				_showErrorLogin();
-				unRes.log = "datas.status";
-				return unRes;
-			}
-			return datas;
-		} else if (res && res.statusCode == 401 && !isNot) {
-			_showErrorLogin();
-			unRes.log = "res.statusCode";
-			return unRes;
-		}
-	} catch (e) {
-		console.log(JSON.stringify(`catch` + e));
-		_errorModal();
-	}
-	unRes.log = "try.catch";
-	return unRes;
+        if (res && res.statusCode === 200) {
+            let datas = res.data;
+            if (datas.status == 401 && !isNot) {
+                _showErrorLogin();
+                unRes.log = "datas.status";
+                return unRes;
+            }
+            return datas;
+        } else if (res && res.statusCode == 401 && !isNot) {
+            _showErrorLogin();
+            unRes.log = "res.statusCode";
+            return unRes;
+        }
+    } catch (e) {
+        console.log(JSON.stringify(`catch` + e));
+        _errorModal();
+    }
+    unRes.log = "try.catch";
+    return unRes;
 };
 
 /**
  * 获取商品列表
  */
 export const getGoodsArray = function(opt, callback) {
-	let {
-		params,
-		access_token
-	} = opt;
+    let {
+        params,
+        access_token
+    } = opt;
 
-	let query = '?';
-	for (let key in params) {
-		if (query == '?') {
-			query += `${key}=${params[key]}`;
-		} else {
-			query += `&${key}=${params[key]}`;
-		}
-	}
-	let _URL = Get + '?url=' + encodeURIComponent(getGoodsList + query);
-	uni.request({
-		method: 'GET',
-		url: _URL,
-		data: {},
-		header: {
-			"Authorization": access_token ? access_token : ''
-		},
-		success: function(res) {
-			if (res.statusCode === 200) {
-				callback && callback(res.data);
-			}
-		},
-		fail: function(res) {
-			_errorModal();
-		},
-		complete: function(e) {}
-	});
+    let query = '?';
+    for (let key in params) {
+        if (query == '?') {
+            query += `${key}=${params[key]}`;
+        } else {
+            query += `&${key}=${params[key]}`;
+        }
+    }
+    let _URL = Get + '?url=' + encodeURIComponent(getGoodsList + query);
+    let _access_token = access_token || uni.getStorageSync('access_token') || "";
+    uni.request({
+        method: 'GET',
+        url: _URL,
+        data: {},
+        header: {
+            "Authorization": _access_token
+        },
+        success: function(res) {
+            if (res.statusCode === 200) {
+                callback && callback(res.data);
+            }
+        },
+        fail: function(res) {
+            _errorModal();
+        },
+        complete: function(e) {}
+    });
 };
 
 /**
@@ -449,33 +472,51 @@ export const getGoodsArray = function(opt, callback) {
  * @param {Object} urlPath 页面路径
  */
 export function goNavigateTo(urlPath) {
-	if (urlPath) {
-		uni.navigateTo({
-			url: urlPath,
-			animationType: "slide-in-right",
-			animationDuration: 200,
-			fail() {
-				showMessage('页面不存在');
-			}
-		});
-	} else {
-		showMessage('页面路径不存在');
-	}
+    if (urlPath) {
+        uni.navigateTo({
+            url: urlPath,
+            animationType: "slide-in-right",
+            animationDuration: 200,
+            fail() {
+                showMessage('页面不存在');
+            }
+        });
+    } else {
+        showMessage('页面路径不存在');
+    }
 }
+		//切割价格大小
+export function	split_price(List = [], price = '', attribute = '') {
+			let temp_list = List.map(item => {
+				if (!attribute) {
+					let goodsPrice = item[price];
+					let array = goodsPrice.split('.');
+					item.big = array[0];
+					item.min = array[1] && array[1];
+				} else {
+					let goodsPrice = item[attribute][price];
+					let array = goodsPrice.split('.');
+					item[attribute].big = array[0];
+					item[attribute].min = array[1] && array[1];
+				}
+				return item;
+			});
+			return temp_list;
+		}
 
 /**
  * 获取登陆access_token
  * @param {Object} vm 实例模型
  */
 export function getAccessToken(vm) {
-	let accessToken = uni.getStorageSync('access_token');
-	if (accessToken) {
-		vm.$store.commit('updateToken', accessToken);
-	} else {
-		uni.redirectTo({
-			url: '/pages/wxlogin/wxlogin'
-		})
-	}
+    let accessToken = uni.getStorageSync('access_token');
+    if (accessToken) {
+        vm.$store.commit('updateToken', accessToken);
+    } else {
+        uni.redirectTo({
+            url: '/pages/wxlogin/wxlogin'
+        })
+    }
 }
 
 /**
@@ -483,32 +524,32 @@ export function getAccessToken(vm) {
  * @param {*} mobile 默认拨打 18926772751
  */
 export function callMobile(mobile) {
-	uni.makePhoneCall({
-		phoneNumber: mobile || '18926772751',
-		fail: function() {
-			vm.$api.showMessage('拉起拨打电话失败');
-		}
-	});
+    uni.makePhoneCall({
+        phoneNumber: mobile || '18926772751',
+        fail: function() {
+            vm.$api.showMessage('拉起拨打电话失败');
+        }
+    });
 }
 
 /**
  * 设置tabbar角标
  */
 export function getTabbarCart(totalCount) {
-	try {
-		let cartNumber = totalCount || uni.getStorageSync('cartNumber') || 0;
-		if (cartNumber && Number(cartNumber) > 0) {
-			uni.setTabBarBadge({
-				index: 3,
-				text: Number(cartNumber) > 100 ? '...' : (cartNumber).toString()
-			});
-		} else {
-			uni.removeTabBarBadge({
-				index: 3
-			})
-		}
-	} catch (e) {
-		console.log(e)
-		//TODO handle the exception
-	}
+    try {
+        let cartNumber = totalCount || uni.getStorageSync('cartNumber') || 0;
+        if (cartNumber && Number(cartNumber) > 0) {
+            uni.setTabBarBadge({
+                index: 3,
+                text: Number(cartNumber) > 100 ? '...' : (cartNumber).toString()
+            });
+        } else {
+            uni.removeTabBarBadge({
+                index: 3
+            })
+        }
+    } catch (e) {
+        console.log(e)
+            //TODO handle the exception
+    }
 }

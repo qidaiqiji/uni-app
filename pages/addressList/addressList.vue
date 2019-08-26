@@ -1,6 +1,6 @@
 <template>
 	<view class="pages address-page">
-		<view class="addr-content" v-cloak v-if="!isEmpty">
+		<view class="addr-content" v-if="!isEmpty" :style="{'min-height': minHeight+'px'}">
 			<view class="item" v-for="(item, index) in addressList" :key="index">
 				<view class="left" @tap="useAddress(item.addressId)">
 					<view class="user">
@@ -40,10 +40,13 @@ export default {
 			total: 0,
 			addressList: [],
 			// 是否订单模块进来
-			ordercheck: false
+			ordercheck: false,
+			minHeight: 1000
 		};
 	},
 	onLoad(params) {
+		let res = uni.getSystemInfoSync();
+		this.minHeight = res.windowHeight;
 		let { order } = params;
 		if (order) {
 			this.ordercheck = true;

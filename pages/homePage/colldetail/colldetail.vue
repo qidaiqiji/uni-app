@@ -130,9 +130,7 @@ export default {
     z-index: 2;
     left: 26upx;
     bottom: 26upx;
-
     font-size: 24upx;
-    font-family: PingFangSC-Medium;
     font-weight: 500;
     color: #ffffff;
 
@@ -154,12 +152,9 @@ export default {
     z-index: 2;
     right: 26upx;
     bottom: 26upx;
-
     font-size: 24upx;
-    font-family: PingFangSC-Medium;
     font-weight: 500;
     color: #ffffff;
-	
 	padding-left: 35upx;
 	background-image:  url('~@/static/images/public/icon_eye_white.png');
 	background-position: left center;

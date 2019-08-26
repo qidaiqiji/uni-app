@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import mpvueCityPicker from '@/components/mpvue-citypicker/mpvueCityPicker1.vue';
+import mpvueCityPicker from '@/components/mpvue-citypicker/mpvueCityPicker.vue';
 import confirm from '@/components/confirm/confirm.vue';
 export default {
 	components: {

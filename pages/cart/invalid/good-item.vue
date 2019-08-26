@@ -288,7 +288,6 @@ export default {
 .tag {
     &.stock {
         font-size: 24upx;
-        font-family: PingFang-SC-Medium;
         font-weight: 500;
         color: rgba(47, 58, 64, 1);
         border: 1px solid rgba(136, 150, 150, 1);

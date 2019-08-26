@@ -10,7 +10,8 @@ export default {
 		this.source = option.source;
 		try {
 			const res = uni.getSystemInfoSync();
-			this.windowHeight = `${res.screenHeight - res.statusBarHeight - 44}px`;
+			// this.windowHeight = `${res.screenHeight - res.statusBarHeight - 44}px`;
+			this.windowHeight = `${res.windowHeight}px`;
 		} catch (e) {
 			// error
 		}
@@ -42,6 +43,16 @@ export default {
 	width: 100%;
 	position: relative;
 	background-color: #000000;
+	
+	.mask {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+
 	#myVideo {
 		width: 100%;
 		height: 300px;

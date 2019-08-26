@@ -46,6 +46,7 @@ export default {
 		uni.showNavigationBarLoading();
 		userValidateLogin2(async () => {
 			that.access_token = uni.getStorageSync('access_token') || '';
+			that.getRecord();
 			that.tabs = await that.getTabList();
 			that.list = await that.getContentList(that.tabs[0]);
 		});
@@ -122,6 +123,12 @@ export default {
 				}
 				return [...this.list, ...res.data.foundList];
 			} catch (e) {}
+		},
+		async getRecord() {
+			let res = await this.$api.request({
+				url: this.$api.foundGetRecord
+			});
+			uni.hideTabBarRedDot({index:2});
 		},
 		updatePop(val) {
 			this.deepAction = val;

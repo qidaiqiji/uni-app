@@ -84,7 +84,8 @@ export default {
 			let _boxBumber = _numberPerBox || _boxNum;
 			let _addNum = datas.buyByBox ? _boxBumber : 1;
 			let _number = _count - Number(_addNum);
-			_count = _number <= _startNum ? _startNum : _number;
+			_count = _number;
+			// _count = _number <= _startNum ? _startNum : _number;
 			// 所有商品只要是小于0或者选中状态下小于起始购买数都提示，
 			if (_count < 0 || (_count < _startNum && datas.selected) || _count < _startNum) {
 				this.$api.showMessage('亲已不能再少了哦');

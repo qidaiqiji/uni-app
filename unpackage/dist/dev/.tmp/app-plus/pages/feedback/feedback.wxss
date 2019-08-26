@@ -1,0 +1,24 @@
+.feedback-page {
+  overflow: hidden;
+  width: 100%;
+  min-height: 1230rpx;
+  background: #f3f3f3;
+}
+.feedback-textarea {
+  margin-top: 20rpx;
+}
+.feedback-textarea .textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  min-height: 388rpx;
+  background: #fff;
+  padding: 20rpx;
+  color: #2f3a40;
+  font-size: 26rpx;
+  line-height: 42rpx;
+}
+.feedback-btn {
+  margin-top: 80rpx;
+}
+

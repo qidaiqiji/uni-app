@@ -2,7 +2,7 @@
     "name" : "小美诚品",
     "appid" : "__UNI__42F9078",
     "description" : "小美诚品",
-    "versionName" : "1.0.72",
+    "versionName" : "1.0.90",
     "versionCode" : "100",
     "transformPx" : false,
     "app-plus" : {
@@ -97,9 +97,13 @@
     },
     "h5" : {
         "router" : {
-            "base" : "",
-            "mode" : "hash"
+            "base" : "/",
+            "mode" : "history"
         },
-        "template" : "h5.template.html"
+        "template" : "h5.template.html",
+        "devServer" : {
+            "port" : 80
+        },
+        "title" : "web"
     }
 }

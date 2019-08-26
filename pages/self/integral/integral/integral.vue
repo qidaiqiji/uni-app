@@ -28,7 +28,7 @@
 
 		<view class="integral-content">
 			<!-- 活动 -->
-			<view class="integral-ads" v-if="ads.length > 0" @click="goPage('../exchangeDraw/exchangeDraw')"><image class="games-image" :src="ads.img" mode=""></image></view>
+			<view class="integral-ads" v-if="ads.length > 0" @click="goPage('../exchangeDraw/exchangeDraw')"><image class="games-image" :src="ads[0].img" mode=""></image></view>
 
 			<!-- 优惠券 -->
 			<!-- v-if="couponList" -->
@@ -128,8 +128,8 @@ export default {
 		}
 	},
 	onShow() {
-		let self = this;
-		self.getExchangeIndex();
+		let that = this;
+		that.getExchangeIndex();
 		this.getNameData();
 	},
 	computed: {
@@ -158,8 +158,10 @@ export default {
 		},
 		async takeCoupon(ruleId, index) {
 			let res = await this.$api.request({
-				method: 'GET',
-				url: `${this.$api.coupon_take}?ruleId=${ruleId}`
+				url: this.$api.coupon_take,
+				data: {
+					ruleId: ruleId
+				}
 			});
 			if (res.code == 0) {
 				uni.showToast({ title: res.msg });
@@ -169,27 +171,21 @@ export default {
 			}
 		},
 		async getExchangeIndex() {
-			let self = this;
+			let that = this;
 			let res = await this.$api.request({
-				method: 'GET',
-				access_token: this.access_token,
 				url: this.$api.exchange_index
 			});
-			if (res.code == 0 && res.data) {
-				let o = res.data;
-				if (o.ads && o.ads.length > 0) {
-					this.ads = o.ads[0];
-				}
-				if (o.couponList && o.couponList.length > 0) {
-					self.$set(self, 'couponList', o.couponList);
-				}
-				let _array = res.data.goodsList.map(e => {
-					e.integral = e.integral.replace('.00','');
+			if (res && res.data) {
+				let { ads, couponList, goodsList } = res.data;
+				that.ads = ads;
+				that.couponList = couponList;
+				let _array = goodsList.map(e => {
+					e.integral = e.integral.replace('.00', '');
 					return e;
 				});
-				self.goodsList = _array;
+				that.goodsList = _array;
 			} else {
-				self.$api.showMessage(res.msg);
+				that.$api.showMessage(res.msg);
 			}
 		},
 		// 积分兑换
@@ -208,9 +204,9 @@ export default {
 				url: `${this.$api.getGoodsView}?goodsId=${goodsId}`
 			});
 			if (res.code == 0 && res.data) {
-				// vm.allproductArr = res.data;
-				// vm.addCartList = res.data.addCartList;
-				vm.addCartList = res.data;
+				let _res = res.data;
+				vm.addCartList = _res.addCartList;
+				vm.addCartList.marketPrice = _res.marketPrice;
 				vm.showCart = true;
 			}
 		},

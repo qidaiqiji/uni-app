@@ -1,0 +1,113 @@
+.productDetial {
+  position: relative;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+.productDetial .tabChose {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 28rpx;
+  border-top: 1px solid #f3f3f3;
+  background: #fff;
+}
+.productDetial .tabChose .stright {
+  width: 50%;
+  color: #2f3a40;
+  text-align: center;
+}
+.productDetial .tabChose .detial {
+  width: 50%;
+  text-align: center;
+}
+.productDetial .tabChose text {
+  height: 100%;
+  display: inline-block;
+}
+.productDetial .tabChose .tabActive {
+  color: #ff3366;
+  border-bottom: 1px solid #ff3366;
+}
+.productDetial .isFixed {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  top: 0px;
+  top: 0px;
+  z-index: 22;
+}
+.productDetial .imgAllShow {
+  background: #f3f3f3;
+  padding-top: 20rpx;
+}
+.productDetial .imgAllShow .imgCon {
+  background: #fff;
+}
+.productDetial .imgAllShow .image {
+  width: 100%;
+  display: block;
+}
+.productDetial .addTocart {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.productDetial .addTocart .cartRight {
+  width: 100%;
+}
+.productDetial .addTocart .cartRight button {
+  width: 100%;
+  height: 98rpx;
+  text-align: center;
+  line-height: 98rpx;
+  background: #ff3366;
+  color: #fff;
+  font-size: 32rpx;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+}
+.slideImg {
+  background: #fff;
+  height: 520rpx;
+  text-align: center;
+}
+.slideImg .swiper {
+  height: 520rpx;
+  text-align: center;
+}
+.slideImg .image {
+  margin: 0 auto;
+  width: 520rpx;
+  height: 520rpx;
+}
+.slideImg .video {
+  width: 100%;
+}
+.photo-view {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ffffff;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #2f3a40;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #dce4e6;
+}
+.photo-view .text {
+  padding: 0 24rpx;
+}
+

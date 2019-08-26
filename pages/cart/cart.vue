@@ -1,6 +1,6 @@
 <template>
 	<view class="shopCart">
-		<view class="cart_wrapper" v-cloak v-if="hasCartGoods">
+		<view class="cart_wrapper" v-if="hasCartGoods" :style="{ 'min-height': minHeight + 'px' }">
 			<!-- 消息提醒 -->
 			<view class="price_tip" v-if="fullCutInfo.fullCutNeedsMoreAmount">
 				<view class="body">
@@ -22,9 +22,6 @@
 			<view class="cart-list" v-if="invalidGoodsList.length > 0">
 				<view class=""><cartListView2 :list="invalidGoodsList" @del="cartDelete"></cartListView2></view>
 			</view>
-
-			<!-- 地区选择 -->
-			<mpvue-Province-picker ref="mpvueCityPicker" :themeColor="themeColor" :pickerValueDefault="cityPickerValueDefault" @onConfirm="onConfirm"></mpvue-Province-picker>
 
 			<!-- 优惠券 -->
 			<view class="disCardDialog">
@@ -85,6 +82,9 @@
 				</view>
 			</view>
 		</view>
+		
+		<!-- 地区选择 -->
+		<mpvue-Province-picker ref="mpvueCityPicker" :themeColor="themeColor" :pickerValueDefault="cityPickerValueDefault" @onConfirm="onConfirm"></mpvue-Province-picker>
 
 		<!-- 购物车为空时 -->
 		<view class="shopCartEmpty" v-if="showEmptyCart">
@@ -110,7 +110,7 @@
 </template>
 
 <script>
-import mpvueProvincePicker from '@/components/mpvue-provincepicker/mpvueProvincePicker.vue';
+import mpvueProvincePicker from '@/components/mpvue-citypicker/mpvueProvincePicker.vue';
 import indexGoodsList from '@/components/goods-list/index-goods-list.vue';
 import couponList from '@/components/coupon-list/coupon-list.vue';
 import buyPopup from '@/components/buy-popup/buy-popup.vue';
@@ -131,6 +131,7 @@ export default {
 	},
 	data() {
 		return {
+			minHeight: 1000,
 			showConfirm: false,
 			recId: '',
 			goodsNum: 1,
@@ -169,7 +170,10 @@ export default {
 			access_token: ''
 		};
 	},
-	onLoad() {},
+	onLoad() {
+		let res = uni.getSystemInfoSync();
+		this.minHeight = res.windowHeight;
+	},
 	onShow() {
 		let that = this;
 		that.$api.getTabbarCart();
@@ -489,35 +493,29 @@ export default {
 				this.getGoodsList();
 			}
 		},
-		getGoodsList() {
+		async getGoodsList() {
 			let that = this;
 			that.pages++;
 			that.loadingText = true;
-			this.$http({
-				method: 'GET',
+			let res = await this.$api.request({
 				url: this.$api.getGoodsList,
 				data: {
 					page: that.pages,
 					pageSize: 10
-				},
-				success: function(res) {
-					if (res && res.data) {
-						let list = res.data.goodsList;
-						that.totalCount = res.data.totalCount;
-						for (let t = 0; t < list.length; t++) {
-							let goodsPrice = list[t].goodsInfo.goodsPrice;
-							let array = goodsPrice.split('.');
-							list[t].big = array[0];
-							list[t].min = array[1];
-						}
-						that.goodslist = that.goodslist.concat(list);
-					}
-					that.loadingText = false;
-				},
-				fail: function(res) {
-					that.loadingText = false;
 				}
 			});
+			if (res && res.data) {
+				let list = res.data.goodsList;
+				that.totalCount = res.data.totalCount;
+				for (let t = 0; t < list.length; t++) {
+					let goodsPrice = list[t].goodsInfo.goodsPrice;
+					let array = goodsPrice.split('.');
+					list[t].big = array[0];
+					list[t].min = array[1];
+				}
+				that.goodslist = that.goodslist.concat(list);
+			}
+			that.loadingText = false;
 		},
 		// 重置购物车数据
 		resetCart(datas) {
@@ -533,23 +531,21 @@ export default {
 			that.validGoodsList = datas.validGoodsList;
 			that.zhifaInfo = datas.zhifaInfo;
 
-			that.$store.commit('updateCart', that.total.totalCount);
-			that.$api.getTabbarCart(that.total.totalCount);
-
 			// 省份信息
 			that.provinceId = datas.provinceId;
 			that.provinceName = datas.provinceName;
 			that.usercitys = datas.provinceName;
-			that.cityPickerValueDefault = [that.provinceId];
-			// if (that.validGoodsList.length < 1 && that.invalidGoodsList.length < 1) {
-			//     that.showEmptyCart = true;
-			// }
-			if (!that.hasCartGoods) {
+			that.cityPickerValueDefault = [datas.provinceId];
+			
+			if (!datas.hasCartGoods) {
 				that.showEmptyCart = true;
 				that.getGoodsList();
 			} else {
 				that.showEmptyCart = false;
 			}
+
+			that.$store.commit('updateCart', datas.total.totalCount);
+			that.$api.getTabbarCart(datas.total.totalCount);
 		},
 		// 确认订单
 		payCheckOrder() {

@@ -1,0 +1,147 @@
+.authentication {
+  width: 100%;
+  min-height: 1230rpx;
+  text-align: center;
+  background-color: #fff;
+}
+.authentication .logo {
+  padding: 73rpx 0 0 0;
+}
+.authentication .logo .image {
+  width: 276rpx;
+  height: 83rpx;
+}
+.authentication .info ._img {
+  width: 448rpx;
+  height: 553rpx;
+}
+.authentication .button {
+  margin: auto;
+  margin-top: 136rpx;
+  width: 416rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ff3366;
+  -webkit-border-radius: 44rpx;
+          border-radius: 44rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.authentication .submit {
+  margin: auto;
+  margin-top: 105rpx;
+  width: 662rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ff3366;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.authentication .tips {
+  position: relative;
+  width: 662rpx;
+  margin: auto;
+  padding: 21rpx 0;
+  line-height: 32rpx;
+  text-align: left;
+  color: #889696;
+  font-size: 22rpx;
+}
+.authentication .tips ._i {
+  font-style: normal;
+  color: #ff3366;
+}
+.authentication .disabled {
+  background: #ffaec2 !important;
+}
+.valid-from {
+  padding-top: 139rpx;
+}
+.valid-from .preview {
+  position: relative;
+  display: inline-block;
+  width: 310rpx;
+  height: 205rpx;
+}
+.valid-from .preview:first-child {
+  margin-right: 43rpx;
+}
+.valid-from .preview input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.valid-from .preview .text {
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #ff8fab;
+  font-size: 24rpx;
+  color: #fff;
+}
+.valid-from .preview .img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.valid-from .must {
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  left: -30rpx;
+  z-index: 2;
+  color: #ff3366;
+  font-size: 38rpx;
+}
+.valid-from .zm {
+  margin-left: 56rpx;
+  font-size: 28rpx;
+}
+.valid-from .input {
+  position: relative;
+  margin: auto;
+  margin-bottom: 25rpx;
+  width: 662rpx;
+  height: 88rpx;
+  background: #f3f3f3;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
+  font-size: 28rpx;
+  margin-left: 56rpx;
+}
+.valid-from .input input {
+  text-align: left;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #889696;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+.agreement {
+  width: 100%;
+  height: 100vh;
+  text-align: left;
+  background-color: #fff;
+}
+.agreement .content {
+  padding-top: 53rpx;
+  width: 701rpx;
+  margin: auto;
+  font-size: 26rpx;
+  line-height: 38rpx;
+}
+.agreement .content .paragraph {
+  padding: 25rpx 0;
+}
+.agreement .content ._p {
+  font-weight: 600;
+}
+

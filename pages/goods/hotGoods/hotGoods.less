@@ -1,0 +1,177 @@
+page{
+	// box-sizing: border-box;
+	background: #fddfc1;
+}
+.topHots {
+	width: 100%;
+	height: 500upx;
+	background-image: url('~@/static/images/hotGoods/topBg.png');
+	background-position: top center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 0 24upx 3upx;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	box-sizing: border-box;
+	&>view {
+		width: 234upx;
+		background: rgba(255, 255, 255, 1);
+		box-shadow: 0px -9upx 38upx 0px rgba(188, 185, 185, 0.5);
+		position: relative;
+		box-sizing: border-box;
+
+		.goodsLogo {
+			width: 70upx;
+			height: 70upx;
+			position: absolute;
+			top: -36upx;
+			left: 50%;
+			transform: translateX(-50%);
+
+			&>image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.goodsThumb {
+			width: 216upx;
+			height: 216upx;
+			margin: 0 auto;
+
+			&>image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.goodsTitle {
+			width: 200upx;
+			height: 58upx;
+			margin: 0 auto;
+			font-size: 24upx;
+			font-family: PingFangSC-Regular;
+			font-weight: 400;
+			color: rgba(47, 58, 64, 1);
+			line-height: 29upx;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space:wrap;
+			display:-webkit-box;
+			-webkit-box-orient:vertical;
+			-webkit-line-clamp:2;
+
+		}
+
+		.goodsDesc {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 44upx;
+			margin-top: 16upx;
+
+			&>.price::before {
+				content: '￥'
+			}
+
+			&>.price {
+				margin-left: 14upx;
+				height: 26upx;
+				font-size: 26upx;
+				font-family: PingFangSC-Regular;
+				font-weight: 400;
+				color: rgba(255, 51, 102, 1);
+				line-height: 26upx;
+			}
+
+			&>.addCart {
+				width: 44upx;
+				height: 44upx;
+				border-radius: 50%;
+				background: #fd2c5f;
+				margin-right: 5upx;
+				z-index: 2;
+				&>image {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.topGoods0 {
+		order: 2;
+		height: 428upx;
+		border-radius: 10upx 10upx 0px 0px;
+		padding-top: 72upx;
+		z-index: 2;
+	}
+
+	.topGoods1 {
+		order: 1;
+		border-radius: 10upx 0px 0px 0px;
+		height: 402upx;
+		padding-top: 46upx;
+	}
+
+	.topGoods2 {
+		order: 3;
+		border-radius: 0px 10upx 0px 0px;
+		height: 402upx;
+		padding-top: 46upx;
+	}
+
+
+}
+
+
+.goodsList {
+	.item {
+		width: 100%;
+		padding: 0 24upx;
+		box-sizing: border-box;
+	
+		&>view {
+			margin-top: 20upx;
+		}
+	}
+}
+
+
+.lock-end {
+	position: relative;
+	margin: auto;
+	margin-top: 40upx;
+	width: 702upx;
+	height: 40upx;
+	line-height: 40upx;
+	font-size: 26upx;
+	font-family: PingFangSC-Regular;
+	font-weight: 400;
+	color: #fff;
+	display: block;
+	text-align: center;
+	margin-bottom: 160upx;
+
+	&::before,
+	&::after {
+		width: 262upx;
+		height: 1upx;
+		background: #fff;
+		content: ' ';
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translate(0, -50%);
+		-ms-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+	}
+
+	&::before {
+		left: 0;
+	}
+
+	&::after {
+		right: 0;
+	}
+}

@@ -1,0 +1,272 @@
+//out:false
+.paySuccess{
+    background: #f3f3f3;
+    min-height: 1334upx-44px-98upxs;
+}
+
+.pay-contariner{
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+}
+
+.paySuccessCon {
+    //padding: 0 40upx;
+    background: #fff;
+    overflow: hidden;
+    width: 690upx;
+    margin: auto;
+}
+
+.pay-success-payImg {
+    margin-top: 73upx;
+    border-bottom: 1px solid #e5e5e5;
+
+    .img {
+        width: 266upx;
+        height: 200upx;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .tips {
+        color: #ff3366;
+        font-size: 32upx;
+        text-align: center;
+        margin-top: 36upx;
+        margin-bottom: 49upx;
+    }
+}
+
+.pay-success-orderInfo {
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: 40upx;
+    //padding: 20upx 0;
+    //padding-bottom: 0;
+
+    .sameText {
+        line-height: 60upx;
+    }
+
+    .order{
+        margin-bottom: 0upx;
+        line-height: normal;
+    }
+
+    .orderId{
+        margin-bottom: 40upx;
+    }
+
+    .icon {
+        display: inline-block;
+        width: 30upx;
+        height: 30upx;
+        background: url('~@/static/images/paySuccess/icon_order.png');
+        background-size: 100%;
+        vertical-align: middle;
+    }
+
+    .dind {
+        font-size: 28upx;
+        color: #677172;
+        font-weight: bold;
+
+        width: 100%;
+        height: 60upx;
+        line-height: 60upx;
+        background-image: url('~@/static/images/paySuccess/icon_order.png');
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 30upx 30upx;
+        padding-left: 40upx;
+    }
+
+    .orderPrice {
+        font-size: 28upx;
+        color: #677172;
+    }
+
+    .priceDetial {
+        font-size: 28upx;
+        color: #ff3366;
+    }
+
+    .orderNum {
+        font-size: 28upx;
+        color: #677172;
+    }
+}
+
+.pay-success-quna {
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+
+    .quanTips {
+        margin-top: 35upx;
+        color: #2f3a40;
+        font-size: 28upx;
+        text-align: center;
+    }
+
+    .self-coupon {
+        color: #ff3366;
+        font-size: 28upx;
+    }
+
+    .quanImg {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        width: 270upx;
+        height: 200upx;
+        background: url('~@/static/images/paySuccess/img_discount.png');
+        background-size: 100%;
+        text-align: center;
+        overflow: hidden;
+        //margin-top: 27upx;
+        //margin-bottom: 16upx;
+    }
+
+    .jiage {
+        font-size: 48upx;
+        color: #fff;
+        //margin-top: 39upx;
+
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 34upx;
+        height: 60upx;
+        line-height: 60upx;
+    }
+
+    .sb{
+        font-size:22upx;
+    }
+
+    .quanType {
+        color: #ffbab5;
+        font-size: 28upx;
+        //margin-top: 33upx;
+        
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 80upx+16upx+20uxp;
+        height: 60upx;
+        line-height: 60upx;
+        
+    }
+
+    .scroll-view_W {
+        white-space: nowrap;
+        width: 100%;
+        height: 200upx;
+        margin-bottom: 40upx;
+        margin-top: 26upx;
+    }
+}
+
+.pay-success-ceping {
+    border-bottom: 1px solid #e5e5e5;
+
+    .cepingTitle {
+        .icon {
+            display: inline-block;
+            width: 30upx;
+            height: 30upx;
+            background: url('~@/static/images/paySuccess/icon_order.png');
+            background-size: 100%;
+            vertical-align: middle;
+
+            padding-left: 40upx;
+        }
+
+        .cepingInfo {
+            color: #677172;
+            font-size: 28upx;
+            font-weight: bold;
+            // margin-left: 10upx;
+
+            width: 100%;
+            height: 88upx;
+            line-height: 88upx;
+            background-image: url('~@/static/images/paySuccess/icon_complimentary.png');
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: 30upx 30upx;
+            padding-left: 40upx;
+        }
+    }
+
+    .ceList {
+        position: relative;
+        padding: 20upx 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .image{
+            width: 120upx;
+            height: 120upx;
+        }
+
+        .ceLeft {
+            width: 120upx;
+            height: 120upx;
+        }
+
+        .ceRight {
+            margin-left: 15upx;
+
+            .title {
+                font-size: 24upx;
+                color: #889696;
+            }
+
+            .detial {
+                margin-top: 28upx;
+                color: #b2b2b2;
+                font-size: 22upx;
+                position: absolute;
+                bottom: 20upx;
+
+                .num {}
+
+                .prize {}
+            }
+        }
+    }
+}
+
+.pay-success-emptyBtn {
+    height: 98upx+64upx;
+    visibility: hidden;
+}
+
+.pay-success-btnCon {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+
+    button {
+        width: 50%;
+        height: 98upx;
+        font-size: 32upx;
+        text-align: center;
+        border: none;
+        line-height: 98upx;
+        border-radius: 0;
+    }
+
+    .viewOrder {
+        color: #ff3366;
+        border: 1px solid #ff3366;
+    }
+
+    .goIndex {
+        color: #fff;
+        background: #ff3366;
+    }
+}

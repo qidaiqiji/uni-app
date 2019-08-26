@@ -5,7 +5,11 @@
 				<text>总单号：</text>
 				<text class="sn">{{ groupSn }}</text>
 			</view>
-			<view class="fr order-status-error">{{ status }}</view>
+			<!-- <view class="fr order-status-error">{{ status }}</view> -->
+			<view class="fr">
+				<view class="order-status-error" v-if="!hasDelivery">{{status}}</view>
+				<view class="order-status-success" v-else-if="hasDelivery" @tap="orderQuery(groupSn)">物流追踪</view>
+			</view>
 		</view>
 		<view class="o-border o-addressInfo">
 			<view class="info">
@@ -206,11 +210,8 @@ export default {
 		// 快递信息查询
 		orderQuery(groupSn) {
 			console.log(groupSn);
-		    // let res = await this.$api.request({
-		    //     method: 'post',
-		    //     url: `${this.$api.orderGroup_queryShipping}?groupSn=${groupSn}`
-		    // });
-		    // this.$api.showMessage(res.msg);
+			let url = `../wuliu/wuliu?groupSn=${groupSn}`;
+			this.$api.goNavigateTo(url);
 		}
 	}
 };

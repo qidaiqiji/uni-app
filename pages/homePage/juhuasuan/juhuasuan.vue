@@ -166,7 +166,6 @@ export default {
 	text-align: center;
 	color: #d4d4d4;
 	font-size: 24upx;
-	font-family: PingFang-SC-Medium;
 	font-weight: 500;
 
 	.text {

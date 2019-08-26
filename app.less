@@ -23,6 +23,12 @@
 .pages {
 	min-height: @minHeight;
 	overflow  : hidden;
+
+	
+}
+.content{
+	line-height: 1;
+	box-sizing: border-box;
 }
 
 // 公共标题文字属性
@@ -239,7 +245,6 @@
 .svip-popup {
 	.bodyer {
 		font-size  : 24upx;
-		font-family: PingFang-SC-Medium;
 		font-weight: 500;
 		color      : #889696;
 		line-height: 42upx;
@@ -274,7 +279,6 @@
 	border-top : 1px #f5f5f5 solid;
 	background : #ffffff;
 	font-size  : 36upx;
-	font-family: PingFang-SC-Medium;
 	font-weight: 500;
 	color      : #000000;
 	text-align : center;
@@ -469,3 +473,5 @@
 @import '~@/static/less/app.less';
 // icon合并
 @import '~@/static/less/icon.less';
+// 商品列表导航样式
+@import '~@/static/less/brand-list-head.less';

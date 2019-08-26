@@ -1,46 +1,45 @@
 //out:false
 .setTransform(@x: 0px, @y: 0px) {
 	-webkit-transform: translate(@x, @y);
-	-ms-transform: translate(@x, @y);
-	transform: translate(@x, @y);
+	-ms-transform    : translate(@x, @y);
+	transform        : translate(@x, @y);
 }
 
 .jfdetail-page {
-	overflow: hidden;
-	width: 100%;
+	overflow  : hidden;
+	width     : 100%;
 	min-height: 1228upx;
 	background: #f3f3f3;
 }
 
 .jfdetail-header {
 	background: #fff;
-	position: fixed;
-	z-index: 2;
-	width: 100%;
-	height: 90upx;
+	position  : fixed;
+	z-index   : 2;
+	width     : 100%;
+	height    : 90upx;
 }
 
 .jfdetail-content {
-	overflow: hidden;
+	overflow     : hidden;
 	// margin-top: 32upx;
-	margin-top: 122upx;
+	margin-top   : 122upx;
 
 	.item {
-		position: relative;
-		box-sizing: border-box;
-		padding: 30upx 25upx;
-		min-height: 132upx;
+		position     : relative;
+		box-sizing   : border-box;
+		padding      : 30upx 25upx;
+		min-height   : 132upx;
 		border-bottom: 1px solid #dce4e6;
-		background: rgba(255, 255, 255, 1);
+		background   : rgba(255, 255, 255, 1);
 	}
 
 	.title {
-		display: block;
-		font-size: 28upx;
-		font-family: PingFang-SC-Bold;
-		font-weight: bold;
-		color: #2f3a40;
-		line-height: 30upx;
+		display      : block;
+		font-size    : 28upx;
+		font-weight  : bold;
+		color        : #2f3a40;
+		line-height  : 30upx;
 		margin-bottom: 22upx;
 	}
 
@@ -49,34 +48,31 @@
 			display: block;
 		}
 
-		display: block;
-		font-size: 26upx;
-		font-family: PingFang-SC-Medium;
-		font-weight: 500;
-		color: #889696;
-		line-height: 30upx;
+		display      : block;
+		font-size    : 26upx;
+		font-weight  : 500;
+		color        : #889696;
+		line-height  : 30upx;
 		margin-bottom: 12upx;
 	}
 
 	.timer {
-		display: block;
-		font-size: 24upx;
-		font-family: PingFang-SC-Medium;
+		display    : block;
+		font-size  : 24upx;
 		font-weight: 500;
-		color: #b2b2b2;
+		color      : #b2b2b2;
 		line-height: 30upx;
 	}
 
 	.score {
-		font-size: 32upx;
-		font-family: PingFang-SC-Bold;
+		font-size  : 32upx;
 		font-weight: bold;
-		color: #ff3366;
+		color      : #ff3366;
 		line-height: 30upx;
 
 		position: absolute;
-		right: 25upx;
-		top: 50%;
+		right   : 25upx;
+		top     : 50%;
 		.setTransform(0, -50%);
 	}
 }

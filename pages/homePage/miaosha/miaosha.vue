@@ -167,7 +167,6 @@ export default {
 			let res = await this.$api.request({
 				method: 'POST',
 				header: true,
-				access_token: this.access_token,
 				url: this.$api.cartAdd,
 				data: data
 			});

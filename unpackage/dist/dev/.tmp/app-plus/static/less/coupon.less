@@ -1,0 +1,212 @@
+//out:false
+// 优惠券列表
+.coupon-view {
+    position: relative;
+    width   : 100%;
+}
+
+.coupon-view-coll {
+    margin           : auto;
+    margin-bottom    : 26upx;
+    width            : 702upx;
+    position         : relative;
+    display          : -webkit-box;
+    -webkit-box-align: start;
+}
+
+.use-money,
+.use-demand {
+    width      : 100%;
+    display    : block;
+    text-align : center;
+    font-family: PingFang-SC-Bold;
+    color      : rgba(255, 255, 255, 1);
+}
+
+.use-money {
+    .symbols {
+        font-size : 28upx;
+        font-style: normal;
+    }
+
+    font-size  :56upx;
+    font-weight: 400;
+
+}
+
+.use-demand {
+    font-size  : 22upx;
+    font-weight: 400;
+}
+
+// 小圆点
+.use-p {
+    position         : absolute;
+    width            : 30upx;
+    height           : 30upx;
+    background       : rgba(255, 255, 255, 1);
+    border-radius    : 50%;
+    top              : 50%;
+    right            : -15upx;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform    : translate(0, -50%);
+    transform        : translate(0, -50%);
+}
+
+// 立即领取
+.use-btn {
+    width        : 130upx;
+    height       : 44upx;
+    line-height  : 44upx;
+    border-radius: 22upx;
+    font-size    : 22upx;
+    font-weight  : 500;
+    background   : rgba(255, 255, 255, 1);
+    display      : inline-block;
+    text-align   : center;
+    position     : absolute;
+    bottom       : 12upx;
+    right        : 12upx;
+    cursor       : pointer;
+}
+
+// 已领取
+.un-take {
+    border: 1px solid rgba(212, 212, 212, 1);
+    color : rgba(212, 212, 212, 1);
+}
+
+.tiket-item_fr {
+    position: relative;
+    height  : 200upx;
+}
+
+.coupon_fl,
+.coupon_fr {
+    position: relative;
+    height  : 200upx !important;
+}
+
+.coupon_fl {
+    .local {
+        width            : 100%;
+        position         : absolute;
+        left             : 50%;
+        top              : 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform    : translate(-50%, -50%);
+        transform        : translate(-50%, -50%);
+    }
+
+    width        : 222upx;
+    border       : 1px solid transparent;
+    border-radius: 4upx 0px 0px 4upx;
+    background   : rgba(254, 152, 6, 1);
+}
+
+.coupon_fr {
+    position     : relative;
+    width        : 480upx;
+    background   : rgba(255, 255, 255, 1);
+    border       : 1px solid rgba(220, 228, 230, 1);
+    border-left  : 0px;
+    border-radius: 0px 4upx 4px 0upx;
+
+    .fr_top {
+        padding   : 0upx 20upx;
+        margin-top: 20upx;
+    }
+
+    .label {
+        display         : inline-block;
+        vertical-align  : top;
+        text-align      : center;
+        border-radius   : 4upx;
+        font-size       : 22upx;
+        font-family     : PingFang-SC-Medium;
+        font-weight     : 500;
+        color           : #fff;
+        //padding       : 6upx 10upx;
+        padding         : 0 10upx;
+    }
+
+    .info {
+
+        .title {
+            font-size    : 24upx;
+            color        : #2f3a40;
+            word-break   : break-all;
+            white-space  : nowrap;
+            overflow     : hidden;
+            text-overflow: ellipsis;
+        }
+
+        display       : inline-block;
+        vertical-align: top;
+        font-family   : PingFang-SC-Medium;
+        font-weight   : 500;
+        line-height   : 36upx;
+        margin-left   : 20upx;
+        //width       : 334upx;
+        width         : 70%;
+    }
+
+    .desc {
+        font-size    : 22upx;
+        color        : #889696;
+        word-break   : break-all;
+        white-space  : nowrap;
+        overflow     : hidden;
+        text-overflow: ellipsis;
+    }
+
+    .desc2 {
+        padding   : 0upx 20upx;
+        margin-top: 5upx;
+    }
+
+    .fr_tips {
+        position      : absolute;
+        width         : 310upx;
+        font-size     : 20upx;
+        font-family   : PingFang-SC-Medium;
+        font-weight   : normal;
+        color         : #889696;
+        left          : 20upx;
+        bottom        : 12upx;
+        display       : block;
+        word-break    : break-all;
+        white-space   : nowrap;
+        overflow      : hidden;
+        text-overflow : ellipsis;
+    }
+}
+
+// 优惠券底部
+.tiket-footer {
+    &__txt {
+        font-size  : 22upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color      : #889696;
+        line-height: 28upx;
+    }
+
+    &__btn {
+        margin-top : 20upx;
+        height     : 98upx;
+        line-height: 98upx;
+        font-size  : 32upx;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color      : rgba(255, 51, 102, 1);
+        background : rgba(255, 255, 255, 1);
+    }
+
+    width     : 100%;
+    position  : fixed;
+    z-index   : 8;
+    bottom    : 0;
+    text-align: center;
+    background: #F3F3F3;
+}

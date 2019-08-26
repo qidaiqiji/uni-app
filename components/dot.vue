@@ -60,7 +60,8 @@ export default {
 		.dot-item {
 			width: 12upx;
 			height: 12upx;
-			border-radius: 50upx;
+			// border-radius: 50upx;
+			border-radius: 50%;
 			background-color: #bfbfbf;
 		}
 		.dot-item.current {

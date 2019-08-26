@@ -1,0 +1,15 @@
+.arrival-unset.data-v-5ce23b97 {
+  background: #fff;
+  min-height: 800rpx;
+  padding-top: 240rpx;
+  margin: auto;
+}
+.arrival-goods-list.data-v-5ce23b97 {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 100%;
+}
+.arrival-header.data-v-5ce23b97 {
+  background: #fff;
+}
+

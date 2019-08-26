@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"arrival-unset.",[1],"data-v-5ce23b97 { background: #fff; min-height: ",[0,800],"; padding-top: ",[0,240],"; margin: auto; }\n.",[1],"arrival-goods-list.",[1],"data-v-5ce23b97 { margin-top: ",[0,20],"; background: #fff; width: 100%; }\n.",[1],"arrival-header.",[1],"data-v-5ce23b97 { background: #fff; }\n",],undefined,{path:"./pages/self/remindlist/remindlist.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/self/remindlist/remindlist.wxml') } }));

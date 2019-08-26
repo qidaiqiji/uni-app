@@ -142,9 +142,7 @@ export default {
     z-index: 2;
     left: 26upx;
     bottom: 36upx;
-
     font-size: 24upx;
-    font-family: PingFangSC-Medium;
     font-weight: 500;
     color: #ffffff;
 
@@ -166,9 +164,7 @@ export default {
     z-index: 2;
     right: 26upx;
     bottom: 36upx;
-
     font-size: 24upx;
-    font-family: PingFangSC-Medium;
     font-weight: 500;
     color: #ffffff;
 	
@@ -225,14 +221,11 @@ export default {
 .album-banner {
     position: relative;
     overflow: hidden;
-
     width: 718upx;
     height: 360upx;
-
     margin: auto;
     margin-top: 20upx;
     margin-bottom: 20upx;
-
     border-radius: 16upx;
     //background: #ffffff;
 
@@ -247,7 +240,6 @@ export default {
     margin: auto;
     margin-top: 20upx;
 	margin-bottom: 20upx;
-	
 	// .ads-item{
 	// 	width: 352upx;
 	// 	height: 164upx;
@@ -257,9 +249,7 @@ export default {
 .album-title {
     display: block;
     text-align: center;
-
     font-size: 28upx;
-    font-family: PingFangSC-Medium;
     font-weight: bold;
     // color: #889696;
     color: #2f3a40;
@@ -280,7 +270,6 @@ export default {
 .album-item {
     position: relative;
     overflow: hidden;
-
     min-height: 432upx;
     background: #ffffff;
     border-radius: 20upx;
@@ -291,9 +280,7 @@ export default {
     position: relative;
     height: 78upx;
     background: #fb64b8;
-
     font-size: 28upx;
-    font-family: PingFangSC-Regular;
     font-weight: 400;
 
     &_fb {
@@ -316,16 +303,13 @@ export default {
     &_more {
         color: #ffffff;
         font-size: 22upx;
-
         padding-right: 34upx;
         height: 40upx;
         line-height: 40upx;
-
         position: absolute;
         top: 50%;
         margin-top: -(78-40)/2upx;
         right: 8upx;
-
         background-image: url('~@/static/images/s30/icon_return2.png');
         background-position: right center;
         background-repeat: no-repeat;
@@ -353,23 +337,17 @@ export default {
     .img {
         width: 216upx;
         max-height: 216upx;
-
         padding: 8upx;
-
         box-sizing: border-box;
-
         border: 1px solid #dce4e6;
         border-radius: 4upx;
     }
 
     .price {
         display: block;
-
         width: 100%;
         text-align: center;
-
         font-size: 26upx;
-        font-family: PingFangSC-Regular;
         font-weight: 400;
         color: #ff3366;
     }
@@ -382,16 +360,12 @@ export default {
 
     .tag {
         display: inline-block;
-
         font-size: 24upx;
-        font-family: PingFangSC-Regular;
         font-weight: 400;
         color: #b2b2b2;
         padding: 6upx 8upx;
-
         border: 1px solid #dce4e6;
         border-radius: 4upx;
-
         margin-right: 20upx;
         margin-bottom: 10upx;
     }

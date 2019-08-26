@@ -1,0 +1,2 @@
+<import src="./pinpaiCoo.vue.wxml" />
+    <template is="05410aef" data="{{ ...$root['0'], $root }}"/>

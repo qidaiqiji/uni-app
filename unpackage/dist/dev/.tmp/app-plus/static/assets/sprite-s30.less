@@ -1,0 +1,163 @@
+// out:false
+// .s30_cheap_remind, .s30_cheap_return, .s30_homepage_fire, .s30_integral_vip, .s30_paysucc_gift, .s30_paysucc_order, .s30_putaway_black, .s30_putaway_white, .s30_search_delete, .s30_shampoo_shop, .s30_shampoo_shuix, .s30_shampoo_youx, .s30_shop_pink {
+//     background: url(sprite-s30.png);
+//     background-size: 150upx 150upx;
+// }
+.s30_icons {
+
+    &:before,
+    &:after {
+        content: " ";
+        background: url('sprite-s30.png');
+        background-size: 150upx 150upx;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &:before {
+        margin-right: 4upx;
+    }
+
+    &:after {
+        margin-left: 4upx;
+    }
+}
+
+
+.s30_cheap_remind {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -40upx 0upx;
+    }
+}
+
+.s30_cheap_return {
+    &:before {
+        background: none;
+    }
+
+    &:after {
+        width: 30upx;
+        height: 30upx;
+        background-position: 0upx -80upx;
+    }
+
+    &.left:after {
+        margin-left: 0;
+    }
+}
+
+.s30_homepage_fire {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: 0upx -40upx;
+    }
+}
+
+.s30_integral_vip {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -40upx -40upx;
+    }
+}
+
+.s30_paysucc_gift {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -80upx 0upx;
+    }
+}
+
+.s30_paysucc_order {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -80upx -40upx;
+    }
+}
+
+.s30_putaway_black {
+    &:after {
+        width: 30upx;
+        height: 30upx;
+        background-position: 0upx 0upx;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translate(0,-50%);
+		-ms-transform:translate(0,-50%);
+		-moz-transform:translate(0,-50%);
+		-webkit-transform: translate(0,-50%);
+		-o-transform: translate(0,-50%);
+    }
+}
+
+.s30_putaway_white {
+    &:after {
+        width: 30upx;
+        height: 30upx;
+        background-position: -40upx -80upx;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translate(0,-50%);
+		-ms-transform:translate(0,-50%);
+		-moz-transform:translate(0,-50%);
+		-webkit-transform: translate(0,-50%);
+		-o-transform: translate(0,-50%);
+    }
+}
+
+.s30_search_delete {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -80upx -80upx;
+    }
+}
+
+.s30_shampoo_shop {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -120upx 0upx;
+    }
+}
+
+.s30_shampoo_shuix {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -120upx -40upx;
+    }
+}
+
+.s30_shampoo_youx {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: -120upx -80upx;
+    }
+}
+
+.s30_shop_pink {
+    &:before {
+        width: 30upx;
+        height: 30upx;
+        background-position: 0upx -120upx;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(0,-50%);
+		-ms-transform:translate(0,-50%);
+		-moz-transform:translate(0,-50%);
+		-webkit-transform: translate(0,-50%);
+		-o-transform: translate(0,-50%);
+    }
+	
+	padding-left: 35upx;
+}

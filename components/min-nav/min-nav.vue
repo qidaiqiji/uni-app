@@ -110,7 +110,8 @@ export default {
 	background: rgba(0, 0, 0, 0.5);
 	border-radius: 8upx;
 	left: 24upx;
-
+	display: flex;
+	align-items: center;
 	.image {
 		width: 40upx;
 		height: 40upx;
@@ -127,7 +128,6 @@ export default {
 		width: 84upx;
 		height: 84upx;
 		position: relative;
-		float: left;
 		display: block;
 		box-sizing: border-box;
 	}

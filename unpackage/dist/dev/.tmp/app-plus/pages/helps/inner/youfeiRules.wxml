@@ -1,0 +1,2 @@
+<import src="./youfeiRules.vue.wxml" />
+    <template is="fb21678a" data="{{ ...$root['0'], $root }}"/>

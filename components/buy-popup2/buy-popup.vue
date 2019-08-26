@@ -2,7 +2,7 @@
 	<view class="cartDiglog" v-if="show">
 		<view class="mask" @tap="closeDiaCart()" @touchmove.stop.prevent="moveHandle"></view>
 		<view class="cartdiaCon">
-			<view class="cartDetial">
+			<view class="cartDetial" @touchmove.stop.prevent="moveHandle">
 				<view class="cartDeLeft"><image class="img" :src="thumb"></image></view>
 				<view class="buy-cartDeRight">
 					<view class="buy-descFirst">
@@ -10,7 +10,7 @@
 						<view class="closeCart closeCart2" @tap="closeDiaCart()"></view>
 					</view>
 					<view class="buy-cartNum">
-						<view class="text">规格：{{ unit }}</view>
+						<view class="text">规格：{{ start }}{{ unit }}</view>
 						<view class="text">库存：{{ goodsNumber }}</view>
 					</view>
 				</view>
@@ -29,6 +29,7 @@
 
 <script>
 import addType from './add-type.vue';
+import { watchData } from './watch';
 export default {
 	components: {
 		addType
@@ -56,6 +57,8 @@ export default {
 			thumb: '',
 			// 商品名称
 			goodsName: '',
+			// 购买数量
+			start: 1,
 			// 规格
 			unit: '',
 			// 库存
@@ -73,32 +76,7 @@ export default {
 
 	watch: {
 		datas(newValue, oldValue) {
-			// 积分商品详情页
-			let { goodsName, goodsNumber, goodsThumb, videoFace, isBuyByBox, isMix, isZhifa, maxNum, numberPerBox, startNum, unit, price, marketPrice, balance } = newValue;
-			this.thumb = goodsThumb || videoFace;
-			this.goodsName = goodsName;
-			this.unit = unit;
-			this.goodsNumber = goodsNumber || maxNum;
-			this.count = startNum;
-			this.addList = [
-				{
-					goodsName,
-					goodsNumber,
-					goodsThumb,
-					isBuyByBox,
-					isMix,
-					isZhifa,
-					maxNum,
-					// numberPerBox,
-					startNum,
-					unit,
-					selected: true,
-					numberPerBox: numberPerBox,
-					price: price,
-					marketPrice: marketPrice,
-					balance: balance
-				}
-			];
+			watchData(newValue, this);
 		}
 	},
 	mounted() {},
@@ -107,17 +85,51 @@ export default {
 			this.$emit('close');
 		},
 		update(value) {
-			this.count = value;
-		},
-		sure(goodsId) {
-			let balance = this.balance * 1;
-			// 总数%2+1,求使用多少次数的积分
-			// let val = ((this.count % 2) + 1) * parseInt(this.shopPrice);
-			let val = this.count * parseInt(this.shopPrice);
-			if (val > balance) {
-				return this.$api.showMessage('您的积分不足');
+			let { goodsId, goodsNum, goodsPrice } = value;
+			let _length = this.added.length;
+			if (!_length) {
+				this.added = [
+					{
+						goodsId,
+						goodsNum,
+						goodsPrice
+					}
+				];
+			} else {
+				let _added = JSON.parse(JSON.stringify(this.added));
+				if (index < 0) {
+					_added.push({
+						goodsId: value.goodsId,
+						goodsPrice: value.goodsPrice,
+						goodsNum: value.goodsNum
+					});
+				} else {
+					_added[index] = {
+						goodsId: value.goodsId,
+						goodsPrice: value.goodsPrice,
+						goodsNum: value.goodsNum
+					};
+				}
 			}
-			this.$emit('sure', { goodsNum: this.count });
+			this.added = _added;
+			console.log(this.added);
+			// this.count = value;
+		},
+		sure() {
+			let balance = parseInt(this.balance) * 1;
+			// let val = Number(this.count) * parseInt(this.shopPrice);
+			// if (val > balance) {
+			// 	return this.$api.showMessage('您的积分不足');
+			// }
+			// this.$emit('sure', { goodsNum: this.count });
+			// let goodsList = this.added.map(item => {
+			// 	return {
+			// 		goodsId: item.goodsId,
+			// 		goodsNum: item.goodsNum
+			// 	};
+			// });
+
+			this.$emit('sure', this.added[0]);
 		},
 		moveHandle() {}
 	}
@@ -200,10 +212,11 @@ export default {
 		font-size: 28upx;
 		width: 308upx;
 		overflow: hidden;
-		// text-overflow: ellipsis;
-		// display: -webkit-box;
-		// -webkit-line-clamp: 2;
-		// -webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		margin-bottom: 10upx;
 	}
 	.closeCart {
 		color: #889696;
@@ -224,6 +237,7 @@ export default {
 	width: 90%;
 	flex-wrap: wrap;
 	margin-top: 20upx;
+	
 	.text {
 		color: #889696;
 		font-size: 22upx;
@@ -246,10 +260,10 @@ export default {
 	bottom: 0;
 
 	.is-tag {
-		// font-size: 24upx;
-		font-size: 19upx;
-		padding: 0 9upx;
-		border-radius: 4px;
+		line-height: 1;
+		font-size: 24upx;
+		padding: 0 8upx;
+		border-radius: 4upx;
 		margin-right: 15upx;
 		border: 1px solid transparent;
 	}

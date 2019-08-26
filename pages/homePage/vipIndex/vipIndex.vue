@@ -51,7 +51,6 @@
 						<text class="bl title">明星单品</text>
 						<text class="bl desc">VIP都在看的爆款</text>
 					</view>
-
 					<view class="goods-list">
 						<view class="goods-item" v-for="(star, starKey) in starList" :key="starKey">
 							<view class="" @click="goDetail(star.goodsInfo.goodsId)">
@@ -63,23 +62,22 @@
 										<text class="sb">￥</text>
 										<text class="sb_price">{{ star.goodsInfo.goodsPrice }}</text>
 									</view>
-									<view class="vip_icon"><image class="image" src="../../static/images/svip/icon_vip@2x.png" alt=""></image></view>
+									<view class="vip_icon"></view>
 								</view>
 							</view>
-							<view class="icon_user_buy" @tap="getUserBuy(star)"><image class="image" src="../../static/images/public/icon_shopping_white.png" alt=""></image></view>
+							<view class="icon_user_buy" @tap="getUserBuy(star)"></view>
 						</view>
 					</view>
 				</view>
 			</view>
 
 			<view class="item">
-				<image class="bg-image" src="/static/images/svip/img_mendian@2x.png" mode=""></image>
+				<image class="bg-image" src="../../../static/images/svip/img_mendian@2x.png" mode=""></image>
 				<view class="content">
 					<view class="head">
 						<text class="bl title">门店必备</text>
 						<text class="bl desc">当季大赏 特惠狂欢</text>
 					</view>
-
 					<view class="goods-list">
 						<view class="goods-item" v-for="(bibei, bibeiKey) in bibeiList" :key="bibeiKey">
 							<view class="" @click="goDetail(bibei.goodsInfo.goodsId)">
@@ -91,12 +89,10 @@
 										<text class="sb">￥</text>
 										<text class="sb_price">{{ bibei.goodsInfo.goodsPrice }}</text>
 									</view>
-									<view class="vip_icon"><image class="image" src="../../static/images/svip/icon_vip@2x.png" alt=""></image></view>
+									<view class="vip_icon"></view>
 								</view>
 							</view>
-							<view class="icon_user_buy" @tap="getUserBuy(bibei)">
-								<image class="image" src="../../static/images/public/icon_shopping_white.png" alt=""></image>
-							</view>
+							<view class="icon_user_buy" @tap="getUserBuy(bibei)"></view>
 						</view>
 					</view>
 				</view>
@@ -104,7 +100,7 @@
 		</view>
 		<!-- <text ref="pointerVip"></text> -->
 		<text id="pointerVip"></text>
-		<view class="category-title"><image class="img" src="/static/images/svip/img_zhuanshuyouhui@2x.png" mode=""></image></view>
+		<view class="category-title"><image class="img" src="../../../static/images/svip/img_zhuanshuyouhui@2x.png" mode=""></image></view>
 
 		<view class="svip-goods">
 			<goods-list :list="goodslist" type="svip" @detail="gotoDetial" @change="getUserBuy"></goods-list>
@@ -130,14 +126,12 @@ import goodsList from '@/components/goods-list/vipGoods-list.vue';
 import toastPopup from '@/components/toast-popup/toast-popup2.vue';
 import minNav from '@/components/min-nav/min-nav.vue';
 import buyPopup from '@/components/buy-popup/buy-popup.vue';
-import loading from '@/components/loading/loading.vue';
 export default {
 	components: {
 		goodsList,
 		toastPopup,
 		minNav,
-		buyPopup,
-		loading
+		buyPopup
 	},
 	data() {
 		return {
@@ -173,7 +167,7 @@ export default {
 	onShow() {},
 	onReady() {
 		let that = this;
-		let tm = setTimeout(function() {
+		setTimeout(function() {
 			let view = uni.createSelectorQuery().selectAll('#pointerVip');
 			view.boundingClientRect(data => {
 				let _top = data && data[0] && data[0].top;
@@ -198,16 +192,15 @@ export default {
 			uni.pageScrollTo({ scrollTop: 0, duration: 10 });
 		},
 		async addCart(data) {
-			let vm = this;
+			let that = this;
 			let res = await this.$api.request({
 				method: 'POST',
 				header: true,
 				url: this.$api.cartAdd,
-				data: data,
-				access_token: this.access_token
+				data: data
 			});
 			if (res.code == 0) {
-				vm.$store.commit('updateCart', res.data.totalCount);
+				that.$store.commit('updateCart', res.data.totalCount);
 			}
 			this.$api.showMessage(res.msg);
 			this.closeCart();
@@ -220,20 +213,18 @@ export default {
 			this.showCart = false;
 		},
 		async getVipData() {
-			let vm = this;
-			let res = await vm.$api.request({
-				method: 'GET',
-				url: `${this.$api.getVipIndex}?userRank=4`,
-				access_token: this.access_token
+			let that = this;
+			let res = await that.$api.request({
+				url: `${this.$api.getVipIndex}?userRank=4`
 			});
-			if (res.code == 0) {
+			if (res && res.data) {
 				let _res = res.data;
-				vm.adList = _res.adList;
-				vm.bannerList = _res.bannerList;
-				vm.bibeiList = _res.bibeiList;
-				vm.starList = _res.starList;
+				that.adList = _res.adList;
+				that.bannerList = _res.bannerList;
+				that.bibeiList = _res.bibeiList;
+				that.starList = _res.starList;
 			} else {
-				vm.$api.showMessage(res.msg);
+				that.$api.showMessage(res.msg);
 			}
 		},
 		//去商品详情页
@@ -246,27 +237,30 @@ export default {
 				this.getGoodsList();
 			}
 		},
-		getGoodsList() {
-			let vm = this;
-			vm.pages++;
-			vm.loadingText = '加载中...';
-			this.$api.getGoodsArray(
-				{
-					params: {
-						page: vm.pages,
-						pageSize: 10,
-						userRank: 4
-					},
-					access_token: this.access_token
-				},
-				function(res) {
-					vm.totalCount = res.data.totalCount;
-					for (let t = 0; t < res.data.goodsList.length; t++) {
-						vm.goodslist.push(res.data.goodsList[t]);
-					}
-					vm.loadingText = '';
+		async getGoodsList() {
+			let that = this;
+			that.pages++;
+			that.loadingText = '加载中...';
+			let res = await this.$api.request({
+				url: this.$api.getGoodsList,
+				data: {
+					page: that.pages,
+					pageSize: 10,
+					userRank: 4
 				}
-			);
+			});
+			if (res && res.data) {
+				that.totalCount = res.data.totalCount;
+				let list = res.data.goodsList;
+				for (let t = 0; t < list.length; t++) {
+					let goodsPrice = list[t].goodsInfo.goodsPrice;
+					let array = goodsPrice.split('.');
+					list[t].big = array[0];
+					list[t].min = array[1];
+				}
+				that.goodslist = that.goodslist.concat(list);
+			}
+			that.loadingText = '';
 		},
 		showPop(type) {
 			this[type] = true;
@@ -294,7 +288,6 @@ export default {
 
 .vipRules {
 	font-size: 24upx;
-	font-family: PingFang-SC-Medium;
 	font-weight: 500;
 	color: rgba(136, 150, 150, 1);
 	line-height: 50upx;

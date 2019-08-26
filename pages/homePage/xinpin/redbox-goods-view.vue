@@ -27,11 +27,7 @@
 </template>
 
 <script>
-import price from '@/components/goods-list/price.vue';
 export default {
-	components: {
-		price
-	},
 	props: ['list', 'newPro'],
 	data() {
 		return {

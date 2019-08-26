@@ -1,18 +1,18 @@
 .setTransform(@x: 0px, @y: 0px) {
 	-webkit-transform: translate(@x, @y);
-	-ms-transform: translate(@x, @y);
-	transform: translate(@x, @y);
+	-ms-transform    : translate(@x, @y);
+	transform        : translate(@x, @y);
 }
 
 .setBackImages(@url: transparent, @size: auto, @position: center, @repeat: no-repeat) {
-	background-image: url(@url);
-	background-size: @size;
-	background-repeat: @repeat;
+	background-image   : url(@url);
+	background-size    : @size;
+	background-repeat  : @repeat;
 	background-position: @position;
 }
 
 .arrow_r {
-	line-height: 40upx;
+	line-height  : 40upx;
 	padding-right: 30upx;
 	.setBackImages('../../static/images/order/arrow_r.png', 22upx 22upx, right center);
 }
@@ -24,66 +24,64 @@
 
 // 地址管理
 .check-map {
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	background: #ffffff;
-	font-size: 24upx;
+	overflow   : hidden;
+	position   : relative;
+	width      : 100%;
+	background : #ffffff;
+	font-size  : 24upx;
 	line-height: 30upx;
 
 	.content {
-		width: 700upx;
-		margin: 34upx auto;
-		//padding: 0 24upx;
-		//padding: 34upx 24upx;
+		width       : 700upx;
+		margin      : 34upx auto;
+		//padding   : 0 24upx;
+		//padding   : 34upx 24upx;
 		//min-height: 158upx;
 	}
 
 	.item {
-		overflow: hidden;
+		overflow     : hidden;
 		margin-bottom: 24upx;
 	}
 
 	.address {
-		padding-left: 40upx;
-		background-image: url('../../static/images/order/add.png');
+		padding-left       : 40upx;
+		background-image   : url('../../static/images/order/add.png');
 		background-position: left top;
-		background-repeat: no-repeat;
-		background-size: 32upx 32upx;
+		background-repeat  : no-repeat;
+		background-size    : 32upx 32upx;
 	}
 
 	.map-line {
 		//position: absolute;
-		bottom: 0;
-		width: auto;
-		height: 10upx;
-		width: 100%;
+		bottom    : 0;
+		width     : auto;
+		height    : 10upx;
+		width     : 100%;
 
 		.img {
 			position: absolute;
-			height: 10upx;
-			width: 100%;
+			height  : 10upx;
+			width   : 100%;
 		}
 	}
 
 	.map {
 		display: inline-block;
-		width: 32upx;
-		height: 32upx;
+		width  : 32upx;
+		height : 32upx;
 	}
 
 	.text {
-		font-size: 24upx;
-		font-family: PingFang-SC-Medium;
+		font-size  : 24upx;
 		font-weight: 500;
-		color: #889696;
+		color      : #889696;
 	}
 
 	.name {
-		font-size: 28upx;
-		font-family: PingFang-SC-Medium;
+		font-size  : 28upx;
 		font-weight: 500;
-		color: #2f3a40;
+		color      : #2f3a40;
 		margin-left: 42upx;
 	}
 }
@@ -93,17 +91,17 @@
 }
 
 .check-goods-item {
-	font-size: 24px;
+	font-size       : 24px;
 	// margin-bottom: 14upx;
-	margin-bottom: 20upx;
+	margin-bottom   : 20upx;
 
 	.qa {
-		width: 20upx;
+		width : 20upx;
 		height: 20upx;
 	}
 
 	.freight {
-		width: 36upx;
+		width : 36upx;
 		height: 36upx;
 	}
 
@@ -112,11 +110,11 @@
 	}
 
 	.head {
-		font-size: 24upx;
-		background: rgba(255, 255, 255, 1);
+		font-size    : 24upx;
+		background   : rgba(255, 255, 255, 1);
 		border-bottom: 1px solid #e9f3f5;
-		padding: 24upx 24upx;
-		overflow: hidden;
+		padding      : 24upx 24upx;
+		overflow     : hidden;
 
 		.supplier {
 			font-weight: bold;
@@ -128,83 +126,80 @@
 
 		.desc {
 			font-size: 24upx;
-			color: #677172;
+			color    : #677172;
 		}
 	}
 
 	.goods-freight {
-		line-height: 40upx;
-		font-size: 24upx;
-		overflow: hidden;
-		padding: 24upx 24upx;
-		background: #ffffff;
+		line-height  : 40upx;
+		font-size    : 24upx;
+		overflow     : hidden;
+		padding      : 24upx 24upx;
+		background   : #ffffff;
 		border-bottom: 1px solid #e9f3f5;
 
 		.fre-text {
 			font-size: 28upx;
-			margin: 0 12upx;
+			margin   : 0 12upx;
 		}
 
 		.count {
-			color: #ff3366;
-			font-size: 28upx;
+			color        : #ff3366;
+			font-size    : 28upx;
 			padding-right: 30upx;
 		}
 	}
 
 	.goods-foot {
-		background: #ffffff;
-		padding: 24upx 24upx;
-		overflow: hidden;
-		font-size: 24upx;
-		font-family: PingFang-SC-Medium;
+		background : #ffffff;
+		padding    : 24upx 24upx;
+		overflow   : hidden;
+		font-size  : 24upx;
 		font-weight: 500;
-		color: #2f3a40;
+		color      : #2f3a40;
 
 		.number {
-			font-size: 32upx;
-			font-family: PingFang-SC-Medium;
+			font-size  : 32upx;
 			font-weight: bold;
-			color: #ff3366;
+			color      : #ff3366;
 		}
 	}
 }
 
 // 订单留言
 .leaving-message {
-	background: #ffffff;
-	padding: 24upx 24upx;
-	font-size: 28upx;
-	font-family: PingFang-SC-Medium;
-	font-weight: 500;
-	color: #889696;
-	border-top: 1px solid #e9f3f5;
+	background   : #ffffff;
+	padding      : 24upx 24upx;
+	font-size    : 28upx;
+	font-family  : PingFang-SC-Medium;
+	font-weight  : 500;
+	color        : #889696;
+	border-top   : 1px solid #e9f3f5;
 	border-bottom: 1px solid #e9f3f5;
 	margin-bottom: 20upx;
 
 	.inputbox {
-		height: 100%;
-		font-size: 26upx;
+		height       : 100%;
+		font-size    : 26upx;
 		// background: rgba(243, 243, 243, 1);
 		// background: transparent;
-		opacity: 1;
+		opacity      : 1;
 
 		&::-webkit-input-placeholder {
-			color: #889696;
-			font-size: 26upx;
+			color      : #889696;
+			font-size  : 26upx;
 			font-weight: 400;
 		}
 	}
 }
 
 .coupon-use {
-	background: #ffffff;
-	padding: 24upx 24upx;
-	overflow: hidden;
-	font-size: 28upx;
-	font-family: PingFang-SC-Medium;
-	font-weight: 500;
-	color: rgba(47, 58, 64, 1);
+	background   : #ffffff;
+	padding      : 24upx 24upx;
+	overflow     : hidden;
+	font-size    : 28upx;
+	font-weight  : 500;
+	color        : rgba(47, 58, 64, 1);
 	margin-bottom: 20upx;
 
 	.ticket {
@@ -214,76 +209,75 @@
 
 	.coupon-text {
 		font-size: 28upx;
-		margin: 0 12upx;
+		margin   : 0 12upx;
 	}
 
 	.coupon-number {
-		padding: 4upx 10upx;
-		background: rgba(255, 51, 102, 1);
+		padding      : 4upx 10upx;
+		background   : rgba(255, 51, 102, 1);
 		border-radius: 4upx;
-		color: #fff;
-		font-size: 20upx;
+		color        : #fff;
+		font-size    : 20upx;
 	}
 
 	.price {
-		min-width: 40upx;
+		min-width : 40upx;
 		min-height: 40upx;
-		font-size: 28upx;
-		color: #ff3366;
+		font-size : 28upx;
+		color     : #ff3366;
 	}
 }
 
 .coupon-tips {
-	padding: 24upx 24upx;
+	padding   : 24upx 24upx;
 	background: rgba(252, 248, 249, 1);
-	border: 1px solid rgba(255, 188, 205, 1);
-
-	font-size: 24upx;
-	font-family: PingFang-SC-Medium;
+	border    : 1px solid rgba(255, 188, 205, 1);
+	font-size  : 24upx;
 	font-weight: 500;
-	color: #fd7a9f;
+	color      : #fd7a9f;
 }
 
 .pay-money {
-	padding: 24upx 24upx;
+	padding      : 24upx 24upx;
 	// border-top: 1px solid #FABBCB;
-	background: #fcf8f9;
-	color: #2f3a40;
-	font-size: 24upx;
-	margin-top: 12upx;
+	background   : #fcf8f9;
+	color        : #2f3a40;
+	font-size    : 24upx;
+	margin-top   : 12upx;
 
 	.item {
-		overflow: hidden;
+		overflow     : hidden;
 		margin-bottom: 12upx;
 	}
 
 	.cut-price {
 		color: #ff3867;
 	}
+
 	.count-price {
-		color: #ff3867;
-		font-size: 28upx;
+		color      : #ff3867;
+		font-size  : 28upx;
 		font-weight: bold;
 	}
 }
 
 // 邮费信息
 .o-feeInfo {
-	width: 710upx;
-	background: #cde6ff;
-	font-size: 24upx;
-	padding-top: 30upx;
+	width         : 710upx;
+	background    : #cde6ff;
+	font-size     : 24upx;
+	padding-top   : 30upx;
 	padding-bottom: 30upx;
-	margin: 24upx auto;
-	border-radius: 20upx;
-	padding-left: 20upx;
+	margin        : 24upx auto;
+	border-radius : 20upx;
+	padding-left  : 20upx;
 	.setBackImages('../../static/images/order/bugle.png', 140upx 146upx, right bottom);
 
 	.tips {
-		font-size: 24upx;
-		font-family: MicrosoftYaHei-Bold;
-		font-weight: bold;
-		color: rgba(255, 51, 102, 1);
+		font-size    : 24upx;
+		font-family  : MicrosoftYaHei-Bold;
+		font-weight  : bold;
+		color        : rgba(255, 51, 102, 1);
 		margin-bottom: 20upx;
 	}
 
@@ -306,16 +300,16 @@
 
 // 去凑单
 .collect-order {
-	width: 100%;
-	position: fixed;
-	z-index: 2;
-	bottom: 98upx;
-	overflow: hidden;
+	width     : 100%;
+	position  : fixed;
+	z-index   : 2;
+	bottom    : 98upx;
+	overflow  : hidden;
 	margin-top: 20upx;
 	background: #ffe1e9;
-	padding: 24upx;
-	color: #2f3a40;
-	font-size: 24upx;
+	padding   : 24upx;
+	color     : #2f3a40;
+	font-size : 24upx;
 	box-sizing: border-box;
 
 	.i {
@@ -323,73 +317,73 @@
 	}
 
 	.fr-text {
-		color: #ff3366;
-		padding-right: 4upx;
-		display: inline-block;
+		color         : #ff3366;
+		padding-right : 4upx;
+		display       : inline-block;
 		vertical-align: middle;
 	}
 }
 
-.container {
-}
+.container {}
 
 .empty-pay-foot {
 	visibility: hidden;
-	height: 98upx+90upx;
+	height    : 98upx+90upx;
 }
 
 .pay-foot {
-	z-index: 5;
-	position: fixed;
-	background: #fff;
-	height: 98upx;
-	bottom: 0;
-	width: 100%;
-	// position: relative;
+	z-index      : 5;
+	position     : fixed;
+	background   : #fff;
+	height       : 98upx;
+	bottom       : 0;
+	width        : 100%;
+	// position  : relative;
 	// background: #fff;
-	// height:98upx;
+	// height    :98upx;
 
 	.pay-left-info {
 		position: absolute;
-		top: 50%;
-		left: 24upx;
+		top     : 50%;
+		left    : 24upx;
 		.setTransform(0, -50%);
 
 		.item {
 			font-size: 24upx;
-			display: block;
+			display  : block;
 		}
+
 		.i {
 			color: #ff3366;
 		}
+
 		.price {
-			font-size: 32upx;
+			font-size  : 32upx;
 			font-weight: bold;
 		}
-		.number {
-		}
+
+		.number {}
 	}
 
 	.pay-order-btn {
-		cursor: pointer;
-		position: absolute;
-		width: 240upx;
-		height: 98upx;
+		cursor     : pointer;
+		position   : absolute;
+		width      : 240upx;
+		height     : 98upx;
 		line-height: 98upx;
-		background: rgba(255, 51, 102, 1);
-		right: 0;
-		top: 0;
+		background : rgba(255, 51, 102, 1);
+		right      : 0;
+		top        : 0;
 
 		.text {
-			text-align: center;
-			width: 100%;
-			font-size: 32upx;
-			font-family: PingFang-SC-Bold;
+			text-align : center;
+			width      : 100%;
+			font-size  : 32upx;
 			font-weight: bold;
-			color: rgba(255, 254, 254, 1);
+			color      : rgba(255, 254, 254, 1);
 
 			position: absolute;
-			top: 50%;
+			top     : 50%;
 			.setTransform(0, -50%);
 		}
 	}
@@ -397,28 +391,27 @@
 
 .ordercheck-page {
 	.ib {
-		//display: inline-block;
+		//display     : inline-block;
 		vertical-align: middle;
 	}
 }
 
 // 运费支付方式
 .freight-box {
-	font-size: 28upx;
-	font-family: PingFang-SC-Medium;
+	font-size  : 28upx;
 	font-weight: 500;
-	color: #2f3a40;
+	color      : #2f3a40;
 
 	.item {
-		padding: 24upx 0;
+		padding      : 24upx 0;
 		border-bottom: 1px solid #e9f3f5;
 	}
 
 	.icon-check-circle-fill:before {
 		//position: absolute;
-		right: 0;
-		color: #889696;
-		float: right;
+		right     : 0;
+		color     : #889696;
+		float     : right;
 	}
 
 	.check:before {
@@ -429,120 +422,118 @@
 // 货品清单
 .check-goods-detail {
 	.item {
-		width: 700upx;
-		margin: auto;
+		width        : 700upx;
+		margin       : auto;
 		border-bottom: 1px solid rgba(229, 229, 229, 1);
 
 		padding: 20upx 0;
 	}
 
 	.item-goods {
-		overflow: hidden;
+		overflow     : hidden;
 		margin-bottom: 14upx;
 	}
 
 	.img-box {
-		overflow: hidden;
+		overflow  : hidden;
 		text-align: center;
-		width: 100upx;
-		height: 100upx;
-		border: 1px solid rgba(233, 243, 245, 1);
+		width     : 100upx;
+		height    : 100upx;
+		border    : 1px solid rgba(233, 243, 245, 1);
 
 		.img {
-			margin: auto;
-			max-width: 100%;
+			margin    : auto;
+			max-width : 100%;
 			max-height: 100%;
 		}
 	}
 
 	.info-box {
 		margin-left: 10upx;
-		width: 458upx;
-		font-size: 24upx;
-		font-family: PingFang-SC-Medium;
+		width      : 458upx;
+		font-size  : 24upx;
 		font-weight: 500;
-		color: rgba(47, 58, 64, 1);
+		color      : rgba(47, 58, 64, 1);
 
 		.goods-name {
-			display: block;
+			display  : block;
 			font-size: 24upx;
 		}
 	}
 
 	.price-box {
-		text-align: right;
-		font-size: 24upx;
-		font-family: MicrosoftYaHei;
+		text-align : right;
+		font-size  : 24upx;
 		font-weight: 400;
 
 		.price {
 			display: block;
-			color: rgba(51, 51, 51, 1);
+			color  : rgba(51, 51, 51, 1);
 		}
+
 		.number {
 			display: block;
-			color: rgba(136, 150, 150, 1);
+			color  : rgba(136, 150, 150, 1);
 		}
 	}
 
 	.goods-tags {
-		font-size: 24upx;
-		//display: inline-block;
-		overflow: hidden;
-		padding: 4upx 10upx;
+		font-size    : 24upx;
+		//display    : inline-block;
+		overflow     : hidden;
+		padding      : 4upx 10upx;
 		border-radius: 4upx;
-		color: #fff;
-		background: transparent;
-		font-size: 24upx;
+		color        : #fff;
+		background   : transparent;
+		font-size    : 24upx;
 
 		.oneProImg {
-			width: 65upx;
+			width : 65upx;
 			height: 65upx;
 		}
 	}
 }
 
 .tags-line {
-	padding: 5px 5px 0 0;
-	display: -webkit-box;
+	padding          : 5px 5px 0 0;
+	display          : -webkit-box;
 	-webkit-box-align: start;
-	font-size: 22upx;
-	font-family: PingFang-SC-Medium;
-	font-weight: 500;
-	color: #000;
-	align-content: center;
-	background: #f0f1f2;
+	font-size        : 22upx;
+	font-weight      : 500;
+	color            : #000;
+	align-content    : center;
+	background       : #f0f1f2;
 
 	.goods-tags {
 		margin-right: 10upx;
 	}
 
 	.ul {
-		font-size: 22upx;
-		width: 620upx;
-		display: flex;
+		font-size  : 22upx;
+		width      : 620upx;
+		display    : flex;
 		align-items: center;
 	}
 
 	.li {
-		width: 100%;
-		overflow: hidden;
-		font-size: 22upx;
+		width        : 100%;
+		overflow     : hidden;
+		font-size    : 22upx;
 		margin-bottom: 10upx;
-		height: 32upx;
-		line-height: 32upx;
+		height       : 32upx;
+		line-height  : 32upx;
 	}
 
 	.text {
 		display: block;
-		width: 458upx;
+		width  : 458upx;
 
-		word-break: break-all;
-		word-spacing: normal;
-		white-space: nowrap;
+		word-break      : break-all;
+		word-spacing    : normal;
+		white-space     : nowrap;
 		-o-text-overflow: ellipsis;
-		text-overflow: ellipsis;
-		overflow: hidden;
+		text-overflow   : ellipsis;
+		overflow        : hidden;
 	}
 
 	.count {
@@ -555,15 +546,15 @@
 	background: #fff;
 
 	.goods-tags {
-		width: 70upx;
-		max-width: 70upx;
+		width     : 70upx;
+		max-width : 70upx;
 		background: #53a7fd;
-		padding: 0;
+		padding   : 0;
 		text-align: center;
 	}
 
 	.ul {
-		width: 600upx;
+		width  : 600upx;
 		display: block;
 	}
 
@@ -582,24 +573,23 @@
 	}
 }
 
-.pkg {
-}
+.pkg {}
 
 .un-address {
-	width: 100%;
+	width     : 100%;
 	text-align: center;
 }
 
 .btn {
-	cursor: pointer;
-	display: inline-block;
-	padding: 6upx 16upx;
-	font-size: 28upx;
-	border: 1px solid rgba(255, 51, 102, 1);
+	cursor       : pointer;
+	display      : inline-block;
+	padding      : 6upx 16upx;
+	font-size    : 28upx;
+	border       : 1px solid rgba(255, 51, 102, 1);
 	border-radius: 20upx;
 }
 
 .btn-address {
 	border: 1px solid rgba(255, 51, 102, 1);
-	color: #ff3366;
+	color : #ff3366;
 }

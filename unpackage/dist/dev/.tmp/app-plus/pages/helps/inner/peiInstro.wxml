@@ -1,0 +1,2 @@
+<import src="./peiInstro.vue.wxml" />
+    <template is="1b6ca486" data="{{ ...$root['0'], $root }}"/>

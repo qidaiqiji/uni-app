@@ -1,128 +1,136 @@
 //out:false
 @import "../../../../reset.less";
+
 .lottery-unit {
-    width: 206upx;
-    height: 176upx;
-    position: relative;
-    text-align: center;
-    z-index: 1;
-    background-image: url('~@/static/images/icons/integral/img_choujiang.png');
+    width              : 206upx;
+    height             : 176upx;
+    position           : relative;
+    text-align         : center;
+    z-index            : 1;
+    background-image   : url('~@/static/images/icons/integral/img_choujiang.png');
     background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 206upx 176upx;
+    background-repeat  : no-repeat;
+    background-size    : 206upx 176upx;
 }
 
 .lottery-unit-0 {
     position: absolute;
-    left: @left;
-    top: @left;
+    left    : @left;
+    top     : @left;
 }
 
 .lottery-unit-1 {
     position: absolute;
-    left: 206upx+6upx;
-    top: @left;
+    left    : 206upx+6upx;
+    top     : @left;
 }
 
 .lottery-unit-2 {
     position: absolute;
-    right: @left;
-    top: @left;
+    right   : @left;
+    top     : @left;
 }
 
 @top: 176upx+6upx + @left;
 
 .lottery-unit-3 {
     position: absolute;
-    right: @left;
-    top: @top;
+    right   : @left;
+    top     : @top;
 }
 
 .lottery-unit-8 {
-    position: absolute;
-    left: 206upx+6upx;
-    top: @top;
-    background-image: url('~@/static/images/icons/integral/icon_choujiang.png');
+    position           : absolute;
+    left               : 206upx+6upx;
+    top                : @top;
+    background-image   : url('~@/static/images/icons/integral/icon_choujiang.png');
     background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 206upx 176upx;
+    background-repeat  : no-repeat;
+    background-size    : 206upx 176upx;
 }
 
 @left: 1px;
 
 .lottery-unit-7 {
     position: absolute;
-    left: @left;
-    top: @top;
+    left    : @left;
+    top     : @top;
 }
 
 .lottery-unit-4 {
     position: absolute;
-    right: @left;
-    bottom: @left;
+    right   : @left;
+    bottom  : @left;
 }
 
 .lottery-unit-5 {
     position: absolute;
-    left: 206upx+6upx;
-    bottom: @left;
+    left    : 206upx+6upx;
+    bottom  : @left;
 }
 
 .lottery-unit-6 {
     position: absolute;
-    left: @left;
-    bottom: @left;
+    left    : @left;
+    bottom  : @left;
 }
 
 .con {
-    position: absolute;
-    z-index: 5;
-    width: 190upx;
-    height: 160upx;
-    top: 50%;
-    left: 50%;
+    position : absolute;
+    z-index  : 5;
+    width    : 190upx;
+    height   : 160upx;
+    top      : 50%;
+    left     : 50%;
     transform: translate(-50%, -50%);
 
     .img-box {
         position: relative;
-        height: 120upx;
+        height  : 120upx;
     }
 
     .logo {
-        position: relative;
-        max-width: 100%;
+        position  : relative;
+        max-width : 100%;
         max-height: 100upx;
-        top: 50%;
-        transform: translate(0, -50%);
+        top       : 50%;
+        transform : translate(0, -50%);
+    }
+
+    .img-box2 {
+        width              : 190upx;
+        height             : 160upx;
+        background-position: center;
+        background-size    : 180upx auto;
+        background-repeat  : no-repeat;
     }
 
     .name {
-        width: 100%;
-        display: block;
-        text-align: center;
-        position: absolute;
-        bottom: 12upx;
-        font-size: 16upx;
-        font-family: NotoSansHans-Medium;
+        width      : 100%;
+        display    : block;
+        text-align : center;
+        position   : absolute;
+        bottom     : 12upx;
+        font-size  : 16upx;
         font-weight: 500;
-        color: rgba(185, 126, 70, 1);
+        color      : rgba(185, 126, 70, 1);
 
-        white-space: nowrap;
+        white-space  : nowrap;
         text-overflow: ellipsis;
-        overflow: hidden;
+        overflow     : hidden;
     }
 }
 
 .mask {
-    width: 206upx;
-    height: 176upx;
-    position: absolute;
-    z-index: 2;
-    visibility: hidden;
-    background-image: url('~@/static/images/icons/integral/img_choujiang_selected.png');
+    width              : 206upx;
+    height             : 176upx;
+    position           : absolute;
+    z-index            : 2;
+    visibility         : hidden;
+    background-image   : url('~@/static/images/icons/integral/img_choujiang_selected.png');
     background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 206upx 176upx;
+    background-repeat  : no-repeat;
+    background-size    : 206upx 176upx;
 }
 
 .active {
@@ -133,54 +141,60 @@
 
 .exchange-draw-page {
     background: #ffaf4b;
-    width: 100%;
-    height: 100%;
-    min-height: @minHeight;
+    width     : 100%;
+    height    : 100%;
+}
+
+.exCon {
+    background: #ffaf4b;
+    width     : 100%;
+	overflow: hidden;
+	position: absolute;
 }
 
 .body {
-    width: 710upx;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    width    : 710upx;
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
     transform: translate(-50%, -50%);
 }
 
 .lottery {
-    overflow: hidden;
-    width: 710upx;
-    height: 634upx;
-    position: relative;
-    background-image: url('~@/static/images/icons/integral/img_choujiang_bg.png');
+    overflow           : hidden;
+    width              : 710upx;
+    height             : 634upx;
+    position           : relative;
+    background-image   : url('~@/static/images/icons/integral/img_choujiang_bg.png');
     background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 710upx 634upx;
+    background-repeat  : no-repeat;
+    background-size    : 710upx 634upx;
 }
 
 .lottery-body {
-    position: relative;
-    width: 630upx;
-    height: 546upx;
-    box-sizing: border-box;
-    margin: auto;
-    margin-top: 40upx;
-    //top: 50%;
-    //left: 50%;
+    position   : relative;
+    width      : 630upx;
+    height     : 546upx;
+    box-sizing : border-box;
+    margin     : auto;
+    margin-top : 40upx;
+    //top      : 50%;
+    //left     : 50%;
     //transform: translate(-50%, -50%);
 }
 
 .lottery-info {
-    text-align: center;
-    margin-top: 40upx;
-    font-size: 26upx;
+    text-align : center;
+    margin-top : 40upx;
+    font-size  : 26upx;
     line-height: 40upx;
 
     .text {
-        cursor: pointer;
-        font-family: PingFang-SC-Medium;
-        font-weight: 500;
+        cursor         : pointer;
+        font-family    : PingFang-SC-Medium;
+        font-weight    : 500;
         text-decoration: underline;
-        color: rgba(255, 255, 255, 1);
+        color          : rgba(255, 255, 255, 1);
     }
 
     .mr {
@@ -197,9 +211,9 @@
 }
 
 .record-list {
-    font-size: 28upx;
+    font-size  : 28upx;
     font-weight: 500;
-    color: rgba(136, 150, 150, 1);
+    color      : rgba(136, 150, 150, 1);
     line-height: 42upx;
 
     .text {
@@ -208,73 +222,70 @@
 }
 
 .r-trans {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
     transform: translate(-50%, -50%);
 }
 
 .record-view {
-    //display: none;
-    position: fixed;
-    z-index: 9;
-    top: @simpleTop;
-    left: 0;
-    width: 100%;
-    height: @minHeight;
+    position  : fixed;
+    z-index   : 9;
+    top       : 0;
+    left      : 0;
+    width     : 100%;
+    height    : 100%;
     background: rgba(0, 0, 0, 0.6);
 
     .record-body {
-        width: 620upx;
+        width     : 620upx;
         min-height: 620upx;
         background: #fff;
-        z-index: 2;
+        z-index   : 2;
     }
 
     .head {
-        position: relative;
+        position  : relative;
         background: #fe2132;
-        width: 100%;
-        height: 132upx;
+        width     : 100%;
+        height    : 132upx;
 
         .text {
-            z-index: 2;
-            display: block;
-            width: 100%;
-            text-align: center;
-            font-size: 46upx;
-            font-family: PingFang-SC-Regular;
+            z-index    : 2;
+            display    : block;
+            width      : 100%;
+            text-align : center;
+            font-size  : 46upx;
             font-weight: bold;
-            color: rgba(255, 255, 255, 1);
+            color      : rgba(255, 255, 255, 1);
         }
 
         .bg {
-            width: 705upx;
-            height: 132upx;
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            left: 50%;
-            margin-left: -352upx;
-            background-image: url('~@/static/images/self/exchange-draw/img_weizhongjiang@2x.png');
+            width              : 705upx;
+            height             : 132upx;
+            position           : absolute;
+            z-index            : 1;
+            top                : 0;
+            left               : 50%;
+            margin-left        : -352upx;
+            background-image   : url('~@/static/images/self/exchange-draw/img_weizhongjiang@2x.png');
             background-position: top center;
-            background-repeat: no-repeat;
-            background-size: 705upx 132upx;
+            background-repeat  : no-repeat;
+            background-size    : 705upx 132upx;
         }
     }
 
     .body-msg {
-        margin: auto;
-        //width: 515upx;
-        width: 480upx;
-        min-height: 360upx;
+        margin       : auto;
+        //width      : 515upx;
+        width        : 480upx;
+        min-height   : 360upx;
         margin-bottom: 90upx+32upx+12upx;
-        padding-top: 80upx;
-        text-align: center;
+        padding-top  : 80upx;
+        text-align   : center;
 
         .text {
-            font-size: 36upx;
-            font-family: PingFang-SC-Regular;
+            font-size  : 36upx;
             font-weight: bold;
             line-height: 46upx;
         }
@@ -284,62 +295,61 @@
         }
 
         .win-tips {
-            font-size: 22upx;
-            font-family: PingFang-SC-Regular;
+            font-size  : 22upx;
             font-weight: bold;
-            color: rgba(47, 58, 64, 1);
+            color      : rgba(47, 58, 64, 1);
             line-height: 42upx;
-            margin-top: 30upx;
+            margin-top : 30upx;
         }
 
         .win-look {
-            font-size: 22upx;
-            font-family: PingFang-SC-Regular;
+            font-size  : 22upx;
             font-weight: bold;
-            color: rgba(255, 67, 48, 1);
-            line-height: 42upx;
-            margin-top: 20upx;
+            color      : rgba(255, 67, 48, 1);
+            line-height: 50upx;
+            margin-top : 20upx;
         }
     }
+
     .foot-btn {
-        position: absolute;
-        //padding: 0 24upx;
-        //bottom: 32upx;
-        bottom: 24upx;
-        width: 100%;
+        position  : absolute;
+        //padding : 0 24upx;
+        //bottom  : 32upx;
+        bottom    : 24upx;
+        width     : 100%;
         text-align: center;
 
         .text {
-            z-index: 2;
-            display: block;
-            width: 100%;
-            text-align: center;
-            font-size: 30upx;
-            font-family: PingFang-SC-Regular;
+            z-index    : 2;
+            display    : block;
+            width      : 100%;
+            text-align : center;
+            font-size  : 30upx;
             font-weight: bold;
-            color: rgba(255, 255, 255, 1);
+            color      : rgba(255, 255, 255, 1);
         }
 
         .btn {
             position: relative;
-            width: 270upx;
-            height: 90upx;
-            display: inline-block;
-            cursor: pointer;
+            width   : 270upx;
+            height  : 90upx;
+            display : inline-block;
+            cursor  : pointer;
         }
 
         .cancle {
-            background-image: url('~@/static/images/self/exchange-draw/icon_cancel@2x.png');
+            background-image   : url('~@/static/images/self/exchange-draw/icon_cancel@2x.png');
             background-position: center;
-            background-repeat: no-repeat;
-            background-size: 270upx 90upx;
-            margin-right: 32upx;
+            background-repeat  : no-repeat;
+            background-size    : 270upx 90upx;
+            margin-right       : 32upx;
         }
+
         .againplay {
-            background-image: url('~@/static/images/self/exchange-draw/icon_againplay@2x.png');
+            background-image   : url('~@/static/images/self/exchange-draw/icon_againplay@2x.png');
             background-position: center;
-            background-repeat: no-repeat;
-            background-size: 270upx 90upx;
+            background-repeat  : no-repeat;
+            background-size    : 270upx 90upx;
         }
     }
 }

@@ -1,0 +1,1 @@
+<template name="2bb83202"><view class="_view data-v-5db8aaef video" bindtap="handleProxy" data-eventid="{{'2bb83202-0'}}" data-comkey="{{$k}}"><image class="_image data-v-5db8aaef poster" src="{{poster}}"></image><view class="_view data-v-5db8aaef icon">play</view></view></template>

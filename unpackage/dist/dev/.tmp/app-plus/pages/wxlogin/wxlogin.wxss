@@ -1,0 +1,41 @@
+.authorization.data-v-154cb346 {
+  width: 100%;
+  min-height: 1334rpx;
+  text-align: center;
+  background-color: #fff;
+  overflow: hidden;
+}
+.authorization .logo.data-v-154cb346 {
+  padding: 0;
+  margin-top: 70rpx;
+}
+.authorization .logo .image.data-v-154cb346 {
+  width: 276rpx;
+  height: 83rpx;
+}
+.authorization .info.data-v-154cb346 {
+  margin: auto;
+  margin-top: 100rpx;
+  width: 448rpx;
+}
+.authorization .info .image.data-v-154cb346 {
+  width: 448rpx;
+  height: 553rpx;
+}
+.authorization .button.data-v-154cb346 {
+  cursor: pointer;
+  margin: auto;
+  margin-top: 136rpx;
+  width: 416rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ff3366;
+  -webkit-border-radius: 44rpx;
+          border-radius: 44rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.authorization .back-button.data-v-154cb346 {
+  margin-top: 20rpx;
+}
+

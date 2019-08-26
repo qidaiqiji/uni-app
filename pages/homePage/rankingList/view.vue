@@ -1,8 +1,8 @@
 <template>
     <view class="pages rank-detail-page">
-        <view class="" v-show="showView">
+        <!-- <view class="" v-show="showView"> -->
             <!-- 商品介绍 -->
-            <view class="content">
+            <view class="content" :class="[showView?'show':'']">
                 <view class="head"><image class="image" :src="img" mode="" ></image></view>
                 <view class="body">
                     <text class="title">{{ desc }}</text>
@@ -21,7 +21,7 @@
                     </view>
                 </view>
                 <!-- 商品列表 -->
-                <view class="goods-list">
+                <view class="list">
                     <goods-list :list="goodsData" type="public" @change="getUserBuy"></goods-list>
                 </view>
             </view>
@@ -32,7 +32,7 @@
             
             <!-- 购物车窗口 -->
             <block v-if="showCart"><buy-popup :show="showCart" :datas="goodInfo" @close="closeCart" @sure="addCart"></buy-popup></block>
-        </view>
+        <!-- </view> -->
     </view>
 </template>
 
@@ -56,7 +56,6 @@ export default {
             showTop: false,
             showCart: false,
             goodInfo: {},
-
             id: ''
         };
     },
@@ -67,20 +66,29 @@ export default {
         this.getRankingView(this.id);
     },
     onShow() { },
+    onPageScroll(event) {
+        let { scrollTop } = event;
+		// 返回顶部
+		if(scrollTop>500&&!this.showTop){
+			this.showTop = true;
+		}else if(scrollTop<500&&this.showTop){
+			this.showTop = false;
+		}
+    },
     methods: {
 		backToTop() {
 			uni.pageScrollTo({ scrollTop: 0, duration: 10 });
 		},
         async addCart(data) {
-            let vm = this;
+            let that = this;
             let res = await this.$api.request({
                 method: 'POST',
                 header: true,
                 url: this.$api.cartAdd,
                 data: data
             });
-            if (res.code == 0) {
-                vm.$store.commit('updateCart', res.data.totalCount);
+            if (res && res.data) {
+                that.$store.commit('updateCart', res.data.totalCount);
             }
             this.$api.showMessage(res.msg);
             this.closeCart();
@@ -93,17 +101,16 @@ export default {
             this.showCart = false;
         },
         async getRankingView(id) {
-            let vm = this;
+            let that = this;
             let res = await this.$api.request({
-                method: 'GET',
                 url: `${this.$api.paihangView}?id=${id}`
             });
             if (res && res.code == 0) {
                 let data = res.data;
-                vm.img = data.img;
-                vm.desc = data.desc;
-                vm.topList = data.topList;
-                vm.goodsData = data.goodsList.map(e => {
+                that.img = data.img;
+                that.desc = data.desc;
+                that.topList = data.topList;
+                that.goodsData = data.goodsList.map(e => {
 					let goodsPrice = e.goodsInfo.goodsPrice;
 					let array = goodsPrice.split('.');
 					e.big = array[0];
@@ -111,7 +118,7 @@ export default {
 					return e;
 				});;
             }
-            vm.showView = true;
+            that.showView = true;
         },
         go_goodsDetail(goodsId){
             this.$api.goNavigateTo(`../../goods/product/product?goodsId=${goodsId}`);
@@ -126,7 +133,6 @@ export default {
     margin: auto;
     margin-top: 40upx;
     font-size: 28upx;
-    font-family: PingFang-SC-Medium;
     font-weight: 500;
     color: #2f3a40;
 
@@ -182,13 +188,18 @@ export default {
     }
 }
 
+.content {
+    background: #fff;
+    visibility: hidden;
+
+    &.show{
+        visibility: visible;
+    }
+}
+
 .rank-detail-page {
     overflow: hidden;
     background: #f3f3f3;
-
-    .content {
-        background: #fff;
-    }
 
     .head {
         overflow: hidden;
@@ -207,7 +218,7 @@ export default {
         text-align: center;
     }
 
-    .goods-list {
+    .list {
         margin-top: 20upx;
         overflow: hidden;
         background: #fff;

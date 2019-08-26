@@ -250,19 +250,20 @@ export default {
 					list[t].big = array[0];
 					list[t].min = array[1];
 				}
-				that.goods_list = that.goods_list.concat(list);
-				list = null;
+				that.$nextTick(() => {
+					that.goods_list = that.goods_list.concat(list);
+				});
+			} else {
+				that.isEmpty = true;
 			}
 			that.loadingText = false;
 		},
 		async getGoodsfilter() {
 			let vm = this;
 			let res = await this.$api.request({
-				method: 'GET',
-				access_token: this.access_token,
 				url: this.$api.getGoodsfilter
 			});
-			if (res && res.code == 0) {
+			if (res && res.data) {
 				let datas = res.data;
 				vm.tagsList = datas.tags;
 				vm.categoryList = datas.category;

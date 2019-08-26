@@ -28,9 +28,9 @@
 					 <!-- style="margin-top:5upx;" -->
 					<view class="r-foot">
 						<view class="price">
-							<view class="price_ident">¥</view>
-							<view class="price_number">{{ item.big }}</view>
-							<view class="price_mantissa">.{{ item.min }}</view>
+							<text class="price_ident">¥</text>
+							<text class="price_number">{{ item.big }}</text>
+							<text class="price_mantissa">.{{ item.min }}</text>
 						</view>
 						<view class="tag discount" v-if="item.goodsInfo.discount">{{ item.goodsInfo.discount }}折</view>
 						<view class="tag discount" v-if="item.goodsInfo.savePrice !== '0.00'">省¥{{ item.goodsInfo.savePrice }}</view>

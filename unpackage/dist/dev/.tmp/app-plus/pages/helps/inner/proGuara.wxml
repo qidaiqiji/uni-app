@@ -1,0 +1,2 @@
+<import src="./proGuara.vue.wxml" />
+    <template is="06706274" data="{{ ...$root['0'], $root }}"/>

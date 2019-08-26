@@ -118,7 +118,6 @@ export default {
 .lookxiaomei {
     visibility: hidden;
     font-size: 24upx;
-    font-family: PingFang-SC-Medium;
     font-weight: 500;
     color: rgba(198, 114, 42, 1);
     position: absolute;

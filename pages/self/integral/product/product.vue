@@ -10,7 +10,7 @@
 			</view>
 		</view>
 
-		<view class="tabChose" id="searchBar" :class="searchBarFixed == true ? 'isFixed' : ''">
+		<view class="tabChose" id="searchBar" :class="[searchBarFixed? 'isFixed' : '']">
 			<view class="stright" @click="tabtype('1', 'headTop')"><text :class="{ tabActive: isdetial == 1 }">直发</text></view>
 			<view class="detial" @click="tabtype('2', 'detialCon')"><text :class="{ tabActive: isdetial == 2 }">详情</text></view>
 		</view>
@@ -123,7 +123,7 @@
 			</view>
 		</toast-popup>
 
-		<buyPopup2 :show="showCart" :datas="allproductArr" @close="closeCart" @sure="addCart"></buyPopup2>
+		<buyPopup2 :show="showCart" :datas="addCartList" @close="closeCart" @sure="addCart"></buyPopup2>
 	</view>
 </template>
 
@@ -170,25 +170,11 @@ export default {
 			clock2: null,
 			//
 			showDescTop: 0,
-
+			imgAllTop: 0,
 			//
 			showCart: false
 		};
 	},
-	onLoad(params) {
-		//获取地址栏参数
-		this.goodsId = params.goodsId;
-	},
-	// onPageScroll(e) {
-	//     // 锁定存在searchBar已经定位的情况下重置不再定位
-	//     if (e.scrollTop <= this.searchBarTop && this.searchBarFixed) {
-	//         this.searchBarFixed = false;
-	//     }
-	//     // 锁定存在searchBar非定位的情况下重置定位
-	//     if (e.scrollTop > this.searchBarTop && this.searchBarTop > 1 && !this.searchBarFixed) {
-	//         this.searchBarFixed = true;
-	//     }
-	// },
 	methods: {
 		closeCart() {
 			this.showCart = false;
@@ -199,7 +185,7 @@ export default {
 				method: 'POST',
 				url: this.$api.exchange_buy,
 				data: {
-					goodsId: vm.goodsId,
+					goodsId: data.goodsId,
 					goodsNum: data.goodsNum
 				}
 			});
@@ -271,16 +257,21 @@ export default {
 		async getDetialData() {
 			let vm = this;
 			let res = await this.$api.request({
-				method: 'GET',
-				url: `${this.$api.getGoodsView}?goodsId=${this.goodsId}&userRank=${vm.$store.state.userRank}`
+				url: this.$api.getGoodsView,
+				data: {
+					goodsId: this.goodsId,
+					userRank: vm.$store.state.userRank
+				}
 			});
-			if (res && res.code == 0) {
+			if (res && res.data) {
 				let _res = res.data;
 				vm.allproductArr = _res;
 				vm.allproductArr.price = vm.allproductArr.price.replace('.00', '');
-
 				vm.swiperImgArr = _res.gallery;
+				// 购物车逻辑
 				vm.addCartList = _res.addCartList;
+				vm.addCartList.marketPrice = _res.marketPrice;
+				//
 				vm.proviceName = _res.defaultShippingProvince.provinceName;
 				vm.attributes = _res.attributes;
 				vm.marketSuggest = _res.marketSuggest;
@@ -293,27 +284,58 @@ export default {
 				vm.activityInfo = _res.activityInfo;
 				vm.goodsChangeNum = _res.startNum;
 			}
+		},
+		pageTabbar(scrollTop) {
+			if (scrollTop < this.searchBarTop && this.searchBarFixed) {
+				// 锁定存在searchBar已经定位的情况下重置不再定位
+				this.searchBarFixed = false;
+				this.isdetial = 1;
+			} else if (scrollTop > this.searchBarTop && this.searchBarTop > 1 && !this.searchBarFixed) {
+				// 锁定存在searchBar非定位的情况下重置定位
+				this.searchBarFixed = true;
+				this.isdetial = 2;
+			}
+			// 返回顶部显示
+			// if (scrollTop > 600 && !this.showTop) {
+			// 	this.showTop = true;
+			// } else if (scrollTop < 600 && this.showTop) {
+			// 	this.showTop = false;
+			// }
 		}
+	},
+	onLoad(params) {
+		// 第一次加载锁定页面在最顶部
+		uni.pageScrollTo({ scrollTop: 0, duration: 0 });
+		//获取地址栏参数
+		this.goodsId = params.goodsId;
+	},
+	onPageScroll(event) {
+		let { scrollTop } = event;
+		this.pageTabbar(scrollTop);
 	},
 	onShow() {
 		this.hidePop();
 		this.getDetialData();
-		let vm = this;
-		this.clock2 = setTimeout(function() {
-			let querys = uni.createSelectorQuery();
-			querys
-				.select('#searchBar')
-				.boundingClientRect(function(e) {
-					vm.searchBarTop = e.top;
-				})
-				.exec();
-			querys
-				.select('#detialCon')
-				.boundingClientRect(function(e) {
-					vm.showDescTop = e.top;
-				})
-				.exec();
-		}, 1000);
+	},
+	onReady() {
+		this.hidePop();
+		let that = this;
+		setTimeout(function() {
+			if (that.imgAllTop < 1) {
+				let view = uni.createSelectorQuery().selectAll('.imgAllShow');
+				let tabbarView = uni.createSelectorQuery().selectAll('.tabChose');
+				view.boundingClientRect(data => {
+					let _top = data && data[0] && data[0].top;
+					that.imgAllTop = _top;
+				}).exec();
+				tabbarView
+					.boundingClientRect(data => {
+						let _top = data && data[0] && data[0].top;
+						that.searchBarTop = _top;
+					})
+					.exec();
+			}
+		}, 700);
 	},
 	destroyed() {
 		this.clock2 = null;

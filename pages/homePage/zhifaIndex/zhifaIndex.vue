@@ -102,7 +102,7 @@
 					<view class="desc">首页</view>
 				</view>
 				<view class="itemSame" @tap="goPage('../../goods/list/list')">
-					<image class="img img2" src="../../../static/images/tabbar/shopIcon.png"></image>
+					<image class="img img2" src="../../../static/images/shampoo/shopIcon.png"></image>
 					<view class="desc">全部商品</view>
 				</view>
 				<view class="itemSame" @tap="goPageto('../../cart/cart')">
@@ -195,7 +195,6 @@ export default {
 			let res = await this.$api.request({
 				method: 'POST',
 				header: true,
-				access_token: this.access_token,
 				url: this.$api.cartAdd,
 				data: data
 			});

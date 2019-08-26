@@ -76,6 +76,7 @@
 
 	.dot {
 		position : absolute;
+		z-index  : 2;
 		bottom   : 20upx;
 		left     : 50%;
 		transform: translate(-50%, 0);
@@ -159,21 +160,23 @@
 
 //底部的加入采购车
 .addTocart {
-	background: #fff;
-	z-index   : 5;
-	position  : fixed;
-	width     : 100%;
-	height    : 98upx;
-	bottom    : 0;
+	background     : #fff;
+	z-index        : 5;
+	position       : fixed;
+	width          : 100%;
+	height         : 98upx;
+	bottom         : 0;
+	display        : flex;
+	justify-content: space-between;
 
-	.addTocartCon {
-		display        : flex;
-		justify-content: space-between;
-		width          : 100%;
-	}
+	// .addTocartCon {
+	// 	display        : flex;
+	// 	justify-content: space-between;
+	// 	width          : 100%;
+	// }
 }
 
-.addTocartCon {
+.addTocart {
 	.cartLeft {
 		width     : 334upx;
 		height    : 98upx;
@@ -185,18 +188,15 @@
 	}
 }
 
-.addTocartCon {
+.addTocart {
 	.nav-view {
-		width                  : 100%;
-		height                 : 98upx;
-		//display              : flex;
-		display                : -webkit-flex;
-		-webkit-box-align      : center;
-		-webkit-align-items    : center;
-		-webkit-justify-content: space-between;
-		// padding             : 0 10upx;
-		padding-right          : 10upx;
-		box-sizing             : border-box;
+		width          : 100%;
+		height         : 98upx;
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+		padding-right  : 10upx;
+		box-sizing     : border-box;
 	}
 
 	.nav-view-cell {
@@ -370,7 +370,6 @@
 			display    : block;
 			display    : -webkit-box;
 			font-size  : 28upx;
-			font-family: PingFangSC-Regular;
 			font-weight: 400;
 			color      : #2f3a40;
 			margin     : 14upx 0;
@@ -389,7 +388,6 @@
 		// 描述
 		&_described {
 			font-size    : 24upx;
-			font-family  : PingFangSC-Regular;
 			font-weight  : 400;
 			color        : #b2b2b2;
 			margin-bottom: 30upx;
@@ -417,7 +415,6 @@
 				&_mantissa {
 					display       : inline-block;
 					vertical-align: bottom;
-					font-family   : PingFangSC-Regular;
 					font-weight   : 400;
 					color         : #ff3366;
 				}
@@ -568,9 +565,9 @@
 			font-size    : 24upx;
 		}
 	}
-	
+
 	.un-sale {
-		display: flex;
+		display    : flex;
 		align-items: baseline;
 	}
 
@@ -579,7 +576,7 @@
 	}
 
 	.un-flashsale {
-		display: flex;
+		display    : flex;
 		align-items: baseline;
 		margin-left: 20upx;
 
@@ -674,14 +671,12 @@
 
 	.save-price {
 		font-size  : 22upx;
-		font-family: PingFang-SC-Medium;
 		font-weight: 500;
 		color      : rgba(237, 241, 244, 1);
 	}
 
 	.pt-price {
 		font-size  : 22upx;
-		font-family: PingFang-SC-Medium;
 		font-weight: 500;
 		color      : rgba(250, 234, 196, 1);
 		background : rgba(255, 255, 255, 0.2);
@@ -733,8 +728,8 @@
 	.discount {
 		color        : #ff9600;
 		border       : 1px solid #ff9600;
-		padding      : 0 4upx;
-		font-size    : 16upx;
+		padding      : 1px 4px;
+		font-size    : 20upx;
 		margin-left  : 10upx;
 		border-radius: 4upx;
 	}
@@ -761,7 +756,7 @@
 	display       : inline-block;
 	vertical-align: middle;
 	margin-right  : 4upx;
-	line-height: 1;
+	line-height   : 1;
 
 	&.juhuasuan {
 		background-image   : url('~@/static/images/productDetial/icon_huasuan.png');

@@ -1,0 +1,2 @@
+<import src="./suggessText.vue.wxml" />
+    <template is="1dc142df" data="{{ ...$root['0'], $root }}"/>
